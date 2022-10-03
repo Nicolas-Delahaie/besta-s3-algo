@@ -1,8 +1,8 @@
-<?xml version="1.1"?>
+<?xml version="1.0"?>
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>Algo_Global_Besta</nom>
-  <date_creation>28/9/2022 09:28</date_creation>
+  <date_creation>3/10/2022 15:21</date_creation>
   <Elements>
     <Action>
       <Position>834;45</Position>
@@ -71,14 +71,22 @@ tbBoissons</PreAssertion>
             </Action>
             <Action>
               <Position>695;504</Position>
-              <StyleLien>1</StyleLien>
+              <StyleLien>2</StyleLien>
               <PreAssertion>tbRecettesDispo</PreAssertion>
               <PostAssertion>tbRecettesDispo</PostAssertion>
               <Titre>Recherche 
 meilleur recette</Titre>
               <DetailsVisible>1</DetailsVisible>
               <DetailsVideVisible>1</DetailsVideVisible>
-              <Enfants/>
+              <Enfants>
+                <Iteration>
+                  <Position>867.5;661.5</Position>
+                  <StyleLien>1</StyleLien>
+                  <Titre>?</Titre>
+                  <IterationFixe>1</IterationFixe>
+                  <Enfants/>
+                </Iteration>
+              </Enfants>
             </Action>
             <Action>
               <Position>955;425</Position>
@@ -106,4 +114,5 @@ en verres</Titre>
       </Enfants>
     </Action>
   </Elements>
+  <Dictionary/>
 </Algorithme>
