@@ -1,0 +1,109 @@
+<?xml version="1.1"?>
+<!DOCTYPE Tabula_Rasa>
+<Algorithme>
+  <nom>Algo_Global_Besta</nom>
+  <date_creation>28/9/2022 09:28</date_creation>
+  <Elements>
+    <Action>
+      <Position>834;45</Position>
+      <StyleLien>2</StyleLien>
+      <PreAssertion>?</PreAssertion>
+      <PostAssertion>?</PostAssertion>
+      <Titre>Besta</Titre>
+      <DetailsVisible>1</DetailsVisible>
+      <DetailsVideVisible>1</DetailsVideVisible>
+      <Enfants>
+        <Action>
+          <Position>241;172</Position>
+          <StyleLien>2</StyleLien>
+          <PreAssertion> AlcoolBD</PreAssertion>
+          <PostAssertion>tbBoissons</PostAssertion>
+          <Titre>Intialisation</Titre>
+          <DetailsVisible>1</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants>
+            <Action>
+              <Position>101;289</Position>
+              <StyleLien>1</StyleLien>
+              <PreAssertion>?</PreAssertion>
+              <PostAssertion>qtBoisson
+nomBoisson</PostAssertion>
+              <Titre>Saisie
+utilisateur</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>0</DetailsVideVisible>
+              <Enfants/>
+            </Action>
+            <Action>
+              <Position>325;291</Position>
+              <StyleLien>1</StyleLien>
+              <PreAssertion>qtBoisson
+nomBoisson
+lAlcoolBD</PreAssertion>
+              <PostAssertion>tbBoisson</PostAssertion>
+              <Titre>Conexion</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>1</DetailsVideVisible>
+              <Enfants/>
+            </Action>
+          </Enfants>
+        </Action>
+        <Action>
+          <Position>775;310</Position>
+          <StyleLien>2</StyleLien>
+          <PreAssertion>tbBoissons</PreAssertion>
+          <PostAssertion>tbVerres</PostAssertion>
+          <Titre>Répartition 
+des verres</Titre>
+          <DetailsVisible>1</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants>
+            <Action>
+              <Position>465;424</Position>
+              <StyleLien>1</StyleLien>
+              <PreAssertion>recetteBD
+tbBoissons</PreAssertion>
+              <PostAssertion>tbRecettesDispo</PostAssertion>
+              <Titre>Recherche recette</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>1</DetailsVideVisible>
+              <Enfants/>
+            </Action>
+            <Action>
+              <Position>695;504</Position>
+              <StyleLien>1</StyleLien>
+              <PreAssertion>tbRecettesDispo</PreAssertion>
+              <PostAssertion>tbRecettesDispo</PostAssertion>
+              <Titre>Recherche 
+meilleur recette</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>1</DetailsVideVisible>
+              <Enfants/>
+            </Action>
+            <Action>
+              <Position>955;425</Position>
+              <StyleLien>1</StyleLien>
+              <PreAssertion>tbRecettesDispo</PreAssertion>
+              <PostAssertion>?</PostAssertion>
+              <Titre>Conversion
+en verres</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>1</DetailsVideVisible>
+              <Enfants/>
+            </Action>
+          </Enfants>
+        </Action>
+        <Action>
+          <Position>1303;182</Position>
+          <StyleLien>1</StyleLien>
+          <PreAssertion>tbVerres</PreAssertion>
+          <PostAssertion>?</PostAssertion>
+          <Titre>Affichage tableau de bord</Titre>
+          <DetailsVisible>1</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants/>
+        </Action>
+      </Enfants>
+    </Action>
+  </Elements>
+</Algorithme>
