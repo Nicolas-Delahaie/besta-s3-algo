@@ -2,7 +2,7 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>Algo_Global_Besta</nom>
-  <date_creation>3/10/2022 15:21</date_creation>
+  <date_creation>3/10/2022 15:26</date_creation>
   <Elements>
     <Action>
       <Position>834;45</Position>
