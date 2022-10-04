@@ -1,8 +1,8 @@
-<?xml version="1.0"?>
+<?xml version="1.1"?>
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>Algo_Global_Besta</nom>
-  <date_creation>3/10/2022 15:21</date_creation>
+  <date_creation>4/10/2022 09:27</date_creation>
   <Elements>
     <Action>
       <Position>834;45</Position>
@@ -59,7 +59,7 @@ des verres</Titre>
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants>
             <Action>
-              <Position>465;424</Position>
+              <Position>247;514</Position>
               <StyleLien>1</StyleLien>
               <PreAssertion>recetteBD
 tbBoissons</PreAssertion>
@@ -70,29 +70,139 @@ tbBoissons</PreAssertion>
               <Enfants/>
             </Action>
             <Action>
-              <Position>695;504</Position>
+              <Position>1017;494</Position>
               <StyleLien>2</StyleLien>
               <PreAssertion>tbRecettesDispo</PreAssertion>
-              <PostAssertion>tbRecettesDispo</PostAssertion>
+              <PostAssertion>tbVerres</PostAssertion>
               <Titre>Recherche 
 meilleur recette</Titre>
               <DetailsVisible>1</DetailsVisible>
               <DetailsVideVisible>1</DetailsVideVisible>
               <Enfants>
+                <Action>
+                  <Position>538;682</Position>
+                  <StyleLien>1</StyleLien>
+                  <PreAssertion>tbRecettesDispo</PreAssertion>
+                  <PostAssertion>TAILLE_SAC</PostAssertion>
+                  <Titre>Calculer la taille du sac</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>1</DetailsVideVisible>
+                  <Enfants/>
+                </Action>
                 <Iteration>
-                  <Position>867.5;661.5</Position>
+                  <Position>1623.5;604.5</Position>
                   <StyleLien>1</StyleLien>
                   <Titre>?</Titre>
-                  <IterationFixe>1</IterationFixe>
-                  <Enfants/>
+                  <IterationFixe>0</IterationFixe>
+                  <Enfants>
+                    <Condition>
+                      <Position>1795.5;703</Position>
+                      <StyleLien>1</StyleLien>
+                      <estUnique>1</estUnique>
+                      <operationsLogiques>
+                        <operation>
+                          <Titre>taille=0</Titre>
+                          <Enfants>
+                            <Sortie>
+                              <Position>1835;778</Position>
+                            </Sortie>
+                          </Enfants>
+                        </operation>
+                        <operation>
+                          <Titre>Sinon</Titre>
+                          <Enfants/>
+                        </operation>
+                      </operationsLogiques>
+                    </Condition>
+                    <Action>
+                      <Position>1145;904</Position>
+                      <StyleLien>2</StyleLien>
+                      <PreAssertion>TAILLE_SAC
+tbRecettesDispo</PreAssertion>
+                      <PostAssertion>tbVerres</PostAssertion>
+                      <Titre>Remplir le sac</Titre>
+                      <DetailsVisible>1</DetailsVisible>
+                      <DetailsVideVisible>1</DetailsVideVisible>
+                      <Enfants>
+                        <Iteration>
+                          <Position>1348.5;1021.5</Position>
+                          <StyleLien>1</StyleLien>
+                          <Titre>?</Titre>
+                          <IterationFixe>0</IterationFixe>
+                          <Enfants>
+                            <Condition>
+                              <Position>1638.5;1131</Position>
+                              <StyleLien>1</StyleLien>
+                              <estUnique>1</estUnique>
+                              <operationsLogiques>
+                                <operation>
+                                  <Titre>tailleVerres=
+TAILLE_SAC</Titre>
+                                  <Enfants>
+                                    <Sortie>
+                                      <Position>1699;1203</Position>
+                                    </Sortie>
+                                  </Enfants>
+                                </operation>
+                                <operation>
+                                  <Titre>Sinon</Titre>
+                                  <Enfants/>
+                                </operation>
+                              </operationsLogiques>
+                            </Condition>
+                            <Action>
+                              <Position>958;1154</Position>
+                              <StyleLien>1</StyleLien>
+                              <PreAssertion>liste</PreAssertion>
+                              <PostAssertion>liste</PostAssertion>
+                              <Titre>ajouter une recette</Titre>
+                              <DetailsVisible>1</DetailsVisible>
+                              <DetailsVideVisible>1</DetailsVideVisible>
+                              <Enfants/>
+                            </Action>
+                          </Enfants>
+                        </Iteration>
+                        <Action>
+                          <Position>596;1013</Position>
+                          <StyleLien>1</StyleLien>
+                          <PreAssertion>?</PreAssertion>
+                          <PostAssertion>liste</PostAssertion>
+                          <Titre>initialiser la liste</Titre>
+                          <DetailsVisible>1</DetailsVisible>
+                          <DetailsVideVisible>0</DetailsVideVisible>
+                          <Enfants/>
+                        </Action>
+                      </Enfants>
+                    </Action>
+                    <Action>
+                      <Position>1408;830</Position>
+                      <StyleLien>1</StyleLien>
+                      <PreAssertion>tbVerres</PreAssertion>
+                      <PostAssertion>tbVerres</PostAssertion>
+                      <Titre>Calculer le reste</Titre>
+                      <DetailsVisible>1</DetailsVisible>
+                      <DetailsVideVisible>1</DetailsVideVisible>
+                      <Enfants/>
+                    </Action>
+                  </Enfants>
                 </Iteration>
+                <Action>
+                  <Position>879;739</Position>
+                  <StyleLien>1</StyleLien>
+                  <PreAssertion>tbRecettesDispo</PreAssertion>
+                  <PostAssertion>tbRecettesDispo</PostAssertion>
+                  <Titre>Calculer valeur</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>1</DetailsVideVisible>
+                  <Enfants/>
+                </Action>
               </Enfants>
             </Action>
             <Action>
-              <Position>955;425</Position>
+              <Position>528;575</Position>
               <StyleLien>1</StyleLien>
               <PreAssertion>tbRecettesDispo</PreAssertion>
-              <PostAssertion>?</PostAssertion>
+              <PostAssertion>tbRecettesDispo</PostAssertion>
               <Titre>Conversion
 en verres</Titre>
               <DetailsVisible>1</DetailsVisible>
@@ -108,11 +218,10 @@ en verres</Titre>
           <PostAssertion>?</PostAssertion>
           <Titre>Affichage tableau de bord</Titre>
           <DetailsVisible>1</DetailsVisible>
-          <DetailsVideVisible>1</DetailsVideVisible>
+          <DetailsVideVisible>0</DetailsVideVisible>
           <Enfants/>
         </Action>
       </Enfants>
     </Action>
   </Elements>
-  <Dictionary/>
 </Algorithme>
