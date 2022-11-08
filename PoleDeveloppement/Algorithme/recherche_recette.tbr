@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<!DOCTYPE Tabula_Rasa>
+<Algorithme>
+  <nom>recherche_recette</nom>
+  <date_creation>8/11/2022 08:40</date_creation>
+  <Elements>
+    <Action>
+      <Position>830;1276</Position>
+      <StyleLien>2</StyleLien>
+      <PreAssertion>listeDiluants
+listeAlcools
+melangesExistants</PreAssertion>
+      <PostAssertion>melangesPossibles</PostAssertion>
+      <Titre>Recherche recette</Titre>
+      <DetailsVisible>1</DetailsVisible>
+      <DetailsVideVisible>1</DetailsVideVisible>
+      <Enfants>
+        <Action>
+          <Position>517;1396</Position>
+          <StyleLien>2</StyleLien>
+          <PreAssertion>listeAlcools</PreAssertion>
+          <PostAssertion>melangesTemp</PostAssertion>
+          <Titre>Parcours alcools</Titre>
+          <DetailsVisible>1</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants>
+            <Iteration>
+              <Position>692.5;1525.5</Position>
+              <StyleLien>1</StyleLien>
+              <Titre>Pour i allant de 0 à tailleListeAlcools</Titre>
+              <IterationFixe>1</IterationFixe>
+              <Enfants>
+                <Iteration>
+                  <Position>694.5;1607.5</Position>
+                  <StyleLien>1</StyleLien>
+                  <Titre>Pour j allant de 0 à
+tailleMelangesExistants</Titre>
+                  <IterationFixe>1</IterationFixe>
+                  <Enfants>
+                    <Condition>
+                      <Position>617.5;1708</Position>
+                      <StyleLien>1</StyleLien>
+                      <estUnique>1</estUnique>
+                      <operationsLogiques>
+                        <operation>
+                          <Titre>listeAlcools[i][0]= melangesExistants[j][0]</Titre>
+                          <Enfants/>
+                        </operation>
+                        <operation>
+                          <Titre>Sinon</Titre>
+                          <Enfants/>
+                        </operation>
+                      </operationsLogiques>
+                    </Condition>
+                  </Enfants>
+                </Iteration>
+              </Enfants>
+            </Iteration>
+          </Enfants>
+        </Action>
+        <Action>
+          <Position>1061;1387</Position>
+          <StyleLien>2</StyleLien>
+          <PreAssertion>listeDiluants
+melangesTemp</PreAssertion>
+          <PostAssertion>melangesPossibles</PostAssertion>
+          <Titre>Parcours Diluants</Titre>
+          <DetailsVisible>1</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants>
+            <Iteration>
+              <Position>1261.5;1517.5</Position>
+              <StyleLien>1</StyleLien>
+              <Titre>Pour i allant de 0 à tailleListeDiluants</Titre>
+              <IterationFixe>1</IterationFixe>
+              <Enfants>
+                <Iteration>
+                  <Position>1259.5;1600.5</Position>
+                  <StyleLien>1</StyleLien>
+                  <Titre>Pour j allant de 0 à
+tailleMelangesTemp</Titre>
+                  <IterationFixe>1</IterationFixe>
+                  <Enfants>
+                    <Condition>
+                      <Position>1183.5;1703</Position>
+                      <StyleLien>1</StyleLien>
+                      <estUnique>1</estUnique>
+                      <operationsLogiques>
+                        <operation>
+                          <Titre>listeDiluants[i][0]
+= melangesTemp[j][1]</Titre>
+                          <Enfants/>
+                        </operation>
+                        <operation>
+                          <Titre>Sinon</Titre>
+                          <Enfants/>
+                        </operation>
+                      </operationsLogiques>
+                    </Condition>
+                  </Enfants>
+                </Iteration>
+              </Enfants>
+            </Iteration>
+          </Enfants>
+        </Action>
+      </Enfants>
+    </Action>
+    <Action>
+      <Position>1021;1796</Position>
+      <StyleLien>1</StyleLien>
+      <PreAssertion>melangesTemp</PreAssertion>
+      <PostAssertion>melangesPossible</PostAssertion>
+      <Titre>melangesPossible ← melangesTemp[j]</Titre>
+      <DetailsVisible>1</DetailsVisible>
+      <DetailsVideVisible>1</DetailsVideVisible>
+      <Enfants/>
+    </Action>
+    <Action>
+      <Position>425;1797</Position>
+      <StyleLien>1</StyleLien>
+      <PreAssertion>melangesExistants</PreAssertion>
+      <PostAssertion>melangesTemp</PostAssertion>
+      <Titre>melangeTemp ← melangesExistants[j]</Titre>
+      <DetailsVisible>1</DetailsVisible>
+      <DetailsVideVisible>1</DetailsVideVisible>
+      <Enfants/>
+    </Action>
+  </Elements>
+  <Dictionary/>
+</Algorithme>

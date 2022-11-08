@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<!DOCTYPE Tabula_Rasa>
+<Algorithme>
+  <nom>Saisie verif utilisateur</nom>
+  <date_creation>8/11/2022 09:00</date_creation>
+  <Elements>
+    <Action>
+      <Position>199;294</Position>
+      <StyleLien>2</StyleLien>
+      <PreAssertion>boissons 
+tailleBoissons</PreAssertion>
+      <PostAssertion>listeDiluants
+listeAlcools
+listeAutre</PostAssertion>
+      <Titre>Saisie vérif
+utilisateur</Titre>
+      <DetailsVisible>1</DetailsVisible>
+      <DetailsVideVisible>1</DetailsVideVisible>
+      <Enfants>
+        <Iteration>
+          <Position>342.5;408.5</Position>
+          <StyleLien>1</StyleLien>
+          <Titre>?</Titre>
+          <IterationFixe>0</IterationFixe>
+          <Enfants>
+            <Action>
+              <Position>26;581</Position>
+              <StyleLien>1</StyleLien>
+              <PreAssertion>?</PreAssertion>
+              <PostAssertion>nomBoissons
+qtBoissons</PostAssertion>
+              <Titre>Saisie de l'utilisateur</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>0</DetailsVideVisible>
+              <Enfants/>
+            </Action>
+            <Iteration>
+              <Position>573.5;539.5</Position>
+              <StyleLien>1</StyleLien>
+              <Titre>pour i allant de 0
+à tailleBoissons</Titre>
+              <IterationFixe>1</IterationFixe>
+              <Enfants>
+                <Condition>
+                  <Position>525.5;620</Position>
+                  <StyleLien>0</StyleLien>
+                  <estUnique>0</estUnique>
+                  <operationsLogiques>
+                    <operation>
+                      <Titre>boissons[i][0]=
+nomBoissons</Titre>
+                      <Enfants>
+                        <Condition>
+                          <Position>402.5;757</Position>
+                          <StyleLien>1</StyleLien>
+                          <estUnique>0</estUnique>
+                          <operationsLogiques>
+                            <operation>
+                              <Titre>boissons[i][1]=1</Titre>
+                              <Enfants>
+                                <Procedure>
+                                  <Position>128;1048</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <PreAssertion>nomBoissons
+qtBoissons
+typeBoisson</PreAssertion>
+                                  <PostAssertion>listeAlcool</PostAssertion>
+                                  <Titre>ajouter dans 
+liste</Titre>
+                                  <DetailsVisible>1</DetailsVisible>
+                                  <DetailsVideVisible>1</DetailsVideVisible>
+                                  <Enfants/>
+                                </Procedure>
+                                <Sortie>
+                                  <Position>413;918</Position>
+                                </Sortie>
+                              </Enfants>
+                            </operation>
+                            <operation>
+                              <Titre>boissons[i][1]=2</Titre>
+                              <Enfants>
+                                <Procedure>
+                                  <Position>387;1233</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <PreAssertion>nomBoissons
+qtBoissons
+typeBoisson</PreAssertion>
+                                  <PostAssertion>listeDiluant</PostAssertion>
+                                  <Titre>ajouter dans 
+liste</Titre>
+                                  <DetailsVisible>1</DetailsVisible>
+                                  <DetailsVideVisible>1</DetailsVideVisible>
+                                  <Enfants/>
+                                </Procedure>
+                                <Sortie>
+                                  <Position>662;1165</Position>
+                                </Sortie>
+                              </Enfants>
+                            </operation>
+                            <operation>
+                              <Titre>boissons[i][1]=3</Titre>
+                              <Enfants>
+                                <Procedure>
+                                  <Position>1039;960</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <PreAssertion>nomBoissons
+qtBoissons
+typeBoisson</PreAssertion>
+                                  <PostAssertion>listeAutre</PostAssertion>
+                                  <Titre>ajouter dans 
+liste</Titre>
+                                  <DetailsVisible>1</DetailsVisible>
+                                  <DetailsVideVisible>1</DetailsVideVisible>
+                                  <Enfants/>
+                                </Procedure>
+                                <Sortie>
+                                  <Position>1407;998</Position>
+                                </Sortie>
+                              </Enfants>
+                            </operation>
+                          </operationsLogiques>
+                        </Condition>
+                      </Enfants>
+                    </operation>
+                  </operationsLogiques>
+                </Condition>
+              </Enfants>
+            </Iteration>
+          </Enfants>
+        </Iteration>
+      </Enfants>
+    </Action>
+  </Elements>
+  <Dictionary/>
+</Algorithme>
