@@ -2,56 +2,18 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>Algo_Global_Besta</nom>
-  <date_creation>8/11/2022 09:01</date_creation>
+  <date_creation>9/11/2022 16:47</date_creation>
   <Elements>
     <Action>
-      <Position>834;44</Position>
+      <Position>747;46</Position>
       <StyleLien>2</StyleLien>
-      <PreAssertion>melangesExistants
-boissons
-tailleBoissons
-tailleMelangesExistants</PreAssertion>
+      <PreAssertion>bdBoissons
+recetteExistantes</PreAssertion>
       <PostAssertion>?</PostAssertion>
-      <Titre>Besta</Titre>
+      <Titre>Gestion Cocktails</Titre>
       <DetailsVisible>1</DetailsVisible>
-      <DetailsVideVisible>1</DetailsVideVisible>
+      <DetailsVideVisible>0</DetailsVideVisible>
       <Enfants>
-        <Action>
-          <Position>1074;237</Position>
-          <StyleLien>2</StyleLien>
-          <PreAssertion>listeDiluants
-listeAlcools</PreAssertion>
-          <PostAssertion>verres</PostAssertion>
-          <Titre>Répartir
-les verres</Titre>
-          <DetailsVisible>1</DetailsVisible>
-          <DetailsVideVisible>1</DetailsVideVisible>
-          <Enfants>
-            <Action>
-              <Position>723;392</Position>
-              <StyleLien>1</StyleLien>
-              <PreAssertion>listeDiluants
-listeAlcools
-melangesExistants</PreAssertion>
-              <PostAssertion>melangesPossibles</PostAssertion>
-              <Titre>Recherche recette</Titre>
-              <DetailsVisible>1</DetailsVisible>
-              <DetailsVideVisible>1</DetailsVideVisible>
-              <Enfants/>
-            </Action>
-            <Action>
-              <Position>1436;397</Position>
-              <StyleLien>1</StyleLien>
-              <PreAssertion>melangesPossibles</PreAssertion>
-              <PostAssertion>verres</PostAssertion>
-              <Titre>Recherche 
-meilleur recette</Titre>
-              <DetailsVisible>1</DetailsVisible>
-              <DetailsVideVisible>1</DetailsVideVisible>
-              <Enfants/>
-            </Action>
-          </Enfants>
-        </Action>
         <Action>
           <Position>1984;247</Position>
           <StyleLien>1</StyleLien>
@@ -63,15 +25,47 @@ meilleur recette</Titre>
           <Enfants/>
         </Action>
         <Action>
-          <Position>183;392</Position>
+          <Position>52;213</Position>
           <StyleLien>1</StyleLien>
-          <PreAssertion>boissons 
-tailleBoissons</PreAssertion>
-          <PostAssertion>listeDiluants
-listeAlcools
-listeAutre</PostAssertion>
+          <PreAssertion>bdBoissons
+tailleBdBoissons</PreAssertion>
+          <PostAssertion>stockSoiree</PostAssertion>
           <Titre>Saisie vérif
 utilisateur</Titre>
+          <DetailsVisible>1</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants/>
+        </Action>
+        <Action>
+          <Position>430;215</Position>
+          <StyleLien>1</StyleLien>
+          <PreAssertion>stockSoiree
+recetteExistantes</PreAssertion>
+          <PostAssertion>recettesPossibles</PostAssertion>
+          <Titre>Recherche recette</Titre>
+          <DetailsVisible>1</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants/>
+        </Action>
+        <Action>
+          <Position>902;214</Position>
+          <StyleLien>1</StyleLien>
+          <PreAssertion>recettesPossibles
+DOSE_ALCOOL
+DOSE_DILUANT</PreAssertion>
+          <PostAssertion>recettesPossibles
+qtMax</PostAssertion>
+          <Titre>Calcule des quantités</Titre>
+          <DetailsVisible>1</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants/>
+        </Action>
+        <Action>
+          <Position>1656;234</Position>
+          <StyleLien>1</StyleLien>
+          <PreAssertion>∅</PreAssertion>
+          <PostAssertion>∅</PostAssertion>
+          <Titre>Calculer valeur des recettes</Titre>
           <DetailsVisible>1</DetailsVisible>
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants/>
