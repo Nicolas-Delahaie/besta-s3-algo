@@ -2,49 +2,62 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>recherche_recette</nom>
-  <date_creation>8/11/2022 08:40</date_creation>
+  <date_creation>9/11/2022 12:00</date_creation>
   <Elements>
     <Action>
-      <Position>830;1276</Position>
+      <Position>416;42</Position>
       <StyleLien>2</StyleLien>
-      <PreAssertion>listeDiluants
-listeAlcools
-melangesExistants</PreAssertion>
-      <PostAssertion>melangesPossibles</PostAssertion>
-      <Titre>Recherche recette</Titre>
+      <PreAssertion>stockSoiree
+recetteExistantes</PreAssertion>
+      <PostAssertion>recettesPossibles</PostAssertion>
+      <Titre>Recherche recettesPossibles possibles</Titre>
       <DetailsVisible>1</DetailsVisible>
       <DetailsVideVisible>1</DetailsVideVisible>
       <Enfants>
         <Action>
-          <Position>517;1396</Position>
+          <Position>5;199</Position>
           <StyleLien>2</StyleLien>
-          <PreAssertion>listeAlcools</PreAssertion>
-          <PostAssertion>melangesTemp</PostAssertion>
-          <Titre>Parcours alcools</Titre>
+          <PreAssertion>stockSoiree
+recettesExistantes
+tailleStockSoireeAlcools
+tailleRecettesExistantes</PreAssertion>
+          <PostAssertion>recettesTemp</PostAssertion>
+          <Titre>Recherche des Alcools dans recettesExistantes et ajout dans recettesTemps</Titre>
           <DetailsVisible>1</DetailsVisible>
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants>
             <Iteration>
-              <Position>692.5;1525.5</Position>
+              <Position>372.5;316.5</Position>
               <StyleLien>1</StyleLien>
-              <Titre>Pour i allant de 0 à tailleListeAlcools</Titre>
+              <Titre>Pour i allant de 0 à tailleStockSoireeAlcools</Titre>
               <IterationFixe>1</IterationFixe>
               <Enfants>
                 <Iteration>
-                  <Position>694.5;1607.5</Position>
+                  <Position>345.5;399.5</Position>
                   <StyleLien>1</StyleLien>
                   <Titre>Pour j allant de 0 à
-tailleMelangesExistants</Titre>
+tailleRecettesExistantes</Titre>
                   <IterationFixe>1</IterationFixe>
                   <Enfants>
                     <Condition>
-                      <Position>617.5;1708</Position>
+                      <Position>138.5;481</Position>
                       <StyleLien>1</StyleLien>
                       <estUnique>1</estUnique>
                       <operationsLogiques>
                         <operation>
-                          <Titre>listeAlcools[i][0]= melangesExistants[j][0]</Titre>
-                          <Enfants/>
+                          <Titre>stockSoiree.getLAlcool()[i].getNom() = recetteExistantes[j].getAlcool.getNom()</Titre>
+                          <Enfants>
+                            <Action>
+                              <Position>71;600</Position>
+                              <StyleLien>1</StyleLien>
+                              <PreAssertion>recettesExistantes</PreAssertion>
+                              <PostAssertion>recettesTemp</PostAssertion>
+                              <Titre>Ajout recettesExistantes[j] dans recettesTemps</Titre>
+                              <DetailsVisible>1</DetailsVisible>
+                              <DetailsVideVisible>1</DetailsVideVisible>
+                              <Enfants/>
+                            </Action>
+                          </Enfants>
                         </operation>
                         <operation>
                           <Titre>Sinon</Titre>
@@ -59,37 +72,49 @@ tailleMelangesExistants</Titre>
           </Enfants>
         </Action>
         <Action>
-          <Position>1061;1387</Position>
+          <Position>755;198</Position>
           <StyleLien>2</StyleLien>
-          <PreAssertion>listeDiluants
-melangesTemp</PreAssertion>
-          <PostAssertion>melangesPossibles</PostAssertion>
-          <Titre>Parcours Diluants</Titre>
+          <PreAssertion>stockSoiree
+recettesTemp
+tailleStockSoireeDiluants
+tailleRecettesExistantes</PreAssertion>
+          <PostAssertion>recettesPossibles</PostAssertion>
+          <Titre>Recherche des Diluants dans les recettes de recettesTemp et ajout dant recettesPossibles</Titre>
           <DetailsVisible>1</DetailsVisible>
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants>
             <Iteration>
-              <Position>1261.5;1517.5</Position>
+              <Position>1128.5;307.5</Position>
               <StyleLien>1</StyleLien>
-              <Titre>Pour i allant de 0 à tailleListeDiluants</Titre>
+              <Titre>Pour i allant de 0 à tailleStockSoireeDiluants</Titre>
               <IterationFixe>1</IterationFixe>
               <Enfants>
                 <Iteration>
-                  <Position>1259.5;1600.5</Position>
+                  <Position>1129.5;390.5</Position>
                   <StyleLien>1</StyleLien>
                   <Titre>Pour j allant de 0 à
-tailleMelangesTemp</Titre>
+tailleRecettesTemp</Titre>
                   <IterationFixe>1</IterationFixe>
                   <Enfants>
                     <Condition>
-                      <Position>1183.5;1703</Position>
+                      <Position>902.5;468</Position>
                       <StyleLien>1</StyleLien>
                       <estUnique>1</estUnique>
                       <operationsLogiques>
                         <operation>
-                          <Titre>listeDiluants[i][0]
-= melangesTemp[j][1]</Titre>
-                          <Enfants/>
+                          <Titre>stockSoiree.getLdiluants[i].getNom() = recettesTemp[j].getDiluant.getNom()</Titre>
+                          <Enfants>
+                            <Action>
+                              <Position>844;585</Position>
+                              <StyleLien>1</StyleLien>
+                              <PreAssertion>recettesTemp</PreAssertion>
+                              <PostAssertion>recettesPossibles</PostAssertion>
+                              <Titre>Ajout melangesTemp[j] dans melangesPossible</Titre>
+                              <DetailsVisible>1</DetailsVisible>
+                              <DetailsVideVisible>1</DetailsVideVisible>
+                              <Enfants/>
+                            </Action>
+                          </Enfants>
                         </operation>
                         <operation>
                           <Titre>Sinon</Titre>
@@ -104,26 +129,6 @@ tailleMelangesTemp</Titre>
           </Enfants>
         </Action>
       </Enfants>
-    </Action>
-    <Action>
-      <Position>1021;1796</Position>
-      <StyleLien>1</StyleLien>
-      <PreAssertion>melangesTemp</PreAssertion>
-      <PostAssertion>melangesPossible</PostAssertion>
-      <Titre>melangesPossible ← melangesTemp[j]</Titre>
-      <DetailsVisible>1</DetailsVisible>
-      <DetailsVideVisible>1</DetailsVideVisible>
-      <Enfants/>
-    </Action>
-    <Action>
-      <Position>425;1797</Position>
-      <StyleLien>1</StyleLien>
-      <PreAssertion>melangesExistants</PreAssertion>
-      <PostAssertion>melangesTemp</PostAssertion>
-      <Titre>melangeTemp ← melangesExistants[j]</Titre>
-      <DetailsVisible>1</DetailsVisible>
-      <DetailsVideVisible>1</DetailsVideVisible>
-      <Enfants/>
     </Action>
   </Elements>
   <Dictionary/>

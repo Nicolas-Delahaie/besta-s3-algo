@@ -2,16 +2,14 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>Saisie verif utilisateur</nom>
-  <date_creation>8/11/2022 09:00</date_creation>
+  <date_creation>9/11/2022 12:10</date_creation>
   <Elements>
     <Action>
-      <Position>199;294</Position>
+      <Position>191;290</Position>
       <StyleLien>2</StyleLien>
-      <PreAssertion>boissons 
-tailleBoissons</PreAssertion>
-      <PostAssertion>listeDiluants
-listeAlcools
-listeAutre</PostAssertion>
+      <PreAssertion>bdBoissons
+tailleBdBoissons</PreAssertion>
+      <PostAssertion>stockSoiree</PostAssertion>
       <Titre>Saisie vérif
 utilisateur</Titre>
       <DetailsVisible>1</DetailsVisible>
@@ -27,99 +25,110 @@ utilisateur</Titre>
               <Position>26;581</Position>
               <StyleLien>1</StyleLien>
               <PreAssertion>?</PreAssertion>
-              <PostAssertion>nomBoissons
-qtBoissons</PostAssertion>
+              <PostAssertion>nomBoisson
+qtBoisson</PostAssertion>
               <Titre>Saisie de l'utilisateur</Titre>
               <DetailsVisible>1</DetailsVisible>
               <DetailsVideVisible>0</DetailsVideVisible>
               <Enfants/>
             </Action>
             <Iteration>
-              <Position>573.5;539.5</Position>
+              <Position>655.5;542.5</Position>
               <StyleLien>1</StyleLien>
               <Titre>pour i allant de 0
-à tailleBoissons</Titre>
+à tailleBdBoissons</Titre>
               <IterationFixe>1</IterationFixe>
               <Enfants>
                 <Condition>
-                  <Position>525.5;620</Position>
+                  <Position>515.5;628</Position>
                   <StyleLien>0</StyleLien>
                   <estUnique>0</estUnique>
                   <operationsLogiques>
                     <operation>
-                      <Titre>boissons[i][0]=
-nomBoissons</Titre>
+                      <Titre>nomBoisson = bdoissons[i].getNom()</Titre>
                       <Enfants>
-                        <Condition>
-                          <Position>402.5;757</Position>
+                        <ConditionMultiple>
+                          <Position>559.5;767</Position>
                           <StyleLien>1</StyleLien>
-                          <estUnique>0</estUnique>
+                          <Titre>bdBoissons[i].getTypeBoisson()</Titre>
                           <operationsLogiques>
                             <operation>
-                              <Titre>boissons[i][1]=1</Titre>
+                              <Titre>Alcool</Titre>
                               <Enfants>
                                 <Procedure>
-                                  <Position>128;1048</Position>
+                                  <Position>43;927</Position>
                                   <StyleLien>1</StyleLien>
-                                  <PreAssertion>nomBoissons
-qtBoissons
-typeBoisson</PreAssertion>
-                                  <PostAssertion>listeAlcool</PostAssertion>
-                                  <Titre>ajouter dans 
-liste</Titre>
+                                  <PreAssertion>nomBoisson
+qtBoisson
+bdBoissons[i].getTypeBoisson()</PreAssertion>
+                                  <PostAssertion>stockSoiree</PostAssertion>
+                                  <Titre>ajouterStockSoiree</Titre>
                                   <DetailsVisible>1</DetailsVisible>
                                   <DetailsVideVisible>1</DetailsVideVisible>
                                   <Enfants/>
                                 </Procedure>
                                 <Sortie>
-                                  <Position>413;918</Position>
+                                  <Position>565;974</Position>
                                 </Sortie>
                               </Enfants>
                             </operation>
                             <operation>
-                              <Titre>boissons[i][1]=2</Titre>
+                              <Titre>Diluant</Titre>
                               <Enfants>
                                 <Procedure>
-                                  <Position>387;1233</Position>
+                                  <Position>640;941</Position>
                                   <StyleLien>1</StyleLien>
-                                  <PreAssertion>nomBoissons
-qtBoissons
-typeBoisson</PreAssertion>
-                                  <PostAssertion>listeDiluant</PostAssertion>
-                                  <Titre>ajouter dans 
-liste</Titre>
+                                  <PreAssertion>nomBoisson
+qtBoisson
+bdBoissons[i].getTypeBoisson()</PreAssertion>
+                                  <PostAssertion>stockSoiree</PostAssertion>
+                                  <Titre>ajouterStockSoiree</Titre>
                                   <DetailsVisible>1</DetailsVisible>
                                   <DetailsVideVisible>1</DetailsVideVisible>
                                   <Enfants/>
                                 </Procedure>
                                 <Sortie>
-                                  <Position>662;1165</Position>
+                                  <Position>1158;975</Position>
                                 </Sortie>
                               </Enfants>
                             </operation>
                             <operation>
-                              <Titre>boissons[i][1]=3</Titre>
+                              <Titre>Autre</Titre>
                               <Enfants>
                                 <Procedure>
-                                  <Position>1039;960</Position>
+                                  <Position>1249;934</Position>
                                   <StyleLien>1</StyleLien>
-                                  <PreAssertion>nomBoissons
-qtBoissons
-typeBoisson</PreAssertion>
-                                  <PostAssertion>listeAutre</PostAssertion>
-                                  <Titre>ajouter dans 
-liste</Titre>
+                                  <PreAssertion>nomBoisson
+qtBoisson
+bdBoissons[i].getTypeBoisson()</PreAssertion>
+                                  <PostAssertion>stockSoiree</PostAssertion>
+                                  <Titre>ajouterStockSoiree</Titre>
                                   <DetailsVisible>1</DetailsVisible>
                                   <DetailsVideVisible>1</DetailsVideVisible>
                                   <Enfants/>
                                 </Procedure>
                                 <Sortie>
-                                  <Position>1407;998</Position>
+                                  <Position>1792;970</Position>
                                 </Sortie>
                               </Enfants>
                             </operation>
                           </operationsLogiques>
-                        </Condition>
+                        </ConditionMultiple>
+                      </Enfants>
+                    </operation>
+                    <operation>
+                      <Titre>Sinon</Titre>
+                      <Enfants>
+                        <Action>
+                          <Position>921;734</Position>
+                          <StyleLien>1</StyleLien>
+                          <PreAssertion>∅</PreAssertion>
+                          <PostAssertion>∅</PostAssertion>
+                          <Titre>Affichage "Cette boisson n'est pas disponible"</Titre>
+                          <DetailsVisible>0</DetailsVisible>
+                          <DetailsVideVisible>1</DetailsVideVisible>
+                          <Enfants/>
+                        </Action>
                       </Enfants>
                     </operation>
                   </operationsLogiques>
