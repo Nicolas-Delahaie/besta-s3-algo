@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE Tabula_Rasa>
+<Algorithme>
+  <nom>calculerQuantiteDesRecettes</nom>
+  <date_creation>9/11/2022 21:43</date_creation>
+  <Elements>
+    <Action>
+      <Position>588;85</Position>
+      <StyleLien>2</StyleLien>
+      <PreAssertion>recettesPossibles
+DOSE_ALCOOL
+DOSE_DILUANT</PreAssertion>
+      <PostAssertion>recettesPossibles
+qtMax</PostAssertion>
+      <Titre>Calcule des quantités</Titre>
+      <DetailsVisible>1</DetailsVisible>
+      <DetailsVideVisible>1</DetailsVideVisible>
+      <Enfants>
+        <Procedure>
+          <Position>108;299</Position>
+          <StyleLien>1</StyleLien>
+          <PreAssertion>stockSoiree
+tailleStockSoireeAlcool
+tailleStockSoireeDiluant</PreAssertion>
+          <PostAssertion>qtMax</PostAssertion>
+          <Titre>calculeQuantiteMax</Titre>
+          <DetailsVisible>1</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants/>
+        </Procedure>
+        <Action>
+          <Position>787;297</Position>
+          <StyleLien>2</StyleLien>
+          <PreAssertion>recettePossibles
+tailleRecettesPossibles</PreAssertion>
+          <PostAssertion>recettePossibles</PostAssertion>
+          <Titre>Calcule quantite pour les recettes possibles</Titre>
+          <DetailsVisible>1</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants>
+            <Iteration>
+              <Position>1075.5;429.5</Position>
+              <StyleLien>1</StyleLien>
+              <Titre>Pour i allant de 0 à tailleRecettesPossibles</Titre>
+              <IterationFixe>1</IterationFixe>
+              <Enfants>
+                <Procedure>
+                  <Position>733;505</Position>
+                  <StyleLien>1</StyleLien>
+                  <PreAssertion>recettesPossibles
+DOSE_ALCOOL
+DOSE_DILUANT</PreAssertion>
+                  <PostAssertion>recettesPossibles</PostAssertion>
+                  <Titre>calculeQuantiteRecette(recettesPossibles[i], DOSE_ALCOOL, DOSE_DILUANT)</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>1</DetailsVideVisible>
+                  <Enfants/>
+                </Procedure>
+              </Enfants>
+            </Iteration>
+          </Enfants>
+        </Action>
+      </Enfants>
+    </Action>
+  </Elements>
+  <Dictionary/>
+</Algorithme>

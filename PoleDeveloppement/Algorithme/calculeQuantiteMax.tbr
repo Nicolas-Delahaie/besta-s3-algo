@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE Tabula_Rasa>
+<Algorithme>
+  <nom>calculeQuantiteMax</nom>
+  <date_creation>9/11/2022 16:39</date_creation>
+  <Elements>
+    <Action>
+      <Position>462;136</Position>
+      <StyleLien>2</StyleLien>
+      <PreAssertion>stockSoiree
+tailleStockSoireeAlcool
+tailleStockSoireeDiluant</PreAssertion>
+      <PostAssertion>qtMax</PostAssertion>
+      <Titre>Calcule de qt max</Titre>
+      <DetailsVisible>1</DetailsVisible>
+      <DetailsVideVisible>1</DetailsVideVisible>
+      <Enfants>
+        <Action>
+          <Position>144;271</Position>
+          <StyleLien>2</StyleLien>
+          <PreAssertion>stockSoiree
+tailleStockSoireeAlcool</PreAssertion>
+          <PostAssertion>qtMax</PostAssertion>
+          <Titre>Somme de la quantite d'alcool</Titre>
+          <DetailsVisible>1</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants>
+            <Iteration>
+              <Position>393.5;407.5</Position>
+              <StyleLien>1</StyleLien>
+              <Titre>Pour i allant de 0 à tailleStockSoireeAlcool</Titre>
+              <IterationFixe>1</IterationFixe>
+              <Enfants>
+                <Action>
+                  <Position>113;494</Position>
+                  <StyleLien>1</StyleLien>
+                  <PreAssertion>stockSoiree</PreAssertion>
+                  <PostAssertion>qtMax</PostAssertion>
+                  <Titre>qtMax = qtMax + stockSoiree.getLalcool()[i].getQtBoisson()</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>1</DetailsVideVisible>
+                  <Enfants/>
+                </Action>
+              </Enfants>
+            </Iteration>
+          </Enfants>
+        </Action>
+        <Action>
+          <Position>764;268</Position>
+          <StyleLien>2</StyleLien>
+          <PreAssertion>stockSoiree
+tailleStockSoireeDiluant
+qtMax</PreAssertion>
+          <PostAssertion>qtMax</PostAssertion>
+          <Titre>Somme de la quantite de diluant</Titre>
+          <DetailsVisible>1</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants>
+            <Iteration>
+              <Position>1021.5;403.5</Position>
+              <StyleLien>1</StyleLien>
+              <Titre>Pour i allant de 0 à tailleStockSoireeDiluant</Titre>
+              <IterationFixe>1</IterationFixe>
+              <Enfants>
+                <Action>
+                  <Position>741;490</Position>
+                  <StyleLien>1</StyleLien>
+                  <PreAssertion>stockSoiree
+qtMax</PreAssertion>
+                  <PostAssertion>qtMax</PostAssertion>
+                  <Titre>qtMax = qtMax + stockSoiree.getLdiluants()[i].getQtBoisson()</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>1</DetailsVideVisible>
+                  <Enfants/>
+                </Action>
+              </Enfants>
+            </Iteration>
+          </Enfants>
+        </Action>
+      </Enfants>
+    </Action>
+  </Elements>
+  <Dictionary/>
+</Algorithme>

@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE Tabula_Rasa>
+<Algorithme>
+  <nom>Algorithme</nom>
+  <date_creation>9/11/2022 16:05</date_creation>
+  <Elements>
+    <Action>
+      <Position>559;13</Position>
+      <StyleLien>2</StyleLien>
+      <PreAssertion>typeBoisson</PreAssertion>
+      <PostAssertion>stockSoiree</PostAssertion>
+      <Titre>ajouterStockSoiree</Titre>
+      <DetailsVisible>1</DetailsVisible>
+      <DetailsVideVisible>1</DetailsVideVisible>
+      <Enfants>
+        <ConditionMultiple>
+          <Position>640.5;143</Position>
+          <StyleLien>0</StyleLien>
+          <Titre>typeBoisson</Titre>
+          <operationsLogiques>
+            <operation>
+              <Titre>Alcool</Titre>
+              <Enfants>
+                <Action>
+                  <Position>27;287</Position>
+                  <StyleLien>1</StyleLien>
+                  <PreAssertion>stockSoiree
+nomBoisson
+qtBoisson
+typeBoisson</PreAssertion>
+                  <PostAssertion>stockSoiree</PostAssertion>
+                  <Titre>stockSoiree.ajouterAlcool(nomBoisson, qtBoisson, typeBoisson)</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>1</DetailsVideVisible>
+                  <Enfants/>
+                </Action>
+              </Enfants>
+            </operation>
+            <operation>
+              <Titre>Diluant</Titre>
+              <Enfants>
+                <Action>
+                  <Position>429;402</Position>
+                  <StyleLien>1</StyleLien>
+                  <PreAssertion>stockSoiree
+nomBoisson
+qtBoisson
+typeBoisson</PreAssertion>
+                  <PostAssertion>stockSoiree</PostAssertion>
+                  <Titre>stockSoiree.ajouterDiluant(nomBoisson, qtBoisson, typeBoisson)</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>1</DetailsVideVisible>
+                  <Enfants/>
+                </Action>
+              </Enfants>
+            </operation>
+            <operation>
+              <Titre>Autres</Titre>
+              <Enfants>
+                <Action>
+                  <Position>795;285</Position>
+                  <StyleLien>1</StyleLien>
+                  <PreAssertion>stockSoiree
+nomBoisson
+qtBoisson
+typeBoisson</PreAssertion>
+                  <PostAssertion>stockSoiree</PostAssertion>
+                  <Titre>stockSoiree.ajouterAutres(nomBoisson, qtBoisson, typeBoisson)</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>1</DetailsVideVisible>
+                  <Enfants/>
+                </Action>
+              </Enfants>
+            </operation>
+          </operationsLogiques>
+        </ConditionMultiple>
+      </Enfants>
+    </Action>
+  </Elements>
+  <Dictionary/>
+</Algorithme>

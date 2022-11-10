@@ -2,10 +2,10 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>Algo_Global_Besta</nom>
-  <date_creation>9/11/2022 16:47</date_creation>
+  <date_creation>9/11/2022 21:43</date_creation>
   <Elements>
     <Action>
-      <Position>747;46</Position>
+      <Position>477;43</Position>
       <StyleLien>2</StyleLien>
       <PreAssertion>bdBoissons
 recetteExistantes</PreAssertion>
@@ -15,7 +15,7 @@ recetteExistantes</PreAssertion>
       <DetailsVideVisible>0</DetailsVideVisible>
       <Enfants>
         <Action>
-          <Position>1984;247</Position>
+          <Position>958;208</Position>
           <StyleLien>1</StyleLien>
           <PreAssertion>verres</PreAssertion>
           <PostAssertion>?</PostAssertion>
@@ -37,7 +37,7 @@ utilisateur</Titre>
           <Enfants/>
         </Action>
         <Action>
-          <Position>430;215</Position>
+          <Position>210;360</Position>
           <StyleLien>1</StyleLien>
           <PreAssertion>stockSoiree
 recetteExistantes</PreAssertion>
@@ -48,7 +48,7 @@ recetteExistantes</PreAssertion>
           <Enfants/>
         </Action>
         <Action>
-          <Position>902;214</Position>
+          <Position>465;214</Position>
           <StyleLien>1</StyleLien>
           <PreAssertion>recettesPossibles
 DOSE_ALCOOL
@@ -61,7 +61,7 @@ qtMax</PostAssertion>
           <Enfants/>
         </Action>
         <Action>
-          <Position>1656;234</Position>
+          <Position>777;366</Position>
           <StyleLien>1</StyleLien>
           <PreAssertion>∅</PreAssertion>
           <PostAssertion>∅</PostAssertion>

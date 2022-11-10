@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<!DOCTYPE Tabula_Rasa>
+<Algorithme>
+  <nom>calculeQuantiteRecette</nom>
+  <date_creation>9/11/2022 16:25</date_creation>
+  <Elements>
+    <Action>
+      <Position>590;51</Position>
+      <StyleLien>2</StyleLien>
+      <PreAssertion>recette
+DOSE_ALCOOL
+DOSE_DILUANT</PreAssertion>
+      <PostAssertion>recette</PostAssertion>
+      <Titre>calculeQuantiteRecette</Titre>
+      <DetailsVisible>1</DetailsVisible>
+      <DetailsVideVisible>1</DetailsVideVisible>
+      <Enfants>
+        <Action>
+          <Position>414;208</Position>
+          <StyleLien>2</StyleLien>
+          <PreAssertion>recette</PreAssertion>
+          <PostAssertion>nbDoseAlcool
+nbDoseDiluant</PostAssertion>
+          <Titre>Calcule du nombre de dose</Titre>
+          <DetailsVisible>1</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants>
+            <Action>
+              <Position>14;364</Position>
+              <StyleLien>1</StyleLien>
+              <PreAssertion>recette</PreAssertion>
+              <PostAssertion>nbDoseAlcool</PostAssertion>
+              <Titre>nbDoseAlcool = recette.getAlcool().getQtBoisson() / DOSE_ALCOOL</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>1</DetailsVideVisible>
+              <Enfants/>
+            </Action>
+            <Action>
+              <Position>657;361</Position>
+              <StyleLien>1</StyleLien>
+              <PreAssertion>recette</PreAssertion>
+              <PostAssertion>nbDoseDiluant</PostAssertion>
+              <Titre>nbDoseDiluant = recette.getDiluant().getQtBoisson() / DOSE_DILUANT</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>1</DetailsVideVisible>
+              <Enfants/>
+            </Action>
+          </Enfants>
+        </Action>
+        <Action>
+          <Position>1241;225</Position>
+          <StyleLien>2</StyleLien>
+          <PreAssertion>nbDoseAlcool
+nbDoseDiluant
+DOSE_ALCOOL
+DOSE_DILUANT</PreAssertion>
+          <PostAssertion>recette</PostAssertion>
+          <Titre>Calcule de la quantite de la recette</Titre>
+          <DetailsVisible>1</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants>
+            <Condition>
+              <Position>1334.5;367</Position>
+              <StyleLien>0</StyleLien>
+              <estUnique>0</estUnique>
+              <operationsLogiques>
+                <operation>
+                  <Titre>nbDoseAlcool &lt;= nbDoseDiluant</Titre>
+                  <Enfants>
+                    <Action>
+                      <Position>894;611</Position>
+                      <StyleLien>2</StyleLien>
+                      <PreAssertion>nbDoseAlcool
+DOSE_ALCOOL
+DOSE_DILUANT</PreAssertion>
+                      <PostAssertion>recette</PostAssertion>
+                      <Titre>Calcule de la quantite de la recette avec l'alcool en limitant</Titre>
+                      <DetailsVisible>1</DetailsVisible>
+                      <DetailsVideVisible>1</DetailsVideVisible>
+                      <Enfants>
+                        <Action>
+                          <Position>264;828</Position>
+                          <StyleLien>1</StyleLien>
+                          <PreAssertion>nbDoseAlcool
+DOSE_DILUANT</PreAssertion>
+                          <PostAssertion>qtDiluant</PostAssertion>
+                          <Titre>qtDiluant = nbDoseAlcool * DOSE_DILUANT</Titre>
+                          <DetailsVisible>1</DetailsVisible>
+                          <DetailsVideVisible>0</DetailsVideVisible>
+                          <Enfants/>
+                        </Action>
+                        <Action>
+                          <Position>812;827</Position>
+                          <StyleLien>1</StyleLien>
+                          <PreAssertion>nbDoseAlcool
+DOSE_ALCOOL</PreAssertion>
+                          <PostAssertion>qtAlcool</PostAssertion>
+                          <Titre>qtAlcool = nbDoseAlcool * DOSE_ALCOOL</Titre>
+                          <DetailsVisible>1</DetailsVisible>
+                          <DetailsVideVisible>1</DetailsVideVisible>
+                          <Enfants/>
+                        </Action>
+                        <Action>
+                          <Position>1318;827</Position>
+                          <StyleLien>1</StyleLien>
+                          <PreAssertion>recette
+qtDiluant
+qtAlcool</PreAssertion>
+                          <PostAssertion>recette</PostAssertion>
+                          <Titre>recette.setQtRecette(qtDiluant + qtAlcool)</Titre>
+                          <DetailsVisible>1</DetailsVisible>
+                          <DetailsVideVisible>1</DetailsVideVisible>
+                          <Enfants/>
+                        </Action>
+                      </Enfants>
+                    </Action>
+                  </Enfants>
+                </operation>
+                <operation>
+                  <Titre>Sinon</Titre>
+                  <Enfants>
+                    <Action>
+                      <Position>1959;579</Position>
+                      <StyleLien>2</StyleLien>
+                      <PreAssertion>nbDoseDiluant
+DOSE_ALCOOL
+DOSE_DILUANT</PreAssertion>
+                      <PostAssertion>recette</PostAssertion>
+                      <Titre>Calcule de la quantite de la recette avec le diluant en limitant</Titre>
+                      <DetailsVisible>1</DetailsVisible>
+                      <DetailsVideVisible>1</DetailsVideVisible>
+                      <Enfants>
+                        <Action>
+                          <Position>1787;826</Position>
+                          <StyleLien>1</StyleLien>
+                          <PreAssertion>nbDoseDiluant
+DOSE_ALCOOL</PreAssertion>
+                          <PostAssertion>qtAlcool</PostAssertion>
+                          <Titre>qtAlcool = nbDoseDiluant * DOSE_ALCOOL</Titre>
+                          <DetailsVisible>1</DetailsVisible>
+                          <DetailsVideVisible>1</DetailsVideVisible>
+                          <Enfants/>
+                        </Action>
+                        <Action>
+                          <Position>2077;961</Position>
+                          <StyleLien>1</StyleLien>
+                          <PreAssertion>qtDiluant
+DOSE_DILUANT</PreAssertion>
+                          <PostAssertion>qtDiluant</PostAssertion>
+                          <Titre>qtDiluant = nbDoseDiluant * DOSE_DILUANT</Titre>
+                          <DetailsVisible>1</DetailsVisible>
+                          <DetailsVideVisible>1</DetailsVideVisible>
+                          <Enfants/>
+                        </Action>
+                        <Action>
+                          <Position>2390;825</Position>
+                          <StyleLien>1</StyleLien>
+                          <PreAssertion>qtDiluant
+qtAlcool</PreAssertion>
+                          <PostAssertion>recette</PostAssertion>
+                          <Titre>recette.setQtRecette(qtDiluant + qtAlcool)</Titre>
+                          <DetailsVisible>1</DetailsVisible>
+                          <DetailsVideVisible>1</DetailsVideVisible>
+                          <Enfants/>
+                        </Action>
+                      </Enfants>
+                    </Action>
+                  </Enfants>
+                </operation>
+              </operationsLogiques>
+            </Condition>
+          </Enfants>
+        </Action>
+      </Enfants>
+    </Action>
+  </Elements>
+  <Dictionary/>
+</Algorithme>
