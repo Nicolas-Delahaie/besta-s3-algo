@@ -2,7 +2,7 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>calculeQuantiteRecette</nom>
-  <date_creation>9/11/2022 16:25</date_creation>
+  <date_creation>14/11/2022 08:22</date_creation>
   <Elements>
     <Action>
       <Position>590;51</Position>
@@ -101,13 +101,35 @@ DOSE_ALCOOL</PreAssertion>
                           <Enfants/>
                         </Action>
                         <Action>
-                          <Position>1318;827</Position>
+                          <Position>1114;1073</Position>
                           <StyleLien>1</StyleLien>
                           <PreAssertion>recette
 qtDiluant
 qtAlcool</PreAssertion>
                           <PostAssertion>recette</PostAssertion>
                           <Titre>recette.setQtRecette(qtDiluant + qtAlcool)</Titre>
+                          <DetailsVisible>1</DetailsVisible>
+                          <DetailsVideVisible>1</DetailsVideVisible>
+                          <Enfants/>
+                        </Action>
+                        <Action>
+                          <Position>1382;825</Position>
+                          <StyleLien>1</StyleLien>
+                          <PreAssertion>recette
+qtDiluant</PreAssertion>
+                          <PostAssertion>recette</PostAssertion>
+                          <Titre>recette.setQtAlcool(qtAlcool)</Titre>
+                          <DetailsVisible>1</DetailsVisible>
+                          <DetailsVideVisible>1</DetailsVideVisible>
+                          <Enfants/>
+                        </Action>
+                        <Action>
+                          <Position>1601;1076</Position>
+                          <StyleLien>1</StyleLien>
+                          <PreAssertion>recette
+qtDiluant</PreAssertion>
+                          <PostAssertion>recette</PostAssertion>
+                          <Titre>recette.setQtDiluant(qtDiluant)</Titre>
                           <DetailsVisible>1</DetailsVisible>
                           <DetailsVideVisible>1</DetailsVideVisible>
                           <Enfants/>
@@ -131,7 +153,7 @@ DOSE_DILUANT</PreAssertion>
                       <DetailsVideVisible>1</DetailsVideVisible>
                       <Enfants>
                         <Action>
-                          <Position>1787;826</Position>
+                          <Position>1809;820</Position>
                           <StyleLien>1</StyleLien>
                           <PreAssertion>nbDoseDiluant
 DOSE_ALCOOL</PreAssertion>
@@ -159,6 +181,28 @@ DOSE_DILUANT</PreAssertion>
 qtAlcool</PreAssertion>
                           <PostAssertion>recette</PostAssertion>
                           <Titre>recette.setQtRecette(qtDiluant + qtAlcool)</Titre>
+                          <DetailsVisible>1</DetailsVisible>
+                          <DetailsVideVisible>1</DetailsVideVisible>
+                          <Enfants/>
+                        </Action>
+                        <Action>
+                          <Position>2906;824</Position>
+                          <StyleLien>1</StyleLien>
+                          <PreAssertion>recette
+qtDiluant</PreAssertion>
+                          <PostAssertion>recette</PostAssertion>
+                          <Titre>recette.setQtAlcool(qtAlcool)</Titre>
+                          <DetailsVisible>1</DetailsVisible>
+                          <DetailsVideVisible>1</DetailsVideVisible>
+                          <Enfants/>
+                        </Action>
+                        <Action>
+                          <Position>2689;1023</Position>
+                          <StyleLien>1</StyleLien>
+                          <PreAssertion>recette
+qtDiluant</PreAssertion>
+                          <PostAssertion>recette</PostAssertion>
+                          <Titre>recette.setQtDiluant(qtDiluant)</Titre>
                           <DetailsVisible>1</DetailsVisible>
                           <DetailsVideVisible>1</DetailsVideVisible>
                           <Enfants/>

@@ -2,7 +2,7 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>calculerQuantiteDesRecettes</nom>
-  <date_creation>9/11/2022 21:43</date_creation>
+  <date_creation>10/11/2022 12:29</date_creation>
   <Elements>
     <Action>
       <Position>588;85</Position>

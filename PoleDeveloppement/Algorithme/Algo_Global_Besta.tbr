@@ -2,7 +2,7 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>Algo_Global_Besta</nom>
-  <date_creation>9/11/2022 21:43</date_creation>
+  <date_creation>14/11/2022 09:29</date_creation>
   <Elements>
     <Action>
       <Position>477;43</Position>
@@ -15,7 +15,7 @@ recetteExistantes</PreAssertion>
       <DetailsVideVisible>0</DetailsVideVisible>
       <Enfants>
         <Action>
-          <Position>958;208</Position>
+          <Position>1364;370</Position>
           <StyleLien>1</StyleLien>
           <PreAssertion>verres</PreAssertion>
           <PostAssertion>?</PostAssertion>
@@ -48,7 +48,7 @@ recetteExistantes</PreAssertion>
           <Enfants/>
         </Action>
         <Action>
-          <Position>465;214</Position>
+          <Position>466;214</Position>
           <StyleLien>1</StyleLien>
           <PreAssertion>recettesPossibles
 DOSE_ALCOOL
@@ -61,11 +61,22 @@ qtMax</PostAssertion>
           <Enfants/>
         </Action>
         <Action>
-          <Position>777;366</Position>
+          <Position>757;366</Position>
           <StyleLien>1</StyleLien>
-          <PreAssertion>∅</PreAssertion>
-          <PostAssertion>∅</PostAssertion>
+          <PreAssertion>recettesPossibles</PreAssertion>
+          <PostAssertion>recettesPossibles</PostAssertion>
           <Titre>Calculer valeur des recettes</Titre>
+          <DetailsVisible>1</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants/>
+        </Action>
+        <Action>
+          <Position>1154;200</Position>
+          <StyleLien>1</StyleLien>
+          <PreAssertion>recettesPossibles
+qtMax</PreAssertion>
+          <PostAssertion>reste</PostAssertion>
+          <Titre>SacApo</Titre>
           <DetailsVisible>1</DetailsVisible>
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants/>
