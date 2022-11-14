@@ -2,10 +2,10 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>SacApo</nom>
-  <date_creation>14/11/2022 09:29</date_creation>
+  <date_creation>14/11/2022 15:06</date_creation>
   <Elements>
     <Action>
-      <Position>625;70</Position>
+      <Position>634;12</Position>
       <StyleLien>2</StyleLien>
       <PreAssertion>recettesPossibles
 qtMax</PreAssertion>
@@ -15,297 +15,35 @@ qtMax</PreAssertion>
       <DetailsVideVisible>1</DetailsVideVisible>
       <Enfants>
         <Action>
-          <Position>308;231</Position>
+          <Position>6727;297</Position>
           <StyleLien>2</StyleLien>
-          <PreAssertion>recettesPossibles
-qtMax</PreAssertion>
-          <PostAssertion>brancheValide</PostAssertion>
-          <Titre>Explorer toutes les possibilités</Titre>
+          <PreAssertion>branchesValide
+borneInf</PreAssertion>
+          <PostAssertion>meilleursCombinaison</PostAssertion>
+          <Titre>Trouver la meilleur possibilité</Titre>
           <DetailsVisible>1</DetailsVisible>
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants>
             <Iteration>
-              <Position>1415.5;422.5</Position>
+              <Position>6929.5;445.5</Position>
               <StyleLien>1</StyleLien>
-              <Titre>?</Titre>
-              <IterationFixe>0</IterationFixe>
+              <Titre>Pour i allant de 0 à tailleBranchesValide</Titre>
+              <IterationFixe>1</IterationFixe>
               <Enfants>
-                <Action>
-                  <Position>742;604</Position>
-                  <StyleLien>1</StyleLien>
-                  <PreAssertion>recettesPossibles[i]</PreAssertion>
-                  <PostAssertion>brancheEnCours</PostAssertion>
-                  <Titre>Ajouter à la pile brancheEnCours recettesPossibles[i]</Titre>
-                  <DetailsVisible>1</DetailsVisible>
-                  <DetailsVideVisible>1</DetailsVideVisible>
-                  <Enfants/>
-                </Action>
-                <Action>
-                  <Position>1389;601</Position>
-                  <StyleLien>2</StyleLien>
-                  <PreAssertion>brancheEnCours
-branchesValide
-branchesInvalide</PreAssertion>
-                  <PostAssertion>brancheEnCours</PostAssertion>
-                  <Titre>Verification si la brancheEnCours est dans brancheValide ou invalide</Titre>
-                  <DetailsVisible>1</DetailsVisible>
-                  <DetailsVideVisible>1</DetailsVideVisible>
-                  <Enfants>
-                    <Iteration>
-                      <Position>1460.5;757.5</Position>
-                      <StyleLien>1</StyleLien>
-                      <Titre>pour i allant de 0 à tailleBranchesValide</Titre>
-                      <IterationFixe>1</IterationFixe>
-                      <Enfants>
-                        <Condition>
-                          <Position>1045.5;869</Position>
-                          <StyleLien>1</StyleLien>
-                          <estUnique>1</estUnique>
-                          <operationsLogiques>
-                            <operation>
-                              <Titre>brancheEncours.getPileRecette() = branchesValide[i].getPileRecette()</Titre>
-                              <Enfants>
-                                <Action>
-                                  <Position>1097;1020</Position>
-                                  <StyleLien>1</StyleLien>
-                                  <PreAssertion>∅</PreAssertion>
-                                  <PostAssertion>∅</PostAssertion>
-                                  <Titre>Depiler de 1 brancheEnCours</Titre>
-                                  <DetailsVisible>0</DetailsVisible>
-                                  <DetailsVideVisible>1</DetailsVideVisible>
-                                  <Enfants/>
-                                </Action>
-                              </Enfants>
-                            </operation>
-                            <operation>
-                              <Titre>Sinon</Titre>
-                              <Enfants/>
-                            </operation>
-                          </operationsLogiques>
-                        </Condition>
-                      </Enfants>
-                    </Iteration>
-                    <Iteration>
-                      <Position>1828.5;774.5</Position>
-                      <StyleLien>1</StyleLien>
-                      <Titre>pour i allant de 0 à tailleBranchesInvalide</Titre>
-                      <IterationFixe>1</IterationFixe>
-                      <Enfants>
-                        <Condition>
-                          <Position>1620.5;858</Position>
-                          <StyleLien>1</StyleLien>
-                          <estUnique>1</estUnique>
-                          <operationsLogiques>
-                            <operation>
-                              <Titre>brancheEncours.getPileRecette() = branchesInvalide[i].getPileRecette()</Titre>
-                              <Enfants>
-                                <Action>
-                                  <Position>1721;975</Position>
-                                  <StyleLien>1</StyleLien>
-                                  <PreAssertion>∅</PreAssertion>
-                                  <PostAssertion>∅</PostAssertion>
-                                  <Titre>Depiler de 1 brancheEnCours</Titre>
-                                  <DetailsVisible>0</DetailsVisible>
-                                  <DetailsVideVisible>1</DetailsVideVisible>
-                                  <Enfants/>
-                                </Action>
-                              </Enfants>
-                            </operation>
-                            <operation>
-                              <Titre>Sinon</Titre>
-                              <Enfants/>
-                            </operation>
-                          </operationsLogiques>
-                        </Condition>
-                      </Enfants>
-                    </Iteration>
-                  </Enfants>
-                </Action>
-                <Action>
-                  <Position>3523;557</Position>
-                  <StyleLien>2</StyleLien>
-                  <PreAssertion>recettesPossibles
-brancheEnCours
-borneSup
-borneInf
-qtMax
-iterateurRecette
-</PreAssertion>
-                  <PostAssertion>recettesPossibles</PostAssertion>
-                  <Titre>Mettres à jour les variables</Titre>
-                  <DetailsVisible>1</DetailsVisible>
-                  <DetailsVideVisible>1</DetailsVideVisible>
-                  <Enfants>
-                    <Action>
-                      <Position>3145;715</Position>
-                      <StyleLien>2</StyleLien>
-                      <PreAssertion>recettesPossibles
-iterateurRecette</PreAssertion>
-                      <PostAssertion>recettesPossibles</PostAssertion>
-                      <Titre>Mise à jour de la quantité des boissons</Titre>
-                      <DetailsVisible>1</DetailsVisible>
-                      <DetailsVideVisible>1</DetailsVideVisible>
-                      <Enfants>
-                        <Action>
-                          <Position>2919;865</Position>
-                          <StyleLien>1</StyleLien>
-                          <PreAssertion>∅</PreAssertion>
-                          <PostAssertion>∅</PostAssertion>
-                          <Titre>recettesPossibles[recetteIterateur].getAlcool().setQtBoissonEnCours(recettesPossibles[recetteIterateur].getAlcool().getQtBoissonEnCours() - recettesPossibles[recetteIterateur].getQtAlcool())</Titre>
-                          <DetailsVisible>0</DetailsVisible>
-                          <DetailsVideVisible>1</DetailsVideVisible>
-                          <Enfants/>
-                        </Action>
-                        <Action>
-                          <Position>3337;866</Position>
-                          <StyleLien>1</StyleLien>
-                          <PreAssertion>∅</PreAssertion>
-                          <PostAssertion>∅</PostAssertion>
-                          <Titre>recettesPossibles[recetteIterateur].getDiluant().setQtBoissonEnCours(recettesPossibles[recetteIterateur].getDiluant().getQtBoissonEnCours() - recettesPossibles[recetteIterateur].getQtDiluant())</Titre>
-                          <DetailsVisible>0</DetailsVisible>
-                          <DetailsVideVisible>1</DetailsVideVisible>
-                          <Enfants/>
-                        </Action>
-                      </Enfants>
-                    </Action>
-                    <Action>
-                      <Position>3839;741</Position>
-                      <StyleLien>2</StyleLien>
-                      <PreAssertion>recettesPossibles
-iterateurRecette</PreAssertion>
-                      <PostAssertion>recettesPossibles</PostAssertion>
-                      <Titre>Mise à jour de la quantité des boissons dans recette</Titre>
-                      <DetailsVisible>1</DetailsVisible>
-                      <DetailsVideVisible>1</DetailsVideVisible>
-                      <Enfants>
-                        <Iteration>
-                          <Position>4120.5;907.5</Position>
-                          <StyleLien>1</StyleLien>
-                          <Titre>Pour i allant de 0 à tailleRecettesPossibles</Titre>
-                          <IterationFixe>1</IterationFixe>
-                          <Enfants>
-                            <Condition>
-                              <Position>3575.5;1021</Position>
-                              <StyleLien>1</StyleLien>
-                              <estUnique>1</estUnique>
-                              <operationsLogiques>
-                                <operation>
-                                  <Titre>recettesPossibles[recetteIterateur].getAlcool() = recettesPossibles[i].getAlcool()</Titre>
-                                  <Enfants>
-                                    <Procedure>
-                                      <Position>3305;1218</Position>
-                                      <StyleLien>1</StyleLien>
-                                      <PreAssertion>recettesPossibles
-DOSE_ALCOOL
-DOSE_DILUANT</PreAssertion>
-                                      <PostAssertion>recettesPossibles</PostAssertion>
-                                      <Titre>calculeQuantiteRecette(recettesPossibles[i], DOSE_ALCOOL, DOSE_DILUANT)</Titre>
-                                      <DetailsVisible>1</DetailsVisible>
-                                      <DetailsVideVisible>1</DetailsVideVisible>
-                                      <Enfants/>
-                                    </Procedure>
-                                  </Enfants>
-                                </operation>
-                                <operation>
-                                  <Titre>Sinon</Titre>
-                                  <Enfants/>
-                                </operation>
-                              </operationsLogiques>
-                            </Condition>
-                            <Condition>
-                              <Position>4170.5;1003</Position>
-                              <StyleLien>1</StyleLien>
-                              <estUnique>1</estUnique>
-                              <operationsLogiques>
-                                <operation>
-                                  <Titre>recettesPossibles[recetteIterateur].getDiluant() = recettesPossibles[i].getDiluant()</Titre>
-                                  <Enfants>
-                                    <Procedure>
-                                      <Position>4088;1223</Position>
-                                      <StyleLien>1</StyleLien>
-                                      <PreAssertion>recettesPossibles
-DOSE_ALCOOL
-DOSE_DILUANT</PreAssertion>
-                                      <PostAssertion>recettesPossibles</PostAssertion>
-                                      <Titre>calculeQuantiteRecette(recettesPossibles[i], DOSE_ALCOOL, DOSE_DILUANT)</Titre>
-                                      <DetailsVisible>1</DetailsVisible>
-                                      <DetailsVideVisible>1</DetailsVideVisible>
-                                      <Enfants/>
-                                    </Procedure>
-                                  </Enfants>
-                                </operation>
-                                <operation>
-                                  <Titre>Sinon</Titre>
-                                  <Enfants/>
-                                </operation>
-                              </operationsLogiques>
-                            </Condition>
-                          </Enfants>
-                        </Iteration>
-                      </Enfants>
-                    </Action>
-                  </Enfants>
-                </Action>
-                <Action>
-                  <Position>2369;598</Position>
-                  <StyleLien>2</StyleLien>
-                  <PreAssertion>brancheEnCours
-qtMax
-borneSup
-borneInf</PreAssertion>
-                  <PostAssertion>brancheInvalide</PostAssertion>
-                  <Titre>Verification si brancheEnCours est invalide</Titre>
-                  <DetailsVisible>1</DetailsVisible>
-                  <DetailsVideVisible>1</DetailsVideVisible>
-                  <Enfants>
-                    <Condition>
-                      <Position>2424.5;742</Position>
-                      <StyleLien>1</StyleLien>
-                      <estUnique>1</estUnique>
-                      <operationsLogiques>
-                        <operation>
-                          <Titre>brancheEnCours.getQtBranche() > qtMax ou borneSup &lt; borneInf</Titre>
-                          <Enfants>
-                            <Action>
-                              <Position>2183;997</Position>
-                              <StyleLien>1</StyleLien>
-                              <PreAssertion>∅</PreAssertion>
-                              <PostAssertion>∅</PostAssertion>
-                              <Titre>Ajouter dans la liste de brancheInvalide la brancheEnCours</Titre>
-                              <DetailsVisible>1</DetailsVisible>
-                              <DetailsVideVisible>1</DetailsVideVisible>
-                              <Enfants/>
-                            </Action>
-                            <Sortie>
-                              <Position>2878;1038</Position>
-                            </Sortie>
-                          </Enfants>
-                        </operation>
-                        <operation>
-                          <Titre>Sinon</Titre>
-                          <Enfants/>
-                        </operation>
-                      </operationsLogiques>
-                    </Condition>
-                  </Enfants>
-                </Action>
                 <Condition>
-                  <Position>5464.5;552</Position>
-                  <StyleLien>0</StyleLien>
-                  <estUnique>0</estUnique>
+                  <Position>6799.5;527</Position>
+                  <StyleLien>1</StyleLien>
+                  <estUnique>1</estUnique>
                   <operationsLogiques>
                     <operation>
-                      <Titre>iterateurRecette = tailleRecettesPossibles - 1</Titre>
+                      <Titre>borneInf = branchesValide[i].getQtValeur()</Titre>
                       <Enfants>
-                        <Sortie>
-                          <Position>5767;945</Position>
-                        </Sortie>
                         <Action>
-                          <Position>5304;909</Position>
+                          <Position>6811;664</Position>
                           <StyleLien>1</StyleLien>
                           <PreAssertion>∅</PreAssertion>
                           <PostAssertion>∅</PostAssertion>
-                          <Titre>Mettre brancheEnCours dans brancheValide</Titre>
+                          <Titre>meilleursCombinaison ← branchesValide[i]</Titre>
                           <DetailsVisible>0</DetailsVisible>
                           <DetailsVideVisible>1</DetailsVideVisible>
                           <Enfants/>
@@ -314,179 +52,578 @@ borneInf</PreAssertion>
                     </operation>
                     <operation>
                       <Titre>Sinon</Titre>
-                      <Enfants>
-                        <Action>
-                          <Position>5974;731</Position>
-                          <StyleLien>1</StyleLien>
-                          <PreAssertion>∅</PreAssertion>
-                          <PostAssertion>∅</PostAssertion>
-                          <Titre>iterateurRecette ← iterateurRecette + 1</Titre>
-                          <DetailsVisible>0</DetailsVisible>
-                          <DetailsVideVisible>1</DetailsVideVisible>
-                          <Enfants/>
-                        </Action>
-                      </Enfants>
+                      <Enfants/>
                     </operation>
                   </operationsLogiques>
                 </Condition>
+              </Enfants>
+            </Iteration>
+          </Enfants>
+        </Action>
+        <Iteration>
+          <Position>531.5;156.5</Position>
+          <StyleLien>1</StyleLien>
+          <Titre>?</Titre>
+          <IterationFixe>0</IterationFixe>
+          <Enfants>
+            <Action>
+              <Position>308;231</Position>
+              <StyleLien>2</StyleLien>
+              <PreAssertion>recettesPossibles
+qtMax</PreAssertion>
+              <PostAssertion>brancheValide</PostAssertion>
+              <Titre>Explorer toutes les possibilités</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>1</DetailsVideVisible>
+              <Enfants>
                 <Action>
-                  <Position>1874;1215</Position>
+                  <Position>11;398</Position>
+                  <StyleLien>1</StyleLien>
+                  <PreAssertion>∅</PreAssertion>
+                  <PostAssertion>∅</PostAssertion>
+                  <Titre>iterateurRecette ← 0</Titre>
+                  <DetailsVisible>0</DetailsVisible>
+                  <DetailsVideVisible>1</DetailsVideVisible>
+                  <Enfants/>
+                </Action>
+                <Action>
+                  <Position>199;381</Position>
                   <StyleLien>2</StyleLien>
-                  <PreAssertion>brancheEnCours
-borneSup
-borneInf</PreAssertion>
-                  <PostAssertion>brancheEnCours
-borneSup
-borneInf</PostAssertion>
-                  <Titre>Mettre à jour les variables de la branche</Titre>
+                  <PreAssertion>iterateurRecette
+recettesPossibles</PreAssertion>
+                  <PostAssertion>recettesPossibles</PostAssertion>
+                  <Titre>Initialisation de la quantite en cours</Titre>
                   <DetailsVisible>1</DetailsVisible>
                   <DetailsVideVisible>1</DetailsVideVisible>
                   <Enfants>
                     <Action>
-                      <Position>1696;1346</Position>
-                      <StyleLien>2</StyleLien>
-                      <PreAssertion>recettesPossibles
-borneSup
-tailleRecettesPossibles
-iterateurRecette</PreAssertion>
-                      <PostAssertion>borneSup</PostAssertion>
-                      <Titre>Mettre à jour borneSup</Titre>
-                      <DetailsVisible>1</DetailsVisible>
+                      <Position>13;614</Position>
+                      <StyleLien>1</StyleLien>
+                      <PreAssertion>∅</PreAssertion>
+                      <PostAssertion>∅</PostAssertion>
+                      <Titre>recettesPossibles[iterateurRecette].getAlcool().setQtBoissonEnCours(recettesPossibles[iterateurRecette].getAlcool().getQtBoissonInitial)</Titre>
+                      <DetailsVisible>0</DetailsVisible>
                       <DetailsVideVisible>1</DetailsVideVisible>
+                      <Enfants/>
+                    </Action>
+                    <Action>
+                      <Position>271;812</Position>
+                      <StyleLien>1</StyleLien>
+                      <PreAssertion>∅</PreAssertion>
+                      <PostAssertion>∅</PostAssertion>
+                      <Titre>recettesPossibles[iterateurRecette].getDiluant().setQtBoissonEnCours(recettesPossibles[iterateurRecette].getDiluant().getQtBoissonInitial)</Titre>
+                      <DetailsVisible>0</DetailsVisible>
+                      <DetailsVideVisible>1</DetailsVideVisible>
+                      <Enfants/>
+                    </Action>
+                  </Enfants>
+                </Action>
+                <Action>
+                  <Position>1161;370</Position>
+                  <StyleLien>2</StyleLien>
+                  <PreAssertion>brancheEnCours
+recettesPossibles
+iterateurRecette</PreAssertion>
+                  <PostAssertion>branchesValide</PostAssertion>
+                  <Titre>Parcours et recherche des branches valide</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>1</DetailsVideVisible>
+                  <Enfants>
+                    <Iteration>
+                      <Position>1415.5;483.5</Position>
+                      <StyleLien>1</StyleLien>
+                      <Titre>?</Titre>
+                      <IterationFixe>0</IterationFixe>
                       <Enfants>
-                        <Iteration>
-                          <Position>1702.5;1480.5</Position>
-                          <StyleLien>1</StyleLien>
-                          <Titre>pour i allant de iterateurRecette à tailleRecettesPossibles - 1</Titre>
-                          <IterationFixe>1</IterationFixe>
-                          <Enfants>
-                            <Action>
-                              <Position>1549;1562</Position>
-                              <StyleLien>1</StyleLien>
-                              <PreAssertion>∅</PreAssertion>
-                              <PostAssertion>∅</PostAssertion>
-                              <Titre>borneSup ← borneSup + recettesPossibles[i].getValeur()</Titre>
-                              <DetailsVisible>0</DetailsVisible>
-                              <DetailsVideVisible>1</DetailsVideVisible>
-                              <Enfants/>
-                            </Action>
-                          </Enfants>
-                        </Iteration>
                         <Action>
-                          <Position>1963;1538</Position>
+                          <Position>631;603</Position>
                           <StyleLien>1</StyleLien>
-                          <PreAssertion>∅</PreAssertion>
-                          <PostAssertion>∅</PostAssertion>
-                          <Titre>borneSup ← borneSup + brancheEnCours.getQtValeur()</Titre>
+                          <PreAssertion>recettesPossibles
+brancheEnCours</PreAssertion>
+                          <PostAssertion>brancheEnCours</PostAssertion>
+                          <Titre>Ajouter à la pile brancheEnCours recettesPossibles[iterateurRecette]</Titre>
                           <DetailsVisible>1</DetailsVisible>
                           <DetailsVideVisible>1</DetailsVideVisible>
                           <Enfants/>
                         </Action>
                         <Action>
-                          <Position>1330;1568</Position>
-                          <StyleLien>1</StyleLien>
-                          <PreAssertion>∅</PreAssertion>
-                          <PostAssertion>∅</PostAssertion>
-                          <Titre>borneSup ← 0</Titre>
-                          <DetailsVisible>0</DetailsVisible>
+                          <Position>1372;598</Position>
+                          <StyleLien>2</StyleLien>
+                          <PreAssertion>brancheEnCours
+branchesValide
+branchesInvalide
+taillebranchesInvalide
+tailleBranchesValide</PreAssertion>
+                          <PostAssertion>brancheEnCours</PostAssertion>
+                          <Titre>Verification si la brancheEnCours est dans brancheValide ou brancheInvalide</Titre>
+                          <DetailsVisible>1</DetailsVisible>
                           <DetailsVideVisible>1</DetailsVideVisible>
-                          <Enfants/>
+                          <Enfants>
+                            <Iteration>
+                              <Position>1247.5;789.5</Position>
+                              <StyleLien>1</StyleLien>
+                              <Titre>pour i allant de 0 à tailleBranchesValide</Titre>
+                              <IterationFixe>1</IterationFixe>
+                              <Enfants>
+                                <Condition>
+                                  <Position>1045.5;869</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <estUnique>1</estUnique>
+                                  <operationsLogiques>
+                                    <operation>
+                                      <Titre>brancheEncours.getPileRecette() = branchesValide[i].getPileRecette()</Titre>
+                                      <Enfants>
+                                        <Action>
+                                          <Position>1147;1018</Position>
+                                          <StyleLien>1</StyleLien>
+                                          <PreAssertion>∅</PreAssertion>
+                                          <PostAssertion>∅</PostAssertion>
+                                          <Titre>Depiler de 1 brancheEnCours</Titre>
+                                          <DetailsVisible>0</DetailsVisible>
+                                          <DetailsVideVisible>1</DetailsVideVisible>
+                                          <Enfants/>
+                                        </Action>
+                                      </Enfants>
+                                    </operation>
+                                    <operation>
+                                      <Titre>Sinon</Titre>
+                                      <Enfants/>
+                                    </operation>
+                                  </operationsLogiques>
+                                </Condition>
+                              </Enfants>
+                            </Iteration>
+                            <Iteration>
+                              <Position>1828.5;774.5</Position>
+                              <StyleLien>1</StyleLien>
+                              <Titre>pour i allant de 0 à tailleBranchesInvalide</Titre>
+                              <IterationFixe>1</IterationFixe>
+                              <Enfants>
+                                <Condition>
+                                  <Position>1620.5;858</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <estUnique>1</estUnique>
+                                  <operationsLogiques>
+                                    <operation>
+                                      <Titre>brancheEncours.getPileRecette() = branchesInvalide[i].getPileRecette()</Titre>
+                                      <Enfants>
+                                        <Action>
+                                          <Position>1811;1021</Position>
+                                          <StyleLien>1</StyleLien>
+                                          <PreAssertion>∅</PreAssertion>
+                                          <PostAssertion>∅</PostAssertion>
+                                          <Titre>Depiler de 1 brancheEnCours</Titre>
+                                          <DetailsVisible>0</DetailsVisible>
+                                          <DetailsVideVisible>1</DetailsVideVisible>
+                                          <Enfants/>
+                                        </Action>
+                                        <Condition>
+                                          <Position>1487.5;1025</Position>
+                                          <StyleLien>1</StyleLien>
+                                          <estUnique>1</estUnique>
+                                          <operationsLogiques>
+                                            <operation>
+                                              <Titre>brancheEnCours.getPileRecette().isEmpty()</Titre>
+                                              <Enfants>
+                                                <Action>
+                                                  <Position>1561;1149</Position>
+                                                  <StyleLien>1</StyleLien>
+                                                  <PreAssertion>∅</PreAssertion>
+                                                  <PostAssertion>∅</PostAssertion>
+                                                  <Titre>estFinis ← Vrai</Titre>
+                                                  <DetailsVisible>0</DetailsVisible>
+                                                  <DetailsVideVisible>1</DetailsVideVisible>
+                                                  <Enfants/>
+                                                </Action>
+                                                <Sortie>
+                                                  <Position>1716;1190</Position>
+                                                </Sortie>
+                                              </Enfants>
+                                            </operation>
+                                            <operation>
+                                              <Titre>Sinon</Titre>
+                                              <Enfants/>
+                                            </operation>
+                                          </operationsLogiques>
+                                        </Condition>
+                                      </Enfants>
+                                    </operation>
+                                    <operation>
+                                      <Titre>Sinon</Titre>
+                                      <Enfants/>
+                                    </operation>
+                                  </operationsLogiques>
+                                </Condition>
+                              </Enfants>
+                            </Iteration>
+                          </Enfants>
                         </Action>
-                      </Enfants>
-                    </Action>
-                    <Action>
-                      <Position>2498;1376</Position>
-                      <StyleLien>2</StyleLien>
-                      <PreAssertion>borneInf
-brancheEnCours</PreAssertion>
-                      <PostAssertion>borneInf</PostAssertion>
-                      <Titre>Mettre à jour borneInf</Titre>
-                      <DetailsVisible>1</DetailsVisible>
-                      <DetailsVideVisible>1</DetailsVideVisible>
-                      <Enfants>
-                        <Condition>
-                          <Position>2558.5;1501</Position>
-                          <StyleLien>1</StyleLien>
-                          <estUnique>1</estUnique>
-                          <operationsLogiques>
-                            <operation>
-                              <Titre>brancheEnCours.getQtValeur() > borneInf</Titre>
+                        <Action>
+                          <Position>3527;566</Position>
+                          <StyleLien>2</StyleLien>
+                          <PreAssertion>recettesPossibles
+brancheEnCours
+borneSup
+borneInf
+qtMax
+iterateurRecette
+tailleRecettesPossibles
+DOSE_ALCOOL
+DOSE_DILUANT
+</PreAssertion>
+                          <PostAssertion>recettesPossibles</PostAssertion>
+                          <Titre>Mettres à jour les variables</Titre>
+                          <DetailsVisible>1</DetailsVisible>
+                          <DetailsVideVisible>1</DetailsVideVisible>
+                          <Enfants>
+                            <Action>
+                              <Position>3145;715</Position>
+                              <StyleLien>2</StyleLien>
+                              <PreAssertion>recettesPossibles
+iterateurRecette</PreAssertion>
+                              <PostAssertion>recettesPossibles</PostAssertion>
+                              <Titre>Mise à jour de la quantité des boissons</Titre>
+                              <DetailsVisible>1</DetailsVisible>
+                              <DetailsVideVisible>1</DetailsVideVisible>
                               <Enfants>
                                 <Action>
-                                  <Position>2584;1651</Position>
+                                  <Position>2920;865</Position>
                                   <StyleLien>1</StyleLien>
                                   <PreAssertion>∅</PreAssertion>
                                   <PostAssertion>∅</PostAssertion>
-                                  <Titre>borneInf ← brancheEnCours.getQtValeur()</Titre>
+                                  <Titre>recettesPossibles[recetteIterateur].getAlcool().setQtBoissonEnCours(recettesPossibles[recetteIterateur].getAlcool().getQtBoissonEnCours() - recettesPossibles[recetteIterateur].getQtAlcool())</Titre>
+                                  <DetailsVisible>0</DetailsVisible>
+                                  <DetailsVideVisible>1</DetailsVideVisible>
+                                  <Enfants/>
+                                </Action>
+                                <Action>
+                                  <Position>3347;867</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <PreAssertion>∅</PreAssertion>
+                                  <PostAssertion>∅</PostAssertion>
+                                  <Titre>recettesPossibles[recetteIterateur].getDiluant().setQtBoissonEnCours(recettesPossibles[recetteIterateur].getDiluant().getQtBoissonEnCours() - recettesPossibles[recetteIterateur].getQtDiluant())</Titre>
                                   <DetailsVisible>0</DetailsVisible>
                                   <DetailsVideVisible>1</DetailsVideVisible>
                                   <Enfants/>
                                 </Action>
                               </Enfants>
-                            </operation>
-                            <operation>
-                              <Titre>Sinon</Titre>
-                              <Enfants/>
-                            </operation>
-                          </operationsLogiques>
-                        </Condition>
+                            </Action>
+                            <Action>
+                              <Position>3839;740</Position>
+                              <StyleLien>2</StyleLien>
+                              <PreAssertion>recettesPossibles
+iterateurRecette
+tailleRecettesPossibles
+DOSE_ALCOOL
+DOSE_DILUANT</PreAssertion>
+                              <PostAssertion>recettesPossibles</PostAssertion>
+                              <Titre>Mise à jour de la quantité des boissons dans recette</Titre>
+                              <DetailsVisible>1</DetailsVisible>
+                              <DetailsVideVisible>1</DetailsVideVisible>
+                              <Enfants>
+                                <Iteration>
+                                  <Position>4120.5;907.5</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <Titre>Pour i allant de 0 à tailleRecettesPossibles</Titre>
+                                  <IterationFixe>1</IterationFixe>
+                                  <Enfants>
+                                    <Condition>
+                                      <Position>3575.5;1021</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <estUnique>1</estUnique>
+                                      <operationsLogiques>
+                                        <operation>
+                                          <Titre>recettesPossibles[recetteIterateur].getAlcool() = recettesPossibles[i].getAlcool()</Titre>
+                                          <Enfants>
+                                            <Procedure>
+                                              <Position>3305;1218</Position>
+                                              <StyleLien>1</StyleLien>
+                                              <PreAssertion>recettesPossibles
+DOSE_ALCOOL
+DOSE_DILUANT</PreAssertion>
+                                              <PostAssertion>recettesPossibles</PostAssertion>
+                                              <Titre>calculeQuantiteRecette(recettesPossibles[i], DOSE_ALCOOL, DOSE_DILUANT)</Titre>
+                                              <DetailsVisible>1</DetailsVisible>
+                                              <DetailsVideVisible>1</DetailsVideVisible>
+                                              <Enfants/>
+                                            </Procedure>
+                                          </Enfants>
+                                        </operation>
+                                        <operation>
+                                          <Titre>Sinon</Titre>
+                                          <Enfants/>
+                                        </operation>
+                                      </operationsLogiques>
+                                    </Condition>
+                                    <Condition>
+                                      <Position>4170.5;1003</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <estUnique>1</estUnique>
+                                      <operationsLogiques>
+                                        <operation>
+                                          <Titre>recettesPossibles[recetteIterateur].getDiluant() = recettesPossibles[i].getDiluant()</Titre>
+                                          <Enfants>
+                                            <Procedure>
+                                              <Position>4088;1223</Position>
+                                              <StyleLien>1</StyleLien>
+                                              <PreAssertion>recettesPossibles
+DOSE_ALCOOL
+DOSE_DILUANT</PreAssertion>
+                                              <PostAssertion>recettesPossibles</PostAssertion>
+                                              <Titre>calculeQuantiteRecette(recettesPossibles[i], DOSE_ALCOOL, DOSE_DILUANT)</Titre>
+                                              <DetailsVisible>1</DetailsVisible>
+                                              <DetailsVideVisible>1</DetailsVideVisible>
+                                              <Enfants/>
+                                            </Procedure>
+                                          </Enfants>
+                                        </operation>
+                                        <operation>
+                                          <Titre>Sinon</Titre>
+                                          <Enfants/>
+                                        </operation>
+                                      </operationsLogiques>
+                                    </Condition>
+                                  </Enfants>
+                                </Iteration>
+                              </Enfants>
+                            </Action>
+                          </Enfants>
+                        </Action>
+                        <Action>
+                          <Position>2369;598</Position>
+                          <StyleLien>2</StyleLien>
+                          <PreAssertion>brancheEnCours
+qtMax
+borneSup
+borneInf</PreAssertion>
+                          <PostAssertion>branchesInvalide</PostAssertion>
+                          <Titre>Verification si brancheEnCours est invalide</Titre>
+                          <DetailsVisible>1</DetailsVisible>
+                          <DetailsVideVisible>1</DetailsVideVisible>
+                          <Enfants>
+                            <Condition>
+                              <Position>2424.5;742</Position>
+                              <StyleLien>1</StyleLien>
+                              <estUnique>1</estUnique>
+                              <operationsLogiques>
+                                <operation>
+                                  <Titre>brancheEnCours.getQtBranche() > qtMax ou borneSup &lt; borneInf</Titre>
+                                  <Enfants>
+                                    <Action>
+                                      <Position>2216;995</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <PreAssertion>∅</PreAssertion>
+                                      <PostAssertion>∅</PostAssertion>
+                                      <Titre>Ajouter dans la liste de brancheInvalide la brancheEnCours</Titre>
+                                      <DetailsVisible>0</DetailsVisible>
+                                      <DetailsVideVisible>1</DetailsVideVisible>
+                                      <Enfants/>
+                                    </Action>
+                                    <Sortie>
+                                      <Position>2860;1051</Position>
+                                    </Sortie>
+                                  </Enfants>
+                                </operation>
+                                <operation>
+                                  <Titre>Sinon</Titre>
+                                  <Enfants/>
+                                </operation>
+                              </operationsLogiques>
+                            </Condition>
+                          </Enfants>
+                        </Action>
+                        <Action>
+                          <Position>1874;1215</Position>
+                          <StyleLien>2</StyleLien>
+                          <PreAssertion>brancheEnCours
+borneSup
+borneInf</PreAssertion>
+                          <PostAssertion>brancheEnCours
+borneSup
+borneInf</PostAssertion>
+                          <Titre>Mettre à jour les variables de la branche</Titre>
+                          <DetailsVisible>1</DetailsVisible>
+                          <DetailsVideVisible>1</DetailsVideVisible>
+                          <Enfants>
+                            <Action>
+                              <Position>1696;1346</Position>
+                              <StyleLien>2</StyleLien>
+                              <PreAssertion>recettesPossibles
+borneSup
+tailleRecettesPossibles
+iterateurRecette</PreAssertion>
+                              <PostAssertion>borneSup</PostAssertion>
+                              <Titre>Mettre à jour borneSup</Titre>
+                              <DetailsVisible>1</DetailsVisible>
+                              <DetailsVideVisible>1</DetailsVideVisible>
+                              <Enfants>
+                                <Iteration>
+                                  <Position>1702.5;1480.5</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <Titre>pour i allant de iterateurRecette à tailleRecettesPossibles - 1</Titre>
+                                  <IterationFixe>1</IterationFixe>
+                                  <Enfants>
+                                    <Action>
+                                      <Position>1549;1562</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <PreAssertion>∅</PreAssertion>
+                                      <PostAssertion>∅</PostAssertion>
+                                      <Titre>borneSup ← borneSup + recettesPossibles[i].getValeur()</Titre>
+                                      <DetailsVisible>0</DetailsVisible>
+                                      <DetailsVideVisible>1</DetailsVideVisible>
+                                      <Enfants/>
+                                    </Action>
+                                  </Enfants>
+                                </Iteration>
+                                <Action>
+                                  <Position>1963;1538</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <PreAssertion>∅</PreAssertion>
+                                  <PostAssertion>∅</PostAssertion>
+                                  <Titre>borneSup ← borneSup + brancheEnCours.getQtValeur()</Titre>
+                                  <DetailsVisible>1</DetailsVisible>
+                                  <DetailsVideVisible>1</DetailsVideVisible>
+                                  <Enfants/>
+                                </Action>
+                                <Action>
+                                  <Position>1330;1568</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <PreAssertion>∅</PreAssertion>
+                                  <PostAssertion>∅</PostAssertion>
+                                  <Titre>borneSup ← 0</Titre>
+                                  <DetailsVisible>0</DetailsVisible>
+                                  <DetailsVideVisible>1</DetailsVideVisible>
+                                  <Enfants/>
+                                </Action>
+                              </Enfants>
+                            </Action>
+                            <Action>
+                              <Position>2498;1376</Position>
+                              <StyleLien>2</StyleLien>
+                              <PreAssertion>borneInf
+brancheEnCours</PreAssertion>
+                              <PostAssertion>borneInf</PostAssertion>
+                              <Titre>Mettre à jour borneInf</Titre>
+                              <DetailsVisible>1</DetailsVisible>
+                              <DetailsVideVisible>1</DetailsVideVisible>
+                              <Enfants>
+                                <Condition>
+                                  <Position>2570.5;1503</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <estUnique>1</estUnique>
+                                  <operationsLogiques>
+                                    <operation>
+                                      <Titre>brancheEnCours.getQtValeur() > borneInf</Titre>
+                                      <Enfants>
+                                        <Action>
+                                          <Position>2502;1642</Position>
+                                          <StyleLien>1</StyleLien>
+                                          <PreAssertion>∅</PreAssertion>
+                                          <PostAssertion>∅</PostAssertion>
+                                          <Titre>borneInf ← brancheEnCours.getQtValeur()</Titre>
+                                          <DetailsVisible>0</DetailsVisible>
+                                          <DetailsVideVisible>1</DetailsVideVisible>
+                                          <Enfants/>
+                                        </Action>
+                                      </Enfants>
+                                    </operation>
+                                    <operation>
+                                      <Titre>Sinon</Titre>
+                                      <Enfants/>
+                                    </operation>
+                                  </operationsLogiques>
+                                </Condition>
+                              </Enfants>
+                            </Action>
+                          </Enfants>
+                        </Action>
+                        <Action>
+                          <Position>4843;626</Position>
+                          <StyleLien>2</StyleLien>
+                          <PreAssertion>iterateurRecette
+tailleRecettesPossibles</PreAssertion>
+                          <PostAssertion>iterateurRecette</PostAssertion>
+                          <Titre>Verification si toute les recettes ont été parcourus et ajout dans branchesValide</Titre>
+                          <DetailsVisible>1</DetailsVisible>
+                          <DetailsVideVisible>1</DetailsVideVisible>
+                          <Enfants>
+                            <Condition>
+                              <Position>5039.5;764</Position>
+                              <StyleLien>0</StyleLien>
+                              <estUnique>0</estUnique>
+                              <operationsLogiques>
+                                <operation>
+                                  <Titre>iterateurRecette = tailleRecettesPossibles - 1</Titre>
+                                  <Enfants>
+                                    <Sortie>
+                                      <Position>5265;976</Position>
+                                    </Sortie>
+                                    <Action>
+                                      <Position>4824;924</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <PreAssertion>∅</PreAssertion>
+                                      <PostAssertion>∅</PostAssertion>
+                                      <Titre>Mettre brancheEnCours dans branchesValide</Titre>
+                                      <DetailsVisible>0</DetailsVisible>
+                                      <DetailsVideVisible>1</DetailsVideVisible>
+                                      <Enfants/>
+                                    </Action>
+                                  </Enfants>
+                                </operation>
+                                <operation>
+                                  <Titre>Sinon</Titre>
+                                  <Enfants>
+                                    <Action>
+                                      <Position>5390;953</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <PreAssertion>∅</PreAssertion>
+                                      <PostAssertion>∅</PostAssertion>
+                                      <Titre>iterateurRecette ← iterateurRecette + 1</Titre>
+                                      <DetailsVisible>0</DetailsVisible>
+                                      <DetailsVideVisible>1</DetailsVideVisible>
+                                      <Enfants/>
+                                    </Action>
+                                  </Enfants>
+                                </operation>
+                              </operationsLogiques>
+                            </Condition>
+                          </Enfants>
+                        </Action>
                       </Enfants>
-                    </Action>
+                    </Iteration>
                   </Enfants>
                 </Action>
-              </Enfants>
-            </Iteration>
-            <Action>
-              <Position>11;398</Position>
-              <StyleLien>1</StyleLien>
-              <PreAssertion>∅</PreAssertion>
-              <PostAssertion>∅</PostAssertion>
-              <Titre>iterateurRecette ← 0</Titre>
-              <DetailsVisible>0</DetailsVisible>
-              <DetailsVideVisible>1</DetailsVideVisible>
-              <Enfants/>
-            </Action>
-            <Action>
-              <Position>310;386</Position>
-              <StyleLien>2</StyleLien>
-              <PreAssertion>iterateurRecette
-recettesPossibles</PreAssertion>
-              <PostAssertion>recettesPossibles</PostAssertion>
-              <Titre>Initialisation de la quantite en cours</Titre>
-              <DetailsVisible>1</DetailsVisible>
-              <DetailsVideVisible>1</DetailsVideVisible>
-              <Enfants>
                 <Action>
-                  <Position>138;599</Position>
+                  <Position>782;386</Position>
                   <StyleLien>1</StyleLien>
-                  <PreAssertion>∅</PreAssertion>
-                  <PostAssertion>∅</PostAssertion>
-                  <Titre>recettesPossibles[iterateurRecette].getAlcool().setQtBoissonEnCours(recettesPossibles[iterateurRecette].getAlcool().getQtBoissonInitial)</Titre>
-                  <DetailsVisible>0</DetailsVisible>
-                  <DetailsVideVisible>1</DetailsVideVisible>
-                  <Enfants/>
-                </Action>
-                <Action>
-                  <Position>482;823</Position>
-                  <StyleLien>1</StyleLien>
-                  <PreAssertion>∅</PreAssertion>
-                  <PostAssertion>∅</PostAssertion>
-                  <Titre>recettesPossibles[iterateurRecette].getDiluant().setQtBoissonEnCours(recettesPossibles[iterateurRecette].getDiluant().getQtBoissonInitial)</Titre>
-                  <DetailsVisible>0</DetailsVisible>
-                  <DetailsVideVisible>1</DetailsVideVisible>
+                  <PreAssertion>?</PreAssertion>
+                  <PostAssertion>brancheEnCours</PostAssertion>
+                  <Titre>Creation de brancheEnCours</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>0</DetailsVideVisible>
                   <Enfants/>
                 </Action>
               </Enfants>
             </Action>
           </Enfants>
+        </Iteration>
+        <Action>
+          <Position>-3;166</Position>
+          <StyleLien>1</StyleLien>
+          <PreAssertion>∅</PreAssertion>
+          <PostAssertion>∅</PostAssertion>
+          <Titre>borneInf ← 0</Titre>
+          <DetailsVisible>0</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants/>
         </Action>
         <Action>
-          <Position>964;229</Position>
+          <Position>158;166</Position>
           <StyleLien>1</StyleLien>
-          <PreAssertion>brancheValide</PreAssertion>
-          <PostAssertion>meilleursCombinaison</PostAssertion>
-          <Titre>Trouver la meilleur possibilité</Titre>
-          <DetailsVisible>1</DetailsVisible>
+          <PreAssertion>∅</PreAssertion>
+          <PostAssertion>∅</PostAssertion>
+          <Titre>estFinis ← Faux</Titre>
+          <DetailsVisible>0</DetailsVisible>
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants/>
         </Action>
