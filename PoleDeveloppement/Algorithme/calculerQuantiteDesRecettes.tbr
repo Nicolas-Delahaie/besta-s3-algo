@@ -2,14 +2,18 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>calculerQuantiteDesRecettes</nom>
-  <date_creation>10/11/2022 12:29</date_creation>
+  <date_creation>14/11/2022 15:51</date_creation>
   <Elements>
     <Action>
       <Position>588;85</Position>
       <StyleLien>2</StyleLien>
       <PreAssertion>recettesPossibles
 DOSE_ALCOOL
-DOSE_DILUANT</PreAssertion>
+DOSE_DILUANT
+stockSoiree
+tailleStockSoireeAlcool
+tailleStockSoireeDiluant
+tailleRecettesPossibles</PreAssertion>
       <PostAssertion>recettesPossibles
 qtMax</PostAssertion>
       <Titre>Calcule des quantités</Titre>
