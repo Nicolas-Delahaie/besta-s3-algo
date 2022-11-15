@@ -2,7 +2,7 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>Algorithme</nom>
-  <date_creation>9/11/2022 16:05</date_creation>
+  <date_creation>14/11/2022 08:40</date_creation>
   <Elements>
     <Action>
       <Position>559;13</Position>
@@ -24,9 +24,9 @@
                 <Action>
                   <Position>27;287</Position>
                   <StyleLien>1</StyleLien>
-                  <PreAssertion>stockSoiree
-nomBoisson
-qtBoisson
+                  <PreAssertion>stockSoiree&#xd;
+nomBoisson&#xd;
+qtBoisson&#xd;
 typeBoisson</PreAssertion>
                   <PostAssertion>stockSoiree</PostAssertion>
                   <Titre>stockSoiree.ajouterAlcool(nomBoisson, qtBoisson, typeBoisson)</Titre>
@@ -42,9 +42,9 @@ typeBoisson</PreAssertion>
                 <Action>
                   <Position>429;402</Position>
                   <StyleLien>1</StyleLien>
-                  <PreAssertion>stockSoiree
-nomBoisson
-qtBoisson
+                  <PreAssertion>stockSoiree&#xd;
+nomBoisson&#xd;
+qtBoisson&#xd;
 typeBoisson</PreAssertion>
                   <PostAssertion>stockSoiree</PostAssertion>
                   <Titre>stockSoiree.ajouterDiluant(nomBoisson, qtBoisson, typeBoisson)</Titre>
@@ -60,9 +60,9 @@ typeBoisson</PreAssertion>
                 <Action>
                   <Position>795;285</Position>
                   <StyleLien>1</StyleLien>
-                  <PreAssertion>stockSoiree
-nomBoisson
-qtBoisson
+                  <PreAssertion>stockSoiree&#xd;
+nomBoisson&#xd;
+qtBoisson&#xd;
 typeBoisson</PreAssertion>
                   <PostAssertion>stockSoiree</PostAssertion>
                   <Titre>stockSoiree.ajouterAutres(nomBoisson, qtBoisson, typeBoisson)</Titre>
