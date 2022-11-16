@@ -54,8 +54,14 @@ article>p{
 .verres{
     width:50px;
 }
+.shots{
+    width:30px;
+}
 .egals{
     font-size: 40px;
     text-align: center;
     font-weight: bold;
+}
+.imagesRestes{
+    grid-column: span 2;
 }
