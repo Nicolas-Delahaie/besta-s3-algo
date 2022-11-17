@@ -82,7 +82,7 @@
 
         /* --------------------------------- SETEUR --------------------------------- */
 
-        function setLAlcools($nouvelAlcool){
+        function setLAlcools($nouveauAlcool){
                 array_push($this->lAlcools, $nouveauAlcool);
         }
         
@@ -90,7 +90,7 @@
                 array_push($this->lDiluants, $nouveauDiluant);
         }
 
-        function setLAutres($nouvelAutre){
+        function setLAutres($nouveauAutre){
                 array_push($this->lAutre, $nouveauAutre);
         }
 
@@ -98,7 +98,7 @@
         /* -------------------------------- TO STRING ------------------------------- */
 
         function toString(){
-            $message="La liste d'alcools contient : ".$this->getAlcools().", la liste de diluants contient : ".$this->getLDilants().", la liste des autres boissons contient : ".$this->getLAutres();
+            $message="La liste d'alcools contient : ".$this->getLAlcools().", la liste de diluants contient : ".$this->getLDilants().", la liste des autres boissons contient : ".$this->getLAutres();
             return($message); //pour afficher le message il faudra faire un print_r
         }
 
