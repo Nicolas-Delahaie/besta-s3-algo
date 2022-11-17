@@ -73,7 +73,7 @@
         function getLAlcools (){
             return ($this->lAlcools);
         }        
-        function getLDilants (){
+        function getLDiluants (){
             return ($this->lDiluants);
         }        
         function getLAutres (){
@@ -91,14 +91,14 @@
         }
 
         function setLAutres($nouveauAutre){
-                array_push($this->lAutre, $nouveauAutre);
+                array_push($this->lAutres, $nouveauAutre);
         }
 
 
         /* -------------------------------- TO STRING ------------------------------- */
 
         function toString(){
-            $message="La liste d'alcools contient : ".$this->getLAlcools().", la liste de diluants contient : ".$this->getLDilants().", la liste des autres boissons contient : ".$this->getLAutres();
+            $message="La liste d'alcools contient : ".$this->getLAlcools().", la liste de diluants contient : ".$this->getLDiluants().", la liste des autres boissons contient : ".$this->getLAutres();
             return($message); //pour afficher le message il faudra faire un print_r
         }
 
