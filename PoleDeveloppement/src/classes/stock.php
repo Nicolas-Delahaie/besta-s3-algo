@@ -4,7 +4,7 @@
 
     print("tu est dans la classe stock");
 
-    class stock{
+    class Stock{
 
         /* -------------------------------------------------------------------------- */
         /*                                  ATTRIBUTS                                 */
