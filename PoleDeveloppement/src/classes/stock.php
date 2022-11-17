@@ -11,7 +11,7 @@
         /* -------------------------------------------------------------------------- */
         private $lAlcools;
         private $lDiluants;
-        private $lAutre;
+        private $lAutres;
 
         /* -------------------------------------------------------------------------- */
         /*                                CONSTRUCTEUR                                */
@@ -21,7 +21,7 @@
         {
             $lAlcools = array();
             $lDiluants = array();
-            $lAutre = array();
+            $lAutres = array();
 
             $nbArguments= func_num_args();
             $tabArguments=func_get_args(); 
@@ -40,7 +40,7 @@
                             break;
                         
                         case 3:
-                            $this->setLAutre($tabArguments[$i]);
+                            $this->setLAutres($tabArguments[$i]);
                             break;
                         default:
                             print("les parametres ne sont pas bons, les paramètres doivent etre soit nuls, soit des objets de type boisson");
@@ -82,31 +82,16 @@
 
         /* --------------------------------- SETEUR --------------------------------- */
 
-        function setLAlcools(){
-            $nbArguments= func_num_args();
-            $tabArguments=func_get_args(); 
-
-            for ($i = 0; $i <= $nbArguments; $i++) {
-                array_push($this->lAlcools, $nouvelAlcool[$i]);
-            }
+        function setLAlcools($nouvelAlcool){
+                array_push($this->lAlcools, $nouveauAlcool);
         }
         
         function setLDiluants($nouveauDiluant){
-            $nbArguments= func_num_args();
-            $tabArguments=func_get_args(); 
-
-            for ($i = 0; $i <= $nbArguments; $i++) {
-                array_push($this->lDiluants, $nouveauDiluant[$i]);
-            }
+                array_push($this->lDiluants, $nouveauDiluant);
         }
 
         function setLAutres($nouvelAutre){
-            $nbArguments= func_num_args();
-            $tabArguments=func_get_args(); 
-
-            for ($i = 0; $i <= $nbArguments; $i++) {
-                array_push($this->lAutre, $nouvelAutre[$i]);
-            }
+                array_push($this->lAutre, $nouveauAutre);
         }
 
 
