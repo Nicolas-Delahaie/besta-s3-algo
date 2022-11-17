@@ -15,7 +15,6 @@
         
         function __construct()
         {
-
             $nbArguments= func_num_args();
             $tabArguments=func_get_args();
 
