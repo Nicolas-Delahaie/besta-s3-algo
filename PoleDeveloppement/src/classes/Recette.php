@@ -9,9 +9,9 @@
         /* -------------------------------------------------------------------------- */
 
         private $nomRecette;
-        private $alcool = new Boisson();
+        private $alcool;
 
-        private $diluant = new Boisson();
+        private $diluant;
 
         private $qtRecette;
         
@@ -123,7 +123,7 @@
         /* -------------------------------- TO STRING -------------------------------- */
 
         function toString(){
-            $message = "Le nom de la recette est : ".$this->getNomRecette().", l'alcool de cette recette est : ".$this->getAlcool().", le diluant de cette recette est : ".$this->getDiluant().", la quantite de cette recette est de : ".$this->getQtRecette()." L, la quantite d'alcool est de : ".$this->getQtAlcool()." L, la quantite de diluant est de : ".$this->getQtDiluant()." L et la valeur de cette recette est de : ".$this->getValeur();
+            $message = "Le nom de la recette est : ".$this->getNomRecette().", l'alcool de cette recette est : ".$this->getAlcool()->toString().", le diluant de cette recette est : ".$this->getDiluant()->toString().", la quantite de cette recette est de : ".$this->getQtRecette()." L, la quantite d'alcool est de : ".$this->getQtAlcool()." L, la quantite de diluant est de : ".$this->getQtDiluant()." L et la valeur de cette recette est de : ".$this->getValeur();
             return ($message);
         }
     }
