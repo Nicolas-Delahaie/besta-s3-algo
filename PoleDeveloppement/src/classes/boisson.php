@@ -1,8 +1,5 @@
 <?php
-
-    print("tu est dans la classe boisson");
-
-    class boisson{
+    class Boisson{
 
         /* -------------------------------------------------------------------------- */
         /*                                  ATTRIBUTS                                 */
@@ -46,7 +43,7 @@
                     
                     break;
                 default:
-                    print("les parametres ne sont pas bons, les paramètres doivent etre soit nul, soit un objet de type boisson, soit quatres parametres (nomBoisson, typeBoisson,qtBoissonInitiale,qtBoissonEnCours");
+                    print("les parametres ne sont pas bon, les paramètres doivent etre soit nul, soit un objet de type Boisson, soit quatres parametres (nomBoisson, typeBoisson, qtBoissonInitiale, qtBoissonEnCours)");
                     break;
             }   
         }
