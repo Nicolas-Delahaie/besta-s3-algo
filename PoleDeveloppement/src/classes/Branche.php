@@ -58,11 +58,15 @@
 
         /* -------------------------------- TO STRING ------------------------------- */
         function toString(){
-            $message = "Je suis la branche consommant ".$this->qtBranche." L d'alcool et ayant pour valeur total ".$this->qtValeur.".<br>J'ai comme suite de cocktails : ";
-            while ($this->pRecette != array())
+            //Retourne la branche de la forme branche(volume utilise : X, valeur totale : X, suite de cocktails : X - X - Z)
+            $message = "Branche (volume utilise : $this->qtBranche, valeur totale : $this->qtValeur, suite de cocktails : ";
+
+            $copiePile = $this->pRecette;
+            while ($copiePile != array())
             {
-                $message = $message.array_pop($this->pRecette)." - ";
+                $message = $message.array_pop($copiePile)->getNomRecette()." - ";
             }
+            $message = $message.")";
             return($message);
         }
 
@@ -70,9 +74,5 @@
         /*                            METHODES SPECIFIQUES                            */
         /* -------------------------------------------------------------------------- */
     }
-
-    
-    $branche = new Branche(array("VODKA", "ANNANAS", "CACTUS"), 66, 911);
-    print($branche->toString());
 ?>
 

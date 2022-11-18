@@ -1,6 +1,5 @@
 <?php
 
-    include 'boisson.php';
 
     print("tu est dans la classe stock");
 
