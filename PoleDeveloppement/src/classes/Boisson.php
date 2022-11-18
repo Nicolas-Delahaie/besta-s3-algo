@@ -31,9 +31,14 @@
          */
         function __construct()
         {
+<<<<<<< HEAD:PoleDeveloppement/src/classes/boisson.php
 
             $nbArguments= func_num_args();      //Nombre de parametres recu par le constructeur
             $tabArguments=func_get_args();      //Stock les parametre dans un tableau
+=======
+            $nbArguments= func_num_args();
+            $tabArguments=func_get_args();
+>>>>>>> f173f02c098b5c706b9476bd69bfb015e0e43dd3:PoleDeveloppement/src/classes/Boisson.php
 
             switch ($nbArguments) {
 
