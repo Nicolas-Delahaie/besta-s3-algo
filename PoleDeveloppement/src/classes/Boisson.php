@@ -7,7 +7,7 @@
 
 
     /**
-     * @brief Classe Boisson comportant un nom, un type, une quantité initiale et la quantité de boisson en cours
+     * @brief classe Boisson comportant un nom, un type, une quantité initiale et la quantité de boisson en cours
      */
     class Boisson{
 
@@ -31,14 +31,10 @@
          */
         function __construct()
         {
-<<<<<<< HEAD:PoleDeveloppement/src/classes/boisson.php
 
             $nbArguments= func_num_args();      //Nombre de parametres recu par le constructeur
-            $tabArguments=func_get_args();      //Stock les parametre dans un tableau
-=======
-            $nbArguments= func_num_args();
-            $tabArguments=func_get_args();
->>>>>>> f173f02c098b5c706b9476bd69bfb015e0e43dd3:PoleDeveloppement/src/classes/Boisson.php
+            $tabArguments=func_get_args();      //Stocke les parametre dans un tableau
+
 
             switch ($nbArguments) {
 
@@ -119,7 +115,6 @@
          * @brief permet de modifier l'attribut nomBoisson
          * @param string nouveauNomBoisson
          */
-    
         function setNomBoisson($nouveauNomBoisson){
             $this->nomBoisson=$nouveauNomBoisson;
         }
