@@ -32,7 +32,7 @@
                     $this->typeBoisson=$tabArguments[0]->typeBoisson;
                     $this->qtBoissonInitiale=$tabArguments[0]->qtBoissonInitiale;
                     $this->qtBoissonEnCours=$tabArguments[0]->qtBoissonEnCours;
-                    
+        
                     break;
                 
                 case 4:
