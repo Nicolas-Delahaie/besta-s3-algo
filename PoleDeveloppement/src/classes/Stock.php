@@ -5,7 +5,7 @@
     *@version 6.0
     */
 
-    require_once('boisson.php');
+    // require_once('boisson.php');
 
     /**
      * @brief Classe Stock comportant une liste d'alcools, une liste de diluants et une 
@@ -52,15 +52,15 @@
                 for ($i = 0; $i <= $nbArguments - 1; $i++) { //Sinon pour chaque argument passé en paramètre :
             
                     switch ($tabArguments[$i]->getTypeBoisson()) { //On regarde quel est le type de cette boisson
-                        case 1: //Si c'est de type 1 (alccol)
+                        case "Alcool": //Si c'est de type 1 (alccol)
                             $this->setLAlcools($tabArguments[$i]); //on l'ajoute à la liste d'alcools
                             break;
                         
-                        case 2://Si c'est de type 2 (diluant)
+                        case "Diluant"://Si c'est de type 2 (diluant)
                             $this->setLDiluants($tabArguments[$i]); //on l'ajoute à la liste de diluants 
                             break;
                         
-                        case 3: //Si c'est le type 3 (autre)
+                        case "Autre": //Si c'est le type 3 (autre)
                             $this->setLAutres($tabArguments[$i]); //on l'ajoute à la liste de autres boissons
                             break;
 
