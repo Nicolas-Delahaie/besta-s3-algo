@@ -52,9 +52,9 @@
         function getQtValeur (){return ($this->qtValeur);}     
         
         /* --------------------------------- SETTERS --------------------------------- */
-        function setPRecette ($p){$this->pRecette = p;}  
-        function setQtBranche ($qtB){$this->qtBranche = qtB;}  
-        function setQtValeur ($qtV){$this->qtValeur = qtV;} 
+        function setPRecette ($p){$this->pRecette = $p;}  
+        function setQtBranche ($qtB){$this->qtBranche = $qtB;}  
+        function setQtValeur ($qtV){$this->qtValeur = $qtV;} 
 
         /* -------------------------------- TO STRING ------------------------------- */
         function toString(){
