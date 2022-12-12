@@ -15,6 +15,30 @@
 
 
 <?php
+    // include("../classes/Stock.php");
+    // include("../classes/Boisson.php");
+    // include("../classes/Recette.php");
+
+    // $recettesExistantes = array();
+    // $bdRecettes=fopen("../bdRecettes.txt", "r");
+    
+    // while (! (feof($bdRecettes))) {
+    //     $ligne = fgets($bdRecettes);
+    //     $ligneExplode = explode(",", $ligne);
+    //     $uneRecetteBD = new Recette();
+    //     $uneRecetteBD->setNomRecette($ligneExplode[0]." ".$ligneExplode[1]);
+    //     $uneRecetteBD->setAlcool($ligneExplode[0]);
+    //     $uneRecetteBD->setDiluant($ligneExplode[1]);
+        
+    //     array_push($recettesExistantes, $uneRecetteBD);
+    // }
+
+    // $coca=new Boisson("coca",2,10,10);
+    // $rhum=new Boisson("rhum",1,5,5);
+    
+    // $stockSoiree=new Stock ();
+    // $stockSoiree->setLDiluants($coca);
+    // $stockSoiree->setLAlcools($rhum);
 
 include("classes/Stock.php");
 include("classes/Boisson.php");

@@ -1,54 +1,42 @@
 <?php
-    include("../classes/Stock.php");
-    include("../classes/Boisson.php");
-    include("../classes/Recette.php");
+    /**
+     * Summary of rechercheRecettes
+     * @author oier Cesat <ocesat@iutbayonne.univ-pau.fr>
+     * @brief permet d'extrire toutes les recettes possibles grâce au stock de la soirée 
+     * @param mixed $stockSoiree
+     * @param mixed $recettesExistantes
+     * @return array liste de recette possible grâce à notre stock
+     */
+    function rechercheRecettes($stockSoiree ,$recettesExistantes){
 
-    $recettesExistantes = array();
-    $recettesTemp = array();
-    $recettesPossibles = array();
-    $bdRecettes=fopen("../bdRecettes.txt", "r");
-    
-    while (! (feof($bdRecettes))) {
-        $ligne = fgets($bdRecettes);
-        $ligneExplode = explode(",", $ligne);
-        $uneRecetteBD = new Recette();
-        $uneRecetteBD->setNomRecette($ligneExplode[0]." ".$ligneExplode[1]);
-        $uneRecetteBD->setAlcool($ligneExplode[0]);
-        $uneRecetteBD->setDiluant($ligneExplode[1]);
+        // Initialisation des listes
+        $recettesTemp = array();        //variable temporaire pour effectuer un deuxième tri dans une liste déjà triée une première fois 
+        $recettesPossibles = array();   //liste de recette possible grâce à notre stock
 
-        array_push($recettesExistantes, $uneRecetteBD);
-    }
+        //Instanciation des variables taille
+        $tailleStockSoireeAlcool=sizeof($stockSoiree->getLAlcools());
+        $tailleStockSoireeDiluant = sizeof($stockSoiree->getLDiluants());
+        $tailleRecettesExistantes = sizeof($recettesExistantes);
 
-    $coca=new Boisson("coca",2,10,10);
-    $rhum=new Boisson("rhum",1,5,5);
+        //Premiere boucle permetant de recherche les recettes pouvant être réalisées grâce au stock d'alcool
+        for ($i=0; $i <$tailleStockSoireeAlcool ; $i++) { 
+                for ($j=0; $j < $tailleRecettesExistantes; $j++) {
+                    if ($stockSoiree->getLAlcools()[$i]->getNomBoisson()==$recettesExistantes[$j]->getAlcool()) {
+                        array_push($recettesTemp, $recettesExistantes[$j]);
+                    }
+                }
+            }
 
-    $stockSoiree=new Stock ();
-    $stockSoiree->setLDiluants($coca);
-    $stockSoiree->setLAlcools($rhum);
+        //Instanciation de la taille de recettesTemp
+        $tailleRecettesTemp = sizeof($recettesTemp);
 
-    $tailleStockSoireeAlcool=sizeof($stockSoiree->getLAlcools());
-    $tailleStockSoireeDiluant = sizeof($stockSoiree->getLDiluants());
-    $tailleRecettesExistantes = sizeof($recettesExistantes);
-
-
-    for ($i=0; $i <$tailleStockSoireeAlcool ; $i++) { 
-        for ($j=0; $j < $tailleRecettesExistantes; $j++) {
-            if ($stockSoiree->getLAlcools()[$i]->getNomBoisson()==$recettesExistantes[$j]->getAlcool()) {
-                array_push($recettesTemp, $recettesExistantes[$j]);
+        //Deuxième boucle permetant de recherche les recettes pouvant être réalisées grâce au stock de diluant 
+        for ($i=0; $i <$tailleStockSoireeDiluant ; $i++) { 
+            for ($j=0; $j < $tailleRecettesTemp; $j++) {
+                if ($stockSoiree->getLDiluants()[$i]->getNomBoisson()==rtrim( $recettesTemp[$j]->getDiluant())) {
+                    array_push($recettesPossibles, $recettesTemp[$j]);
+                }
             }
         }
-    }
-
-$tailleRecetteTemp = sizeof($recettesTemp);
-
-    for ($i=0; $i <$tailleStockSoireeDiluant ; $i++) { 
-        for ($j=0; $j < $tailleRecetteTemp; $j++) {
-
-            if ($stockSoiree->getLDiluants()[$i]->getNomBoisson()==rtrim( $recettesTemp[$j]->getDiluant())) {
-                echo "salut";
-                array_push($recettesPossibles, $recettesTemp[$j]);
-            }
-        }
-    }
-
-    print_r($recettesPossibles);
+    return $recettesPossibles;
+    };
