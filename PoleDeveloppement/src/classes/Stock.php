@@ -103,6 +103,20 @@
             array_push($this->lAutres, $nouveauAutre);//On ajoute a la liste des autres boissons, la boisson passée en paramètre
         }
 
+        /* --------------------------------- SUPPRESSION --------------------------------- */
+
+        function supprLAlcools($alcool){
+            unset($this->lAlcools[array_search($alcool, $this->lAlcools)]);//Supprime la boisson alcool passée en paramètre
+        }
+
+        function supprLDiluants($diluant){
+            unset($this->lDiluants[array_search($diluant, $this->lDiluants)]);//Supprime la boisson diluant passée en paramètre
+        }
+
+        function supprLAutres($autre){
+            unset($this->lAutres[array_search($autre, $this->lAutres)]); //Supprime la boisson autre passée en paramètre
+        }
+
         /* -------------------------------- TO STRING ------------------------------- */
 
         function toString(){
