@@ -2,12 +2,12 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>Algo_Global_Besta</nom>
-  <date_creation>14/11/2022 14:48</date_creation>
+  <date_creation>12/12/2022 19:24</date_creation>
   <Elements>
     <Action>
       <Position>477;43</Position>
       <StyleLien>2</StyleLien>
-      <PreAssertion>bdBoissons
+      <PreAssertion>bdBoissons&#xd;
 recetteExistantes</PreAssertion>
       <PostAssertion>?</PostAssertion>
       <Titre>Gestion Cocktails</Titre>
@@ -27,10 +27,10 @@ recetteExistantes</PreAssertion>
         <Action>
           <Position>52;213</Position>
           <StyleLien>1</StyleLien>
-          <PreAssertion>bdBoissons
+          <PreAssertion>bdBoissons&#xd;
 tailleBdBoissons</PreAssertion>
           <PostAssertion>stockSoiree</PostAssertion>
-          <Titre>Saisie vérif
+          <Titre>Saisie vérif&#xd;
 utilisateur</Titre>
           <DetailsVisible>1</DetailsVisible>
           <DetailsVideVisible>1</DetailsVideVisible>
@@ -39,7 +39,7 @@ utilisateur</Titre>
         <Action>
           <Position>210;360</Position>
           <StyleLien>1</StyleLien>
-          <PreAssertion>stockSoiree
+          <PreAssertion>stockSoiree&#xd;
 recetteExistantes</PreAssertion>
           <PostAssertion>recettesPossibles</PostAssertion>
           <Titre>Recherche recette</Titre>
@@ -50,10 +50,10 @@ recetteExistantes</PreAssertion>
         <Action>
           <Position>466;214</Position>
           <StyleLien>1</StyleLien>
-          <PreAssertion>recettesPossibles
-DOSE_ALCOOL
+          <PreAssertion>recettesPossibles&#xd;
+DOSE_ALCOOL&#xd;
 DOSE_DILUANT</PreAssertion>
-          <PostAssertion>recettesPossibles
+          <PostAssertion>recettesPossibles&#xd;
 qtMax</PostAssertion>
           <Titre>Calcule des quantités</Titre>
           <DetailsVisible>1</DetailsVisible>
@@ -73,7 +73,7 @@ qtMax</PostAssertion>
         <Action>
           <Position>1126;201</Position>
           <StyleLien>1</StyleLien>
-          <PreAssertion>recettesPossibles
+          <PreAssertion>recettesPossibles&#xd;
 qtMax</PreAssertion>
           <PostAssertion>meilleursCombinaison</PostAssertion>
           <Titre>SacApo</Titre>
