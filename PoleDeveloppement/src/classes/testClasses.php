@@ -6,7 +6,10 @@
 
     $biere = new Boisson("Biere", "Autre",5,5 );
     
+    $rhum = new Boisson("Rhum", "Alcool", 8, 8);
+
     $ricard = new Boisson("Ricard", "Alcool", 10, 10);
+    
     print($ricard->toString());
     
     echo "<br/><br/>";
@@ -21,8 +24,15 @@
     
     echo "<br/><br/>";
 
-    $stock = new Stock($ricard,$biere);
+    $stock = new Stock($ricard,$biere,$rhum);
     print($stock->toString());
+
+
+    echo "<br/><br/>";echo "<br/><br/>";
+
+    print(sizeof($stock->getLAlcools()));
+
+    
     
     echo "<br/><br/>";
 ?>

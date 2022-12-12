@@ -81,55 +81,14 @@
         /* --------------------------------- GETEUR --------------------------------- */
 
         function getLAlcools (){
-            
-            if ($this->lAlcools != []){ //On regarde si notre liste n'est pas vide
-                $nbAlcools = count($this->lAlcools); //On compte le nombre d'éléments présents dans la liste des alcools
-                $listeDesAlcools = ""; //On prepare le message a afficher
-
-                for ($i = 0; $i <= $nbAlcools - 1; $i++){ //Pour chaque alcool
-                    $nomAlcool= $this->lAlcools[$i]->getNomBoisson(); //On récupére son nom
-                    $listeDesAlcools = $listeDesAlcools." ".$nomAlcool; //On le concatène avec les autres noms
-                    }
-                }
-
-            else { //Si la liste des alcools est vide
-                $listeDesAlcools = "aucuns alcools"; 
-            }    
-            return ($listeDesAlcools);
+            return $this->lAlcools;
         }    
 
         function getLDiluants (){
-
-            if ($this->lDiluants != []){ //On regarde si notre liste n'est pas vide
-                $nbDiluant = count($this->lDiluants); //On compte le nombre d'éléments présents dans la liste des diluants
-                $listeDesDiluants = "";//On prepare le message a afficher
-
-                for ($i = 0; $i <= $nbDiluant - 1; $i++){ //pour chaque diluants
-                    $nomDiluant= $this->lDiluants[$i]->getNomBoisson();//On récupère son nom
-                    $listeDesDiluants = $listeDesDiluants." ".$nomDiluant; //On le concatène avec les autres noms
-                    }
-                }
-            else {
-                $listeDesDiluants = "aucuns diluants";
-            }    
-            return ($listeDesDiluants);
+            return $this -> lDiluants;
         }        
-        function getLAutres (){
-
-            if ($this ->lAutres != []) {//On regarde si notre liste n'est pas vide
-                $nbAutre = count($this->lAutres); //On compte le nombre d'éléments présents dans la liste des autres boissons
-                $listeDesAutres = "";//On prepare le message a afficher
-                
-                for ($i = 0; $i <= $nbAutre - 1; $i++){ //pour chaque autres boissons
-                    $nomAutre= $this->lAutres[$i]->getNomBoisson(); //on récupère son nom
-                    $listeDesAutres = $listeDesAutres." ".$nomAutre; //On le concatène avec les autres noms
-                    }
-            }
-
-            else {
-                $listeDesAutres = "aucunes autres boissons";
-            }
-            return ($listeDesAutres);
+        function getLAutres (){       
+            return $this -> lAutres;
         }              
 
         /* --------------------------------- SETEUR --------------------------------- */
@@ -147,7 +106,48 @@
         /* -------------------------------- TO STRING ------------------------------- */
 
         function toString(){
-            $message= "La liste d'alcools contient : ".$this->getLAlcools(). " ; la liste des diluants contient : ".$this->getLDiluants(). " ; la liste des autres boissons contient : ".$this->getLAutres(); //On récupére chaque liste de boissons et on les concatènes
+            if ($this->lAlcools != []){ //On regarde si notre liste n'est pas vide
+                $nbAlcools = count($this->lAlcools); //On compte le nombre d'éléments présents dans la liste des alcools
+                $listeDesAlcools = ""; //On prepare le message a afficher
+
+                for ($i = 0; $i <= $nbAlcools - 1; $i++){ //Pour chaque alcool
+                    $nomAlcool= $this->lAlcools[$i]->getNomBoisson(); //On récupére son nom
+                    $listeDesAlcools = $listeDesAlcools." ".$nomAlcool; //On le concatène avec les autres noms
+                    }
+                }
+
+            else { //Si la liste des alcools est vide
+                $listeDesAlcools = "aucuns alcools"; 
+            }    
+            
+            if ($this->lDiluants != []){ //On regarde si notre liste n'est pas vide
+                $nbDiluant = count($this->lDiluants); //On compte le nombre d'éléments présents dans la liste des diluants
+                $listeDesDiluants = "";//On prepare le message a afficher
+
+                for ($i = 0; $i <= $nbDiluant - 1; $i++){ //pour chaque diluants
+                    $nomDiluant= $this->lDiluants[$i]->getNomBoisson();//On récupère son nom
+                    $listeDesDiluants = $listeDesDiluants." ".$nomDiluant; //On le concatène avec les autres noms
+                    }
+                }
+            else {
+                $listeDesDiluants = "aucuns diluants";
+            }    
+
+            if ($this ->lAutres != []) {//On regarde si notre liste n'est pas vide
+                $nbAutre = count($this->lAutres); //On compte le nombre d'éléments présents dans la liste des autres boissons
+                $listeDesAutres = "";//On prepare le message a afficher
+                
+                for ($i = 0; $i <= $nbAutre - 1; $i++){ //pour chaque autres boissons
+                    $nomAutre= $this->lAutres[$i]->getNomBoisson(); //on récupère son nom
+                    $listeDesAutres = $listeDesAutres." ".$nomAutre; //On le concatène avec les autres noms
+                    }
+            }
+
+            else {
+                $listeDesAutres = "aucunes autres boissons";
+            }
+
+            $message= "La liste d'alcools contient : ". $listeDesAlcools . " ; la liste des diluants contient : ". $listeDesDiluants . " ; la liste des autres boissons contient : ". $listeDesAutres; //On récupére chaque liste de boissons et on les concatènes
             return $message;
 
         /* -------------------------------------------------------------------------- */
