@@ -3,6 +3,7 @@
     include ("Boisson.php");
     include ("Branche.php");
     include ("Stock.php");
+    include ("calculQuantiteMax.php");
 
     $biere = new Boisson("Biere", "Autre",5,5 );
     
@@ -25,14 +26,22 @@
     echo "<br/><br/>";
 
     $stock = new Stock($ricard,$biere,$rhum);
-    print($stock->toString());
 
-
-    echo "<br/><br/>";echo "<br/><br/>";
-
-    print(sizeof($stock->getLAlcools()));
-
-    
-    
     echo "<br/><br/>";
+
+    print($stock->toString());
+    echo "<br/>";
+    print(sizeof($stock->getLAlcools()) . " Alcools");
+
+    echo "<br/>";
+    echo "<br/>";
+
+
+    $stock->supprLAlcools($rhum);
+    $stock->supprLAutres($biere);
+
+
+    print($stock->toString());
+    echo "<br/>";
+    print(sizeof($stock->getLAlcools()) . " Alcool");
 ?>
