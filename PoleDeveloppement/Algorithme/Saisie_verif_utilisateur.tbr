@@ -2,15 +2,15 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>Saisie verif utilisateur</nom>
-  <date_creation>9/11/2022 16:25</date_creation>
+  <date_creation>21/11/2022 15:36</date_creation>
   <Elements>
     <Action>
       <Position>191;290</Position>
       <StyleLien>2</StyleLien>
-      <PreAssertion>bdBoissons
+      <PreAssertion>bdBoissons&#xd;
 tailleBdBoissons</PreAssertion>
       <PostAssertion>stockSoiree</PostAssertion>
-      <Titre>Saisie vérif
+      <Titre>Saisie vérif&#xd;
 utilisateur</Titre>
       <DetailsVisible>1</DetailsVisible>
       <DetailsVideVisible>1</DetailsVideVisible>
@@ -25,7 +25,7 @@ utilisateur</Titre>
               <Position>26;581</Position>
               <StyleLien>1</StyleLien>
               <PreAssertion>?</PreAssertion>
-              <PostAssertion>nomBoisson
+              <PostAssertion>nomBoisson&#xd;
 qtBoisson</PostAssertion>
               <Titre>Saisie de l'utilisateur</Titre>
               <DetailsVisible>1</DetailsVisible>
@@ -35,7 +35,7 @@ qtBoisson</PostAssertion>
             <Iteration>
               <Position>655.5;542.5</Position>
               <StyleLien>1</StyleLien>
-              <Titre>pour i allant de 0
+              <Titre>pour i allant de 0&#xd;
 à tailleBdBoissons</Titre>
               <IterationFixe>1</IterationFixe>
               <Enfants>
@@ -56,10 +56,10 @@ qtBoisson</PostAssertion>
                               <Titre>Alcool</Titre>
                               <Enfants>
                                 <Procedure>
-                                  <Position>43;927</Position>
+                                  <Position>3;926</Position>
                                   <StyleLien>1</StyleLien>
-                                  <PreAssertion>nomBoisson
-qtBoisson
+                                  <PreAssertion>nomBoisson&#xd;
+qtBoisson&#xd;
 bdBoissons[i].getTypeBoisson()</PreAssertion>
                                   <PostAssertion>stockSoiree</PostAssertion>
                                   <Titre>ajouterStockSoiree</Titre>
@@ -68,7 +68,7 @@ bdBoissons[i].getTypeBoisson()</PreAssertion>
                                   <Enfants/>
                                 </Procedure>
                                 <Sortie>
-                                  <Position>565;974</Position>
+                                  <Position>620;1126</Position>
                                 </Sortie>
                               </Enfants>
                             </operation>
@@ -78,8 +78,8 @@ bdBoissons[i].getTypeBoisson()</PreAssertion>
                                 <Procedure>
                                   <Position>640;941</Position>
                                   <StyleLien>1</StyleLien>
-                                  <PreAssertion>nomBoisson
-qtBoisson
+                                  <PreAssertion>nomBoisson&#xd;
+qtBoisson&#xd;
 bdBoissons[i].getTypeBoisson()</PreAssertion>
                                   <PostAssertion>stockSoiree</PostAssertion>
                                   <Titre>ajouterStockSoiree</Titre>
@@ -98,8 +98,8 @@ bdBoissons[i].getTypeBoisson()</PreAssertion>
                                 <Procedure>
                                   <Position>1249;934</Position>
                                   <StyleLien>1</StyleLien>
-                                  <PreAssertion>nomBoisson
-qtBoisson
+                                  <PreAssertion>nomBoisson&#xd;
+qtBoisson&#xd;
 bdBoissons[i].getTypeBoisson()</PreAssertion>
                                   <PostAssertion>stockSoiree</PostAssertion>
                                   <Titre>ajouterStockSoiree</Titre>
