@@ -14,11 +14,11 @@
         /**
          * @brief A REMPLIR (pRecette)
          */
-        private $pRecette
+        private $pRecette;
         /**
          * @brief A REMPLIR (qtBranche)
          */
-        private $qtBranche
+        private $qtBranche;
         /**
          * @brief A REMPLIR (qtValeur)
          */
