@@ -1,52 +1,58 @@
 <?php
-include("../classes/Stock.php");
-include("../classes/Boisson.php");
+/**
+ * Summary of remplirStock
+ * @brief remplie le stock de la soirée selon ce que l'utilisateur à rempli
+ * @param array $bdBoissons liste de boisson contenue dans notre base de donnée
+ * @param int $tailleBdBoissons taille de la liste bdBoisson
+ * @param Stock $stockSoiree objet contenant la liste des boissons de la soirée
+ * @return Stock $stockSoiree objet contenant la liste des boissons de la soirée
+ */
+function remplirStock ($bdBoissons, $tailleBdBoissons, $stockSoiree) {
 
-$bdBoisson = array();
-$stockSoiree = new Stock();
+    // Récupération du nom et de la quantité fourinie par l'utilisateur
+    $resultatSaisieVerif = saisiVerif();
 
-$fichierBdBoisson = fopen("../bdBoisson.txt", "r");
-    while (!(feof($fichierBdBoisson))) {
-        $ligne=fgets($fichierBdBoisson);
-        $ligneExplode=explode(",",$ligne);
-        $boissonObjet = new Boisson($ligneExplode[0], $ligneExplode[1], 0, 0);
-        array_push($bdBoisson, $boissonObjet);
-    }
-fclose($fichierBdBoisson);
+    //Création d'une variable temporaire $boissonSaisie
+    $boissonSaisie = new Boisson($resultatSaisieVerif[0], 0, $resultatSaisieVerif[1], $resultatSaisieVerif[1]);
 
-$tailleBdBoisson= sizeof($bdBoisson);
+    //Parcours de la liste $bdBoisson afin de trouver la boisson qui comporte le même nom
+    for ($i = 0; $i < $tailleBdBoissons; $i++) {
+        if ($bdBoissons[$i]->getNomBoisson() == $boissonSaisie->getNomBoisson()) {
+            switch ($bdBoissons[$i]->getTypeBoisson()) {
 
-$resultatSaisieVerif = saisiVerif();
-$boissonSaisie = new Boisson($resultatSaisieVerif[0], 0, $resultatSaisieVerif[1], $resultatSaisieVerif[1]);
+                //Si la boisson est de type 1:alcool
+                case 1:
+                    $boissonSaisie->setTypeBoisson($bdBoissons[$i]->getTypeBoisson());
 
-for ($i=0; $i < $tailleBdBoisson; $i++) { 
-    if ($bdBoisson[$i]->getNomBoisson()==$boissonSaisie->getNomBoisson()) {
-        switch ($bdBoisson[$i]->getTypeBoisson()) {
-            case 1:
-                $boissonSaisie->setTypeBoisson($bdBoisson[$i]->getTypeBoisson());
-                $stockSoiree->setLAlcools($boissonSaisie);
-                break;
-            case 2:
-                $boissonSaisie->setTypeBoisson($bdBoisson[$i]->getTypeBoisson());
-                $stockSoiree->setLDiluants($boissonSaisie);
-                break;
-            case 3:
-                $boissonSaisie->setTypeBoisson($bdBoisson[$i]->getTypeBoisson());
-                $stockSoiree->setLAutres($boissonSaisie);
-                break;
+                    //Ajout de $boissonSaisie dans la liste d'alcool de $stockSoiree
+                    $stockSoiree->setLAlcools($boissonSaisie);
+                    break;
 
-            default:
-                echo "erreur dans le switch";
-                break;
+                //Si la boisson est de type 2:diluant
+                case 2:
+                    $boissonSaisie->setTypeBoisson($bdBoissons[$i]->getTypeBoisson());
+
+                    //Ajout de $boissonSaisie dans la liste de diluant de $stockSoiree
+                    $stockSoiree->setLDiluants($boissonSaisie);
+                    break;
+
+                //Si la boisson est de type 1:autre
+                case 3:
+                    $boissonSaisie->setTypeBoisson($bdBoissons[$i]->getTypeBoisson());
+
+                    //Ajout de $boissonSaisie dans la liste autres de $stockSoiree
+                    $stockSoiree->setLAutres($boissonSaisie);
+                    break;
+
+                //Si la fonction comporte un probleme 
+                default:
+                    echo "erreur dans le switch";
+                    break;
+            }
         }
     }
-}
-
-echo $stockSoiree->toString();
-
-
-
-// header("Location: ../index.php");
+    return $stockSoiree;
+};
 
 /**
  * @author @oiercesat <ocesat@iutbayonne.univ-pau.fr>
