@@ -33,6 +33,13 @@
     //-------------------
     //--- FONCTIONS  ----
     //-------------------
+    // -- Tests fonction creerRecette --
+    include ("fonctions/creationRecette.php");
+    $recettes = creerRecette("./datas/bdRecettes.json");
+    foreach ($recettes as $recette) {
+        echo ($recette->toString()."<br/><br/>");
+    }
+
     /**
      * @warning Ne fonctionne pas car calculQuantiteMax inclu egalement Stock
      */
