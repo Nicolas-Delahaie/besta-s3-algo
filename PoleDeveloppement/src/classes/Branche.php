@@ -12,26 +12,26 @@
         /*                                  ATTRIBUTS                                 */
         /* -------------------------------------------------------------------------- */
         /**
-         * @brief A REMPLIR (pRecette)
+         * @brief Pile des cocktails fabriqués dans la branche entière
          */
-        private $pRecette;
+        private $pCocktails;
         /**
-         * @brief A REMPLIR (qtBranche)
+         * @brief Volume total des cocktails de la branche entière
          */
-        private $qtBranche;
+        private $volumeTotal;
         /**
-         * @brief A REMPLIR (qtValeur)
+         * @brief Total des valeurs de la branche entière
          */
-        private $qtValeur;
-
+        private $valeurTotale;
+        
         /* -------------------------------------------------------------------------- */
         /*                                CONSTRUCTEUR                                */
         /* -------------------------------------------------------------------------- */
         /**
          * @brief Constructeur par defaut, par copie ou avec parametres
-         * @param attribut 1 de la classe : pRecette
-         * @param attribut 2 de la classe : qtBranche
-         * @param attribut 2 de la classe : qtValeur
+         * @param attribut 1 de la classe : pCocktails
+         * @param attribut 2 de la classe : volumeTotal
+         * @param attribut 2 de la classe : valeurTotale
          */
         function __construct()
         {
@@ -41,23 +41,23 @@
             switch ($nbArguments) {
                 case 0:
                     //Aucun parametres
-                    $this->pRecette= array();
-                    $this->qtBranche=0;
-                    $this->qtValeur=0;
+                    $this->pCocktails= array();
+                    $this->volumeTotal=0;
+                    $this->valeurTotale=0;
                     break;
                 
                 case 1:
                     //Constructeur par reference
-                    $this->pRecette=$tabArguments[0]->pRecette;
-                    $this->qtBranche=$tabArguments[0]->qtBranche;
-                    $this->qtValeur=$tabArguments[0]->qtValeur;
+                    $this->pCocktails=$tabArguments[0]->pCocktails;
+                    $this->volumeTotal=$tabArguments[0]->volumeTotal;
+                    $this->valeurTotale=$tabArguments[0]->valeurTotale;
                     break;
                 
                 case 3:
                     //Tous les parametres sont inscrits
-                    $this->pRecette=$tabArguments[0];
-                    $this->qtBranche=$tabArguments[1];
-                    $this->qtValeur=$tabArguments[2];
+                    $this->pCocktails=$tabArguments[0];
+                    $this->volumeTotal=$tabArguments[1];
+                    $this->valeurTotale=$tabArguments[2];
                     break;
 
                 default:
@@ -71,50 +71,61 @@
 
         /* --------------------------------- GETTERS --------------------------------- */
         /**
-         * @return l'attribut 1 de la classe : pRecette
+         * @return pCocktails
          */
-        function getPRecette (){return ($this->pRecette);}
+        function getPCocktails (){return ($this->pCocktails);}
         /**
-         * @return l'attribut 2 de la classe : qtBranche
+         * @return volumeTotal
          */
-        function getQtBranche (){return ($this->qtBranche);}  
+        function getVolumeTotal (){return ($this->volumeTotal);}  
         /**
-         * @return l'attribut 3 de la classe : qtValeur
+         * @return valeurTotale
          */
-        function getQtValeur (){return ($this->qtValeur);}     
+        function getValeurTotale (){return ($this->valeurTotale);}     
+        
+        
         
         /* --------------------------------- SETTERS --------------------------------- */
         /**
-         * @brief set l'attribut 1 pRecette
-         * @param pRecette
+         * @brief Set la pile des cocktails fabriqués dans la branche entière
+         * @param pCocktails
          */
-        function setPRecette ($p){$this->pRecette = $p;}  
+        function setpCocktails ($p){$this->pCocktails = $p;}  
         /**
-         * @brief set l'attribut 1 pRecette
-         * @param qtBranche
+         * @brief Set le volume total des cocktails de la branche entière
+         * @param volumeTotal
          */
-        function setQtBranche ($qtB){$this->qtBranche = $qtB;}  
+        function setVolumeTotal ($qtB){$this->volumeTotal = $qtB;}  
         /**
-         * @brief set l'attribut 1 pRecette
-         * @param qtValeur
+         * @brief Set le total des valeurs de la branche entière
+         * @param valeurTotale
          */
-        function setQtValeur ($qtV){$this->qtValeur = $qtV;} 
+        function setValeurTotale ($qtV){$this->valeurTotale = $qtV;} 
 
         /* -------------------------------- TO STRING ------------------------------- */
         /**
          * @brief Traduit la branche en une chaine de caracteres
-         * @return Chaine de caractere representant l objet
+         * @return String
          */
         function toString(){
             //Retourne la branche de la forme branche(volume utilise : X, valeur totale : X, suite de cocktails : X - X - Z)
-            $message = "Branche (volume utilise : $this->qtBranche, valeur totale : $this->qtValeur, suite de cocktails : ";
+            $message = "Branche (volume utilise : $this->volumeTotal, valeur totale : $this->valeurTotale, suite de cocktails : (";
 
-            $copiePile = $this->pRecette;
-            while ($copiePile != array())
-            {
-                $message = $message.array_pop($copiePile)->getNomRecette()." - ";
+            
+            $copiePile = $this->pCocktails;
+            
+            if  (!empty($copiePile)){
+                $message .= array_pop($copiePile)->getNomRecette();
+                while ($copiePile != array())
+                {
+                    //Tant que la pile n'est pas vide
+                    $message .= ", ".array_pop($copiePile)->getNomRecette();
+                }
             }
-            $message = $message.")";
+            
+
+    
+            $message = $message."))";
             return($message);
         }
 
