@@ -1,52 +1,49 @@
 <?php
-    include ("Recette.php");
-    include ("Boisson.php");
-    include ("Branche.php");
-    include ("Stock.php");
-    include ("calculQuantiteMax.php");
+    //-------------------
+    //---  CLASSES   ----
+    //-------------------
+    include ("classes/Recette.php");
+    include ("classes/Boisson.php");
+    include ("classes/Branche.php");
+    include ("classes/Stock.php");
 
+    // -- Tests classe Boisson --
     $biere = new Boisson("Biere", "Autre",5,5 );
-    
     $rhum = new Boisson("Rhum", "Alcool", 8, 8);
-
     $ricard = new Boisson("Ricard", "Alcool", 10, 10);
-
     $crazy = new Boisson("Crazy", "Diluant",6,6);
+    echo ($ricard->toString()."<br/><br/>");
     
-    print($ricard->toString());
-    
-    echo "<br/><br/>";
-    
+    // -- Tests classe Recette --
     $mazout = new Recette("Mazout", $ricard, new Boisson("Coca", "Diluant", 20, 20), "999", "1", "5", "0");
-    print($mazout->toString());
+    $perroquet = new Recette("Perroquet", $ricard, new Boisson("Sirop de menthe", "Diluant", 20, 20), "999", "1", "5", "0");
+    echo ($mazout->toString()."<br/><br/>");
     
-    echo "<br/><br/>";
-    
-    $branche = new Branche([$mazout], 66, 911);
-    print($branche->toString());
-    
-    echo "<br/><br/>";
+    // -- Tests classe Branche --
+    $branche = new Branche([$mazout, $perroquet], 66, 911);
+    echo ($branche->toString()."<br/><br/>");
 
+    // -- Tests classe Stock --
     $stock = new Stock($ricard,$biere,$rhum,$crazy);
+    echo ($stock->toString()."<br/><br/>");
+    
 
-    echo "<br/><br/>";
 
-    print($stock->toString());
-    echo "<br/>";
-    print(sizeof($stock->getLAlcools()) . " Alcools");
 
-    echo "<br/>";
-    echo "<br/>";
+    //-------------------
+    //--- FONCTIONS  ----
+    //-------------------
+    /**
+     * @warning Ne fonctionne pas car calculQuantiteMax inclu egalement Stock
+     */
+    include ("fonctions/calculQuantiteMax.php");
 
-    print(calculQuantiteMax($stock). "L maximum de boisson"); echo "<br/>";echo "<br/>";
-
+    // -- Tests fichier calculQuantiteMax
+    echo (sizeof($stock->getLAlcools())." Alcools<br/><br/>");
+    echo (calculQuantiteMax($stock). "Le maximum de boisson<br/><br/>");
     $stock->supprLAlcools($rhum);
     $stock->supprLAutres($biere);
-
-
-    print($stock->toString());
-    echo "<br/>";
-    print(sizeof($stock->getLAlcools()) . " Alcool");
-    echo "<br/>";
-    print(calculQuantiteMax($stock). "L maximum de boisson");
+    echo($stock->toString()."<br/><br/>");
+    echo(sizeof($stock->getLAlcools()) . " Alcool<br/>");
+    print(calculQuantiteMax($stock). "Le maximum de boisson<br/>");
 ?>
