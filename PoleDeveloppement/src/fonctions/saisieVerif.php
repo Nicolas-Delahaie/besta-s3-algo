@@ -50,8 +50,6 @@ function remplirStock ()
     }
 };
 
-    remplirStock();
-
 /**
  * @author @oiercesat <ocesat@iutbayonne.univ-pau.fr>
  * Summary of saisiVerif
