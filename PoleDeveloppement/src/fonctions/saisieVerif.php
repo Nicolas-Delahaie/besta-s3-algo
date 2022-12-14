@@ -8,6 +8,13 @@ function remplirStock ()
     // Récupération du nom et de la quantité fourinie par l'utilisateur
     $resultatSaisieVerif = saisieVerif();
 
+    // Récupération du nom de la boisson
+    $boissonSaisie = array(
+        "nomBoisson" => $resultatSaisieVerif[0],
+        "qtBoisson" => $resultatSaisieVerif[1]
+    );
+
+
     //Ouverture fichier json
     $json = file_get_contents("./../datas/bdStock.json");
     //Decode le json
@@ -18,10 +25,10 @@ function remplirStock ()
     $position = 0;
     while ($boissonTrouve != true &&  $position < count($json_data["Stock"])) {
         //Si la boisson est déjà dans le fichier
-        if ($json_data["Stock"][$position]["nomBoisson"] == $resultatSaisieVerif[0])
+        if ($json_data["Stock"][$position]["nomBoisson"] == $boissonSaisie["nomBoisson"])
         {
             //On modifie la quantité
-            $json_data["Stock"][$position]["qtBoisson"] += $resultatSaisieVerif[1];
+            $json_data["Stock"][$position]["qtBoisson"] += $boissonSaisie["qtBoisson"];
             //On modifie le fichier json
             file_put_contents('./../datas/bdStock.json', json_encode($json_data));
             //On sort de la boucle
@@ -56,16 +63,17 @@ function saisieVerif()
     $resultat=array();
     if ($_POST['qtBoisson'] != "") {
         if ($_POST['nomBoisson'] == 'default') {
-            header("Location: ../1dex.php");
+            header("Location: ../index.php");
         }
 
         $nomBoisson = $_POST['nomBoisson'];
         $qtBoisson = $_POST['qtBoisson'];
 
-        array_push($resultat,$nomBoisson,$qtBoisson);        
+        array_push($resultat,$nomBoisson,intval($qtBoisson));
+        header("Location: ../index.php");
     } 
     else {
-        header("Location: ../1dex.php");
+        header("Location: ../index.php");
     }
     return $resultat;
 }
