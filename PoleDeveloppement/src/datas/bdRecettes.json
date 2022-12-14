@@ -1,0 +1,135 @@
+{
+  "Recette": [
+    {
+        "nomRecette": "rhumCoca",
+        "alcool": "rhum",
+        "diluant": "coca"
+    },
+    {
+        "nomRecette": "rhumOrange",
+        "alcool": "rhum",
+        "diluant": "orange"
+    },
+    {
+        "nomRecette": "rhumAnanas",
+        "alcool": "rhum",
+        "diluant": "ananas"
+    },
+    {
+        "nomRecette": "whiskyEau",
+        "alcool": "whisky",
+        "diluant": "eau"
+    },
+    {
+        "nomRecette": "whiskyAnanas",
+        "alcool": "whisky",
+        "diluant": "ananas"
+    },
+    {
+        "nomRecette": "whiskyCoca",
+        "alcool": "whisky",
+        "diluant": "coca"
+    },
+    {
+        "nomRecette": "vodkaKas",
+        "alcool": "vodka",
+        "diluant": "kas"
+    },
+    {
+        "nomRecette": "vodkaRedbull",
+        "alcool": "whisky",
+        "diluant": "redbull"
+    },
+    {
+        "nomRecette": "vodkaCoca",
+        "alcool": "vodka",
+        "diluant": "coca"
+    },
+    {
+        "nomRecette": "jeagerBomb",
+        "alcool": "jeager",
+        "diluant": "redbull"
+    },
+    {
+        "nomRecette": "jeagerIceTea",
+        "alcool": "jeager",
+        "diluant": "iceTea"
+    },
+    {
+        "nomRecette": "jeagerCoca",
+        "alcool": "jeager",
+        "diluant": "coca"
+    },
+    {
+        "nomRecette": "ginTonic",
+        "alcool": "gin",
+        "diluant": "tonic"
+    },
+    {
+        "nomRecette": "ginCoca",
+        "alcool": "gin",
+        "diluant": "coca"
+    },
+    {
+        "nomRecette": "ginRedbull",
+        "alcool": "gin",
+        "diluant": "redbull"
+    },
+    {
+        "nomRecette": "tequilaCoca",
+        "alcool": "tequila",
+        "diluant": "coca"
+    },
+    {
+        "nomRecette": "tequilaRedbull",
+        "alcool": "tequila",
+        "diluant": "redbull"
+    },
+    {
+        "nomRecette": "tequilaEau",
+        "alcool": "tequila",
+        "diluant": "eau"
+    },
+    {
+        "nomRecette": "tequilaKas",
+        "alcool": "tequila",
+        "diluant": "kas"
+    },
+    {
+        "nomRecette": "tequilaAnanas",
+        "alcool": "tequila",
+        "diluant": "ananas"
+    },
+    {
+        "nomRecette": "tequilaOrange",
+        "alcool": "tequila",
+        "diluant": "orange"
+    },
+    {
+        "nomRecette": "tequilaCranberry",
+        "alcool": "tequila",
+        "diluant": "cranberry"
+    },
+    {
+        "nomRecette": "tequilaPomme",
+        "alcool": "tequila",
+        "diluant": "pomme"
+    },
+    {
+        "nomRecette": "tequilaCassis",
+        "alcool": "tequila",
+        "diluant": "cassis"
+    },
+    {
+        "nomRecette": "tequilaFraise",
+        "alcool": "tequila",
+        "diluant": "fraise"
+    },
+    {
+        "nomRecette": "tequilaCerise",
+        "alcool": "tequila",
+        "diluant": "cerise"
+    }
+  ]
+}
+
