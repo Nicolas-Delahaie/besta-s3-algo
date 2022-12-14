@@ -1,6 +1,0 @@
-coca,2
-rhum,1
-biere,3
-kas,2
-whisky,1
-crazy,2
