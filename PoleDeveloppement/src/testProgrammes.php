@@ -25,6 +25,7 @@
 
     // -- Tests classe Stock --
     $stock = new Stock($ricard,$biere,$rhum,$crazy);
+    $stock->ajouterBoisson("./datas/bdBoissons.json", "coca", 10);
     echo ($stock->toString()."<br/><br/>");
     
 
