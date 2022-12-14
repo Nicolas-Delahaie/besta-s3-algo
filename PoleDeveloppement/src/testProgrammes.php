@@ -47,22 +47,26 @@
     echo(sizeof($stock->getLAlcools()) . " Alcool<br/>");
     print(calculQuantiteMax($stock). "Le maximum de boisson<br/>");
 
-    $bdBoisson = array();
-    $stockSoiree = new Stock();
+    /* -------------------------------------------------------------------------- */
+    /*              test pour les fonctions du fichier saisiVerif.php             */
+    /* -------------------------------------------------------------------------- */
 
-    $fichierBdBoisson = fopen("../bdBoisson.txt", "r");
-    while (!(feof($fichierBdBoisson))) {
-        $ligne=fgets($fichierBdBoisson);
-        $ligneExplode=explode(",",$ligne);
-        $boissonObjet = new Boisson($ligneExplode[0], $ligneExplode[1], 0, 0);
-        array_push($bdBoisson, $boissonObjet);
-    }
-    fclose($fichierBdBoisson);
+    // $bdBoisson = array();
+    // $stockSoiree = new Stock();
 
-    $tailleBdBoisson= sizeof($bdBoisson);
+    // $fichierBdBoisson = fopen("../bdBoisson.txt", "r");
+    // while (!(feof($fichierBdBoisson))) {
+    //     $ligne=fgets($fichierBdBoisson);
+    //     $ligneExplode=explode(",",$ligne);
+    //     $boissonObjet = new Boisson($ligneExplode[0], $ligneExplode[1], 0, 0);
+    //     array_push($bdBoisson, $boissonObjet);
+    // }
+    // fclose($fichierBdBoisson);
 
-    $resultatSaisieVerif = saisiVerif();
-    $boissonSaisie = new Boisson($resultatSaisieVerif[0], 0, $resultatSaisieVerif[1], $resultatSaisieVerif[1]);
+    // $tailleBdBoisson= sizeof($bdBoisson);
 
-    echo $stockSoiree->toString();
+    // $resultatSaisieVerif = saisiVerif();
+    // $boissonSaisie = new Boisson($resultatSaisieVerif[0], 0, $resultatSaisieVerif[1], $resultatSaisieVerif[1]);
+
+    // echo $stockSoiree->toString();
 ?>
