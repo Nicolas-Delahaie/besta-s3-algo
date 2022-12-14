@@ -1,58 +1,56 @@
 <?php
-/**
- * Summary of remplirStock
- * @brief remplie le stock de la soirée selon ce que l'utilisateur à rempli
- * @param array $bdBoissons liste de boisson contenue dans notre base de donnée
- * @param int $tailleBdBoissons taille de la liste bdBoisson
- * @param Stock $stockSoiree objet contenant la liste des boissons de la soirée
- * @return Stock $stockSoiree objet contenant la liste des boissons de la soirée
- */
-function remplirStock ($bdBoissons, $tailleBdBoissons, $stockSoiree) {
-
+function remplirStock ()
+    /**
+     * @author : Robin
+     * @brief Remplie la base de donnée contenant le stock de boisson
+     */
+{
     // Récupération du nom et de la quantité fourinie par l'utilisateur
-    $resultatSaisieVerif = saisiVerif();
+    $resultatSaisieVerif = saisieVerif();
 
-    //Création d'une variable temporaire $boissonSaisie
-    $boissonSaisie = new Boisson($resultatSaisieVerif[0], 0, $resultatSaisieVerif[1], $resultatSaisieVerif[1]);
+    // Récupération du nom de la boisson
+    $boissonSaisie = array(
+        "nomBoisson" => $resultatSaisieVerif[0],
+        "qtBoisson" => $resultatSaisieVerif[1]
+    );
 
-    //Parcours de la liste $bdBoisson afin de trouver la boisson qui comporte le même nom
-    for ($i = 0; $i < $tailleBdBoissons; $i++) {
-        if ($bdBoissons[$i]->getNomBoisson() == $boissonSaisie->getNomBoisson()) {
-            switch ($bdBoissons[$i]->getTypeBoisson()) {
 
-                //Si la boisson est de type 1:alcool
-                case 1:
-                    $boissonSaisie->setTypeBoisson($bdBoissons[$i]->getTypeBoisson());
+    //Ouverture fichier json
+    $json = file_get_contents("./../datas/bdStock.json");
+    //Decode le json
+    $json_data = json_decode($json,true);
 
-                    //Ajout de $boissonSaisie dans la liste d'alcool de $stockSoiree
-                    $stockSoiree->setLAlcools($boissonSaisie);
-                    break;
-
-                //Si la boisson est de type 2:diluant
-                case 2:
-                    $boissonSaisie->setTypeBoisson($bdBoissons[$i]->getTypeBoisson());
-
-                    //Ajout de $boissonSaisie dans la liste de diluant de $stockSoiree
-                    $stockSoiree->setLDiluants($boissonSaisie);
-                    break;
-
-                //Si la boisson est de type 1:autre
-                case 3:
-                    $boissonSaisie->setTypeBoisson($bdBoissons[$i]->getTypeBoisson());
-
-                    //Ajout de $boissonSaisie dans la liste autres de $stockSoiree
-                    $stockSoiree->setLAutres($boissonSaisie);
-                    break;
-
-                //Si la fonction comporte un probleme 
-                default:
-                    echo "erreur dans le switch";
-                    break;
-            }
+    //Parcourss du json, pour chercher si la boisson est déjà dans le fichier
+    $boissonTrouve = false;
+    $position = 0;
+    while ($boissonTrouve != true &&  $position < count($json_data["Stock"])) {
+        //Si la boisson est déjà dans le fichier
+        if ($json_data["Stock"][$position]["nomBoisson"] == $boissonSaisie["nomBoisson"])
+        {
+            //On modifie la quantité
+            $json_data["Stock"][$position]["qtBoisson"] += $boissonSaisie["qtBoisson"];
+            //On modifie le fichier json
+            file_put_contents('./../datas/bdStock.json', json_encode($json_data));
+            //On sort de la boucle
+            $boissonTrouve = true;
+        }
+        else{
+            //On passe à la boisson suivante
+            $position = $position + 1;
         }
     }
-    return $stockSoiree;
+
+    //Si la boisson n'est pas dans le fichier
+    if ($boissonTrouve == false)
+    {
+        //On ajoute la boisson au fichier
+        array_push($json_data["Stock"], $boissonSaisie);
+        //Ecriture dans le fichier json
+        file_put_contents('./../datas/bdStock.json', json_encode($json_data));
+    }
 };
+
+    remplirStock();
 
 /**
  * @author @oiercesat <ocesat@iutbayonne.univ-pau.fr>
@@ -60,21 +58,24 @@ function remplirStock ($bdBoissons, $tailleBdBoissons, $stockSoiree) {
  * @brief vérifie que les variables transmise sont exploitable
  * @return array liste sous la forme [nomBoisson,qtBoisson]
  */
-function saisiVerif()
+function saisieVerif()
 {
     $resultat=array();
     if ($_POST['qtBoisson'] != "") {
         if ($_POST['nomBoisson'] == 'default') {
-            header("Location: ../1dex.php");
+            header("Location: ../index.php");
         }
 
         $nomBoisson = $_POST['nomBoisson'];
         $qtBoisson = $_POST['qtBoisson'];
 
-        array_push($resultat,$nomBoisson,$qtBoisson);        
+        array_push($resultat,$nomBoisson,intval($qtBoisson));
+        header("Location: ../index.php");
     } 
     else {
-        header("Location: ../1dex.php");
+        header("Location: ../index.php");
     }
     return $resultat;
 }
+
+?>
