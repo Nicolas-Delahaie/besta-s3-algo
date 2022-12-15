@@ -25,6 +25,7 @@
 
     // -- Tests classe Stock --
     $stock = new Stock($ricard,$biere,$rhum,$crazy);
+    include ("fonctions/ouvertureJson.php");
     $stock->ajouterBoisson("./datas/bdBoissons.json", "coca", 10);
     echo ($stock->toString()."<br/><br/>");
     
@@ -49,8 +50,9 @@
     echo (sizeof($stock->getLAlcools())." Alcools<br/><br/>");
     echo (calculQuantiteMax($stock,$tailleStockSoireeAlcool,$tailleStockSoireeDiluant). " Le maximum de boisson<br/><br/>");
     
-    $stock->supprLAlcools($rhum); //supprime le rhum de la liste d'alcool
-    $stock->supprLAutres($biere); //supprime la biere de la liste autre
+    //$stock->supprLAlcools($rhum); //supprime le rhum de la liste d'alcool
+    //$stock->supprLAutres($biere); //supprime la biere de la liste autre
+    $stock->supprimerBoisson("Biere");
 
     $tailleStockSoireeAlcool = count($stock->getLAlcools());//On actualise le nombre d'alcool dans la liste
     $tailleStockSoireeDiluant = count($stock->getLDiluants());//On actualise le nombre de diluants dans la liste
@@ -83,23 +85,4 @@
     $tailleStockSoireePossible = count($recettesPossibles); //nombre de recettes dans la liste
 
     print_r(calculQuantiteDesRecettes($recettesPossibles,$DOSE_ALCOOL,$DOSE_DILUANT,$stock,$tailleStockSoireeAlcool,$tailleStockSoireeDiluant,$tailleStockSoireePossible));
-
-    // $bdBoisson = array();
-    // $stockSoiree = new Stock();
-
-    // $fichierBdBoisson = fopen("datas/bdBoisson.txt", "r");
-    // while (!(feof($fichierBdBoisson))) {
-    //     $ligne=fgets($fichierBdBoisson);
-    //     $ligneExplode=explode(",",$ligne);
-    //     $boissonObjet = new Boisson($ligneExplode[0], $ligneExplode[1], 0, 0);
-    //     array_push($bdBoisson, $boissonObjet);
-    // }
-    // fclose($fichierBdBoisson);
-
-    // $tailleBdBoisson= sizeof($bdBoisson);
-
-    // $resultatSaisieVerif = saisiVerif();
-    // $boissonSaisie = new Boisson($resultatSaisieVerif[0], 0, $resultatSaisieVerif[1], $resultatSaisieVerif[1]);
-
-    // echo $stockSoiree->toString();
 ?>

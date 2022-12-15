@@ -217,6 +217,55 @@
                     break;
             }
         }
+
+        public function supprimerBoisson($nomBoisson)
+            /**
+             * @brief: Cette méthode permet de supprimer une boisson du stock
+             * @param: $nomBoisson: le nom de la boisson à supprimer
+             * @return: void
+             * @note: Cette méthode ne supprime pas la boisson du fichier json
+             */
+        {
+            //On verifie si la boisson est dans nos listes
+            $boissonTrouve = false;
+            $position = 0;
+            while ($boissonTrouve != true &&  $position < count($this->lAlcools)) {
+                //Si la boisson est dans la liste des alcools
+                if ($nomBoisson == $this->lAlcools[$position]->getNomBoisson()) {
+                    array_splice($this->lAlcools, $position, 1); //On supprime la boisson
+                    $boissonTrouve = true;
+                } else {
+                    $position = $position + 1;
+                }
+            }
+
+            $position = 0;
+            while ($boissonTrouve != true &&  $position < count($this->lDiluants)) {
+                //Si la boisson est dans la liste des diluants
+                if ($nomBoisson == $this->lDiluants[$position]->getNomBoisson()) {
+                    array_splice($this->lDiluants, $position, 1); //On supprime la boisson
+                    $boissonTrouve = true;
+                } else {
+                    $position = $position + 1;
+                }
+            }
+
+            $position = 0;
+            while ($boissonTrouve != true &&  $position < count($this->lDiluants)) {
+                //Si la boisson est dans la liste des diluants
+                if ($nomBoisson == $this->lAutres[$position]->getNomBoisson()) {
+                    array_splice($this->lAutres, $position, 1); //On supprime la boisson
+                    $boissonTrouve = true;
+                } else {
+                    $position = $position + 1;
+                }
+            }
+
+            if ($boissonTrouve == false) {
+                echo "La boisson n'a pas été trouvée";
+            }
+
+        }
     }
 ?>
 
