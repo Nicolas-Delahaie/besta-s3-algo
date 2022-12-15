@@ -6,10 +6,8 @@
      * @return Recette : la recette créée
      */
     {
-        //Recuperation des données du json
-        $json = file_get_contents($nomFichier);
-        //Decode le json
-        $json_data = json_decode($json,true);
+        //Ouvrir et décoder le fichier json
+        $json_data = ouvrirJson($nomFichier);
         //Creation d'un tableau de recettes
         $recettesExistantes = array();
 

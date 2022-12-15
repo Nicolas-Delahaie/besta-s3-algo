@@ -173,11 +173,8 @@
          * @return: void
          */
         {
-            //On recuperer les donnes du json
-            $json = file_get_contents($nomFichier);
-
-            //On les decode
-            $json_data = json_decode($json, true);
+            //On ouvre et decode le fichier json
+            $json_data = ouvrirJson($nomFichier);
 
             //On crée une nouvelle boisson avec le nom passé en paramètre
             $boissonAajouter = new Boisson($nomBoisson, 0, 0, 0);
