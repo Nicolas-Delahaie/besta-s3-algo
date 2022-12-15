@@ -139,7 +139,7 @@
         function popRecette(){
             $recette = array_pop($this->pRecette);
             $this->qtBranche -= $recette->getQtRecette();
-            $this->qtValeur -= $recette->getValeurRecette();
+            $this->qtValeur -= $recette->getValeur();
         }
 
         /**

@@ -1,6 +1,10 @@
 <?php
-require_once('Stock.php');
 
+/**
+ * Summary of calculQuantiteMax
+ * @param Stock $stockSoiree 
+ * @return float|int $qtmax
+ */
 function calculQuantiteMax ($stockSoiree) {
     $qtMax = 0;
 
@@ -15,6 +19,4 @@ function calculQuantiteMax ($stockSoiree) {
     }
 
     return $qtMax;
-   }
-   
-?>
+}
