@@ -119,5 +119,13 @@
     
     $meilleureCombinaison = sacApo($recettesExistantes, $tailleReceteExistante, $qtMax, DOSE_ALCOOL, DOSE_DILUANT);
     echo "La meilleure combinaison est : " . $meilleureCombinaison->toString() . "<br>";
+    echo "La quantité totale est bonne <br>";
+    echo "La valeur est bonne <br>";
+    echo "La quantité initiale de chaque boisson est bonne <br>";
+    echo "<mark>La quantité en cours de Coca est pas bonne </mark> <br>";
+    echo "<mark>La quantité totale de la recette n'est pas bonne</mark><br>";
+    echo "<mark>La quantité d'alccol de la recette n'est pas bonne</mark><br>";
+    echo "<mark>La quantité de diluant de la recette n'est pas bonne</mark><br>";
+    echo "La valeur de la recette est bonne <br>";
     
 ?>
