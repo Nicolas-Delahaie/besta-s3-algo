@@ -5,75 +5,75 @@
       "typeBoisson": 1
     },
     {
-      "nomBoisson": "whisky",
+      "nomBoisson": "Whisky",
       "typeBoisson": 1
     },
     {
-      "nomBoisson": "vodka",
+      "nomBoisson": "Vodka",
       "typeBoisson": 1
     },
     {
-      "nomBoisson": "jeager",
+      "nomBoisson": "Jeager",
       "typeBoisson": 1
     },
     {
-      "nomBoisson": "gin",
+      "nomBoisson": "Gin",
       "typeBoisson": 1
     },
     {
-      "nomBoisson": "tequila",
+      "nomBoisson": "Tequila",
       "typeBoisson": 1
     },
     {
-      "nomBoisson": "coca",
+      "nomBoisson": "Coca",
       "typeBoisson": 2
     },
     {
-      "nomBoisson": "orange",
+      "nomBoisson": "Orange",
       "typeBoisson": 2
     },
     {
-      "nomBoisson": "ananas",
+      "nomBoisson": "Ananas",
       "typeBoisson": 2
     },
     {
-      "nomBoisson": "kas",
+      "nomBoisson": "Kas",
       "typeBoisson": 2
     },
     {
-      "nomBoisson": "redbull",
+      "nomBoisson": "Redbull",
       "typeBoisson": 2
     },
     {
-      "nomBoisson": "iceTea",
+      "nomBoisson": "IceTea",
       "typeBoisson": 2
     },
     {
-      "nomBoisson": "tonic",
+      "nomBoisson": "Tonic",
       "typeBoisson": 2
     },
     {
-      "nomBoisson": "eau",
+      "nomBoisson": "Eau",
       "typeBoisson": 2
     },
     {
-      "nomBoisson": "cranberry",
+      "nomBoisson": "Cranberry",
       "typeBoisson": 2
     },
     {
-      "nomBoisson": "pomme",
+      "nomBoisson": "Pomme",
       "typeBoisson": 2
     },
     {
-      "nomBoisson": "cassis",
+      "nomBoisson": "Cassis",
       "typeBoisson": 2
     },
     {
-      "nomBoisson": "fraise",
+      "nomBoisson": "Fraise",
       "typeBoisson": 2
     },
     {
-      "nomBoisson": "cerise",
+      "nomBoisson": "Cerise",
       "typeBoisson": 2
     }
   ]
