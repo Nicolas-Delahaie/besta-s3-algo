@@ -14,7 +14,7 @@ function calculDesValeurs($recettesPossibles)
     // -- Trier les recettes --
     $tailleRecettesPossibles = count($recettesPossibles);
     for ($i=0; $i < $tailleRecettesPossibles; $i++) { 
-        for ($j=0; $j < $i; $j++) { 
+        for ($j=0; $j <= $i; $j++) { 
             if ($recettePossibles[$j].getQtRecette() > $recettesPossibles[$j+1].getQtRecette()){
                 #Echange des recettes
                 $temp = $recettePossibles[$j];
@@ -27,17 +27,17 @@ function calculDesValeurs($recettesPossibles)
     // -- Attribuer les valeurs --
     //Premiere valeur
     $valeur = $tailleRecettesPossibles;
-    $recettesPossibles[0].setValeur(valeur);
+    $recettesPossibles[0].setValeur($valeur);
 
     //Autres valeurs
     for ($i=0; $i < $tailleRecettesPossibles; $i++) { 
-        if ($recettesPossibles[i].getQtRecette() == $recettesPossibles[i-1].getQtRecette()){
-            $recettesPossibles[i].setValeur($valeur);
+        if ($recettesPossibles[$i].getQtRecette() == $recettesPossibles[$i-1].getQtRecette()){
+            $recettesPossibles[$i].setValeur($valeur);
         }
         else
         {
             $valeur += 1;
-            $recettesPossibles[i].setValeur($valeur);
+            $recettesPossibles[$i].setValeur($valeur);
         }
     }
 }
