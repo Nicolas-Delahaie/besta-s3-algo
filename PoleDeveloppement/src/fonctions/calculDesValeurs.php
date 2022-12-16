@@ -30,12 +30,14 @@ function calculDesValeurs($recettesPossibles)
     $recettesPossibles[0].setValeur($valeur);
 
     //Autres valeurs
-    for ($i=0; $i < $tailleRecettesPossibles; $i++) { 
+    for ($i=0; $i < $tailleRecettesPossibles-1; $i++) { 
         if ($recettesPossibles[$i].getQtRecette() == $recettesPossibles[$i-1].getQtRecette()){
-            $recettesPossibles[$i].setValeur($valeur);
+            //Si le volume d une recette est egal a celui de la suivante
+            $recettesPossibles[$i].setValeur($valeur);  
         }
         else
         {
+            //Si le volume d une recette n est pas egal a celui de la suivante
             $valeur += 1;
             $recettesPossibles[$i].setValeur($valeur);
         }
