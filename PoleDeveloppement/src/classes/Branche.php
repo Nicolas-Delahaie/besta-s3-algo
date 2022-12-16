@@ -112,7 +112,7 @@
             $copiePile = $this->pRecette;
             while ($copiePile != array())
             {
-                $message = $message.array_pop($copiePile)->getNomRecette()." - ";
+                $message = $message.array_pop($copiePile)->toString()." <br><br>";
             }
             $message = $message.")";
             return($message);
