@@ -14,8 +14,8 @@ function calculDesValeurs($recettesPossibles)
     // -- Trier les recettes --
     $tailleRecettesPossibles = count($recettesPossibles);
     for ($i=0; $i < $tailleRecettesPossibles; $i++) { 
-        for ($j=0; $j <= $i; $j++) { 
-            if ($recettePossibles[$j].getQtRecette() > $recettesPossibles[$j+1].getQtRecette()){
+        for ($j=0; $j < $i; $j++) { 
+            if ($recettePossibles[$j]->getQtRecette() > $recettesPossibles[$j+1]->getQtRecette()){
                 #Echange des recettes
                 $temp = $recettePossibles[$j];
                 $recettePossibles[$j] = $recettePossibles[$j+1];
@@ -27,19 +27,18 @@ function calculDesValeurs($recettesPossibles)
     // -- Attribuer les valeurs --
     //Premiere valeur
     $valeur = $tailleRecettesPossibles;
-    $recettesPossibles[0].setValeur($valeur);
+    $recettesPossibles[0]->setValeur(valeur);
 
     //Autres valeurs
-    for ($i=0; $i < $tailleRecettesPossibles-1; $i++) { 
-        if ($recettesPossibles[$i].getQtRecette() == $recettesPossibles[$i-1].getQtRecette()){
-            //Si le volume d une recette est egal a celui de la suivante
-            $recettesPossibles[$i].setValeur($valeur);  
+    for ($i=0; $i < $tailleRecettesPossibles; $i++) { 
+        if ($recettesPossibles[i]->getQtRecette() == $recettesPossibles[i-1]->getQtRecette()){
+            $recettesPossibles[i]->setValeur($valeur);
         }
         else
         {
             //Si le volume d une recette n est pas egal a celui de la suivante
             $valeur += 1;
-            $recettesPossibles[$i].setValeur($valeur);
+            $recettesPossibles[i]->setValeur($valeur);
         }
     }
 }
