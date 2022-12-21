@@ -15,7 +15,8 @@ function calculDesValeurs($recettesPossibles)
     $tailleRecettesPossibles = count($recettesPossibles);
     for ($i=0; $i < $tailleRecettesPossibles; $i++) { 
         for ($j=0; $j < $i; $j++) { 
-            if ($recettePossibles[$j]->getQtRecette() > $recettesPossibles[$j+1]->getQtRecette()){
+            if ($recettePossibles[$j]->getQtRecette() > $recettesPossibles[$j+1]->getQtRecette())
+            {
                 #Echange des recettes
                 $temp = $recettePossibles[$j];
                 $recettePossibles[$j] = $recettePossibles[$j+1];
@@ -30,8 +31,9 @@ function calculDesValeurs($recettesPossibles)
     $recettesPossibles[0]->setValeur(valeur);
 
     //Autres valeurs
-    for ($i=0; $i < $tailleRecettesPossibles; $i++) { 
-        if ($recettesPossibles[i]->getQtRecette() == $recettesPossibles[i-1]->getQtRecette()){
+    for ($i=0; $i < $tailleRecettesPossibles -1; $i++) { 
+        if ($recettesPossibles[i]->getQtRecette() == $recettesPossibles[i-1]->getQtRecette())
+        {
             $recettesPossibles[i]->setValeur($valeur);
         }
         else
