@@ -15,11 +15,11 @@ function calculDesValeurs($recettesPossibles)
     $tailleRecettesPossibles = count($recettesPossibles);
     for ($i=0; $i < $tailleRecettesPossibles; $i++) { 
         for ($j=0; $j < $i; $j++) { 
-            if ($recettePossibles[$j]->getQtRecette() > $recettesPossibles[$j+1]->getQtRecette())
+            if ($recettesPossibles[$j]->getQtRecette() > $recettesPossibles[$j+1]->getQtRecette())
             {
                 #Echange des recettes
-                $temp = $recettePossibles[$j];
-                $recettePossibles[$j] = $recettePossibles[$j+1];
+                $temp = $recettesPossibles[$j];
+                $recettesPossibles[$j] = $recettesPossibles[$j+1];
                 $recettePossibles[$j+1] = $temp;
             }
         }
@@ -28,19 +28,22 @@ function calculDesValeurs($recettesPossibles)
     // -- Attribuer les valeurs --
     //Premiere valeur
     $valeur = $tailleRecettesPossibles;
-    $recettesPossibles[0]->setValeur(valeur);
+    $recettesPossibles[0]->setValeur($valeur);
 
     //Autres valeurs
-    for ($i=0; $i < $tailleRecettesPossibles -1; $i++) { 
-        if ($recettesPossibles[i]->getQtRecette() == $recettesPossibles[i-1]->getQtRecette())
+    for ($i=1; $i < $tailleRecettesPossibles-1; $i++) { 
+        $volumeRecette = $recettesPossibles[$i]->getQtRecette();
+        $volumeRecettePrecedente = $recettesPossibles[$i-1]->getQtRecette();
+        if ($volumeRecette == $volumeRecettePrecedente)
         {
-            $recettesPossibles[i]->setValeur($valeur);
+            //Recette aussi volumineuse
+            $recettesPossibles[$i]->setValeur($valeur);
         }
         else
         {
-            //Si le volume d une recette n est pas egal a celui de la suivante
+            //Recette moins volumineuse, incrementation de valeur
             $valeur += 1;
-            $recettesPossibles[i]->setValeur($valeur);
+            $recettesPossibles[$i]->setValeur($valeur);
         }
     }
 }
