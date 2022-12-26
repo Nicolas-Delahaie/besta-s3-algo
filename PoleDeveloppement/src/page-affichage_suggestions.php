@@ -83,15 +83,6 @@
 
                     echo $html;
                 ?>
-
-                
-                    
-                <!-- </article>
-                <article>
-                    <p class="sommesFinales">20</p>
-                    <p class="separateur">X</p>
-                    <img src="shot.jpg" id="shotsTotaux">
-                </article> -->
             </main>
         </section>
     </body>
