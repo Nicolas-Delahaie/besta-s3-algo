@@ -1,5 +1,9 @@
 <html>
 
+<head>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
 <body>
     <form action="./fonctions/saisieVerif.php" method="POST">
         <p>Sélectionnez le nom de la boisson </p>
@@ -9,23 +13,25 @@
             //Recuperer fichier json
             $json = file_get_contents('./datas/bdBoissons.json');
             //Decode le json
-            $json_data = json_decode($json,true);
+            $json_data = json_decode($json, true);
             //Parcourss du json
             foreach ($json_data['Boisson'] as $boisson) {
                 //Recuperation du nom de la boisson
 
                 $nomBoisson = $boisson["nomBoisson"];
                 //Affichage du nom de la boisson
-                echo "<option value=".$nomBoisson.">".$nomBoisson."</option>";
+                echo "<option value=" . $nomBoisson . ">" . $nomBoisson . "</option>";
             }
-            ?>
+            ?>  
         </select>
-        <p>Sélectionnez la quantité de votre boisson</p>
+        <p>Sélectionnez la quantité de votre boisson en litres</p>
         <input type="number" name="qtBoisson" value="qtBoisson">
         <br>
-        <input type="submit" value="Valider">
+        <section>
+            <input type="submit" value="Valider" class="btn">
+            <a href="main.php" class="btn">Les résultats</a>
+        </section>
     </form>
-    <a href="main.php">Les Resultats</a>
 </body>
 
 </html>
