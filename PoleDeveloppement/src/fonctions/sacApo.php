@@ -80,7 +80,7 @@ function sacApo($recettesPossibles, $tailleRecettesPossibles, $qtMax, $doseAlcoo
             
             /* ------------------------ Mis à jour des variables ------------------------ */
             
-            //misa à jour de la borne sup
+            //Mise à jour de la borne sup
             $borneSup = 0;
             
             //Parcours des recettes possibles encore ajoutable
@@ -106,6 +106,7 @@ function sacApo($recettesPossibles, $tailleRecettesPossibles, $qtMax, $doseAlcoo
             /* ------------------------- Mis à jour des varibles ------------------------ */
             
             //Mise à jour de la quantité des boissons
+
             $recettesPossibles[$iterateurRecette]->getAlcool()->setQtBoissonEnCours($recettesPossibles[$iterateurRecette]->getAlcool()->getQtBoissonEnCours() - $recettesPossibles[$iterateurRecette]->getQtAlcool());
             $recettesPossibles[$iterateurRecette]->getDiluant()->setQtBoissonEnCours($recettesPossibles[$iterateurRecette]->getDiluant()->getQtBoissonEnCours() - $recettesPossibles[$iterateurRecette]->getQtDiluant());
             
