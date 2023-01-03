@@ -5,7 +5,6 @@
     *@version 6.0
     */
 
-    // require_once('boisson.php');
 
     /**
      * @brief Classe Stock comportant une liste d'alcools, une liste de diluants et une 
@@ -119,55 +118,154 @@
 
         /* -------------------------------- TO STRING ------------------------------- */
 
-        function toString(){
-            if ($this->lAlcools != []){ //On regarde si notre liste n'est pas vide
+        function toString()
+        {
+            if ($this->lAlcools != []) { //On regarde si notre liste n'est pas vide
                 $nbAlcools = count($this->lAlcools); //On compte le nombre d'éléments présents dans la liste des alcools
                 $listeDesAlcools = ""; //On prepare le message a afficher
 
-                for ($i = 0; $i <= $nbAlcools - 1; $i++){ //Pour chaque alcool
-                    $nomAlcool= $this->lAlcools[$i]->getNomBoisson(); //On récupére son nom
-                    $listeDesAlcools = $listeDesAlcools." ".$nomAlcool; //On le concatène avec les autres noms
-                    }
+                for ($i = 0; $i <= $nbAlcools - 1; $i++) { //Pour chaque alcool
+                    $nomAlcool = $this->lAlcools[$i]->getNomBoisson(); //On récupére son nom
+                    $listeDesAlcools = $listeDesAlcools . " " . $nomAlcool; //On le concatène avec les autres noms
                 }
+            } else { //Si la liste des alcools est vide
+                $listeDesAlcools = "aucuns alcools";
+            }
 
-            else { //Si la liste des alcools est vide
-                $listeDesAlcools = "aucuns alcools"; 
-            }    
-            
-            if ($this->lDiluants != []){ //On regarde si notre liste n'est pas vide
+            if ($this->lDiluants != []) { //On regarde si notre liste n'est pas vide
                 $nbDiluant = count($this->lDiluants); //On compte le nombre d'éléments présents dans la liste des diluants
                 $listeDesDiluants = "";//On prepare le message a afficher
 
-                for ($i = 0; $i <= $nbDiluant - 1; $i++){ //pour chaque diluants
-                    $nomDiluant= $this->lDiluants[$i]->getNomBoisson();//On récupère son nom
-                    $listeDesDiluants = $listeDesDiluants." ".$nomDiluant; //On le concatène avec les autres noms
-                    }
+                for ($i = 0; $i <= $nbDiluant - 1; $i++) { //pour chaque diluants
+                    $nomDiluant = $this->lDiluants[$i]->getNomBoisson();//On récupère son nom
+                    $listeDesDiluants = $listeDesDiluants . " " . $nomDiluant; //On le concatène avec les autres noms
                 }
-            else {
+            } else {
                 $listeDesDiluants = "aucuns diluants";
-            }    
-
-            if ($this ->lAutres != []) {//On regarde si notre liste n'est pas vide
-                $nbAutre = count($this->lAutres); //On compte le nombre d'éléments présents dans la liste des autres boissons
-                $listeDesAutres = "";//On prepare le message a afficher
-                
-                for ($i = 0; $i <= $nbAutre - 1; $i++){ //pour chaque autres boissons
-                    $nomAutre= $this->lAutres[$i]->getNomBoisson(); //on récupère son nom
-                    $listeDesAutres = $listeDesAutres." ".$nomAutre; //On le concatène avec les autres noms
-                    }
             }
 
-            else {
+            if ($this->lAutres != []) {//On regarde si notre liste n'est pas vide
+                $nbAutre = count($this->lAutres); //On compte le nombre d'éléments présents dans la liste des autres boissons
+                $listeDesAutres = "";//On prepare le message a afficher
+
+                for ($i = 0; $i <= $nbAutre - 1; $i++) { //pour chaque autres boissons
+                    $nomAutre = $this->lAutres[$i]->getNomBoisson(); //on récupère son nom
+                    $listeDesAutres = $listeDesAutres . " " . $nomAutre; //On le concatène avec les autres noms
+                }
+            } else {
                 $listeDesAutres = "aucunes autres boissons";
             }
 
-            $message= "La liste d'alcools contient : ". $listeDesAlcools . " ; la liste des diluants contient : ". $listeDesDiluants . " ; la liste des autres boissons contient : ". $listeDesAutres; //On récupére chaque liste de boissons et on les concatènes
+            $message = "La liste d'alcools contient : " . $listeDesAlcools . " ; la liste des diluants contient : " . $listeDesDiluants . " ; la liste des autres boissons contient : " . $listeDesAutres; //On récupére chaque liste de boissons et on les concatènes
             return $message;
+        }
 
         /* -------------------------------------------------------------------------- */
         /*                            METHODES SPECIFIQUES                            */
         /* -------------------------------------------------------------------------- */
-    }
-}
 
+        public function ajouterBoisson($nomFichier, $nomBoisson, $quantite)
+        /**
+         * @brief: Cette méthode permet d'ajouter une boisson à la liste des boissons
+         * @param: $nomFichier: le nom du fichier dans lequel on va recuperer les boissons à comparer
+         * @param: $nomBoisson: le nom de la boisson à ajouter
+         * @param: $quantite: la quantité de la boisson à ajouter
+         * @return: void
+         */
+        {
+            //On ouvre et decode le fichier json
+            $json_data = ouvrirJson($nomFichier);
+
+            //On crée une nouvelle boisson avec le nom passé en paramètre
+            $boissonAajouter = new Boisson($nomBoisson, 0, 0, 0);
+
+            //Parcourss du json, pour chercher la boisson
+            $boissonTrouve = false;
+            $position = 0;
+            while ($boissonTrouve != true &&  $position < count($json_data["Boisson"])) {
+                //Si la boisson est déjà dans le fichier
+                if ($json_data["Boisson"][$position]["nomBoisson"] == $boissonAajouter->getNomBoisson())
+                {
+                    $boissonAajouter->setTypeBoisson($json_data["Boisson"][$position]["typeBoisson"]);
+                    $boissonAajouter->setQtBoissonInitiale($quantite);
+                    $boissonAajouter->setQtBoissonEnCours($quantite);
+                    $boissonTrouve = true;
+                }
+                else{
+                    $position = $position + 1;
+                }
+            }
+
+            //On recupere le type de la boisson
+            $typeBoisson = $boissonAajouter->getTypeBoisson();
+
+            //On regarde le type de la boisson
+            switch ($typeBoisson) {
+                case 1: //Si c'est le type 1 (alcool)
+                    $this->setLAlcools($boissonAajouter); //on l'ajoute à la liste d'alcools
+                    break;
+
+                case 2: //Si c'est le type 2 (diluant)
+                    $this->setLDiluants($boissonAajouter); //on l'ajoute à la liste de diluants
+                    break;
+
+                case 3: //Si c'est le type 3 (autre)
+                    $this->setLAutres($boissonAajouter); //on l'ajoute à la liste de autres boissons
+                    break;
+
+                default: //Si aucun de ces cas ne sont possibles on indique l'erreur possible
+                    break;
+            }
+        }
+
+        public function supprimerBoisson($nomBoisson)
+            /**
+             * @brief: Cette méthode permet de supprimer une boisson du stock
+             * @param: $nomBoisson: le nom de la boisson à supprimer
+             * @return: void
+             * @note: Cette méthode ne supprime pas la boisson du fichier json
+             */
+        {
+            //On verifie si la boisson est dans nos listes
+            $boissonTrouve = false;
+            $position = 0;
+            while ($boissonTrouve != true &&  $position < count($this->lAlcools)) {
+                //Si la boisson est dans la liste des alcools
+                if ($nomBoisson == $this->lAlcools[$position]->getNomBoisson()) {
+                    array_splice($this->lAlcools, $position, 1); //On supprime la boisson
+                    $boissonTrouve = true;
+                } else {
+                    $position = $position + 1;
+                }
+            }
+
+            $position = 0;
+            while ($boissonTrouve != true &&  $position < count($this->lDiluants)) {
+                //Si la boisson est dans la liste des diluants
+                if ($nomBoisson == $this->lDiluants[$position]->getNomBoisson()) {
+                    array_splice($this->lDiluants, $position, 1); //On supprime la boisson
+                    $boissonTrouve = true;
+                } else {
+                    $position = $position + 1;
+                }
+            }
+
+            $position = 0;
+            while ($boissonTrouve != true &&  $position < count($this->lDiluants)) {
+                //Si la boisson est dans la liste des diluants
+                if ($nomBoisson == $this->lAutres[$position]->getNomBoisson()) {
+                    array_splice($this->lAutres, $position, 1); //On supprime la boisson
+                    $boissonTrouve = true;
+                } else {
+                    $position = $position + 1;
+                }
+            }
+
+            if ($boissonTrouve == false) {
+                echo "La boisson n'a pas été trouvée";
+            }
+
+        }
+    }
 ?>
+

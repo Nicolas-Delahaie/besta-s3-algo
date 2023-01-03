@@ -1,0 +1,81 @@
+{
+  "Boisson": [
+    {
+      "nomBoisson": "rhum",
+      "typeBoisson": 1
+    },
+    {
+      "nomBoisson": "Whisky",
+      "typeBoisson": 1
+    },
+    {
+      "nomBoisson": "Vodka",
+      "typeBoisson": 1
+    },
+    {
+      "nomBoisson": "Jeager",
+      "typeBoisson": 1
+    },
+    {
+      "nomBoisson": "Gin",
+      "typeBoisson": 1
+    },
+    {
+      "nomBoisson": "Tequila",
+      "typeBoisson": 1
+    },
+    {
+      "nomBoisson": "Coca",
+      "typeBoisson": 2
+    },
+    {
+      "nomBoisson": "Orange",
+      "typeBoisson": 2
+    },
+    {
+      "nomBoisson": "Ananas",
+      "typeBoisson": 2
+    },
+    {
+      "nomBoisson": "Kas",
+      "typeBoisson": 2
+    },
+    {
+      "nomBoisson": "Redbull",
+      "typeBoisson": 2
+    },
+    {
+      "nomBoisson": "IceTea",
+      "typeBoisson": 2
+    },
+    {
+      "nomBoisson": "Tonic",
+      "typeBoisson": 2
+    },
+    {
+      "nomBoisson": "Eau",
+      "typeBoisson": 2
+    },
+    {
+      "nomBoisson": "Cranberry",
+      "typeBoisson": 2
+    },
+    {
+      "nomBoisson": "Pomme",
+      "typeBoisson": 2
+    },
+    {
+      "nomBoisson": "Cassis",
+      "typeBoisson": 2
+    },
+    {
+      "nomBoisson": "Fraise",
+      "typeBoisson": 2
+    },
+    {
+      "nomBoisson": "Cerise",
+      "typeBoisson": 2
+    }
+  ]
+}
+

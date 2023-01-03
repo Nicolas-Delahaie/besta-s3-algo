@@ -11,9 +11,13 @@
     // echo ($ricard->toString()."<br/><br/>");
     
     // -- Tests classe Recette --
+
     // $mazout = new Recette("Mazout", $ricard, new Boisson("Coca", "Diluant", 20, 20), "999", "1", "5", "0");
     // $perroquet = new Recette("Perroquet", $ricard, new Boisson("Sirop de menthe", "Diluant", 20, 20), "999", "1", "5", "0");
     // echo ($mazout->toString()."<br/><br/>");
+    $mazout = new Recette("Mazout", $ricard, new Boisson("Coca", "Diluant", 10, 10), "999", "1", "5", "0");
+    $perroquet = new Recette("Perroquet", $ricard, new Boisson("Sirop de menthe", "Diluant", 5, 5), "999", "1", "5", "0");
+    echo ($mazout->toString()."<br/><br/>");
     
     // // -- Tests classe Branche --
     // $branche = new Branche([$mazout, $perroquet], 66, 911);
@@ -128,4 +132,67 @@
     echo "<mark>La quantité de diluant de la recette n'est pas bonne</mark><br>";
     echo "La valeur de la recette est bonne <br>";
     
+    // -- Tests classe Stock --
+    $stock = new Stock($ricard,$biere,$rhum,$crazy);
+    include ("fonctions/ouvertureJson.php");
+    $stock->ajouterBoisson("./datas/bdBoissons.json", "coca", 10);
+    echo ($stock->toString()."<br/><br/>");
+    
+
+    //-------------------
+    //--- FONCTIONS  ----
+    //-------------------
+    // -- Tests fonction creerRecette --
+    include ("fonctions/creationRecette.php");
+    $recettes = creerRecette("./datas/bdRecettes.json");
+    foreach ($recettes as $recette) {
+        echo ($recette->toString()."<br/><br/>");
+    }
+  
+
+    // -- Tests fichier calculQuantiteMax
+    include ("fonctions/calculQuantiteMax.php");
+
+    $tailleStockSoireeAlcool = count($stock->getLAlcools());
+    $tailleStockSoireeDiluant = count($stock->getLDiluants());
+
+    echo (sizeof($stock->getLAlcools())." Alcools<br/><br/>");
+    echo (calculQuantiteMax($stock,$tailleStockSoireeAlcool,$tailleStockSoireeDiluant). " Le maximum de boisson<br/><br/>");
+    
+    //$stock->supprLAlcools($rhum); //supprime le rhum de la liste d'alcool
+    //$stock->supprLAutres($biere); //supprime la biere de la liste autre
+    $stock->supprimerBoisson("Biere");
+
+    $tailleStockSoireeAlcool = count($stock->getLAlcools());//On actualise le nombre d'alcool dans la liste
+    $tailleStockSoireeDiluant = count($stock->getLDiluants());//On actualise le nombre de diluants dans la liste
+
+    echo($stock->toString()."<br/><br/>");
+    echo(sizeof($stock->getLAlcools()) . " Alcool<br/>");
+    print(calculQuantiteMax($stock,$tailleStockSoireeAlcool,$tailleStockSoireeDiluant). " Le maximum de boisson<br/>");
+
+
+    // -- Test fichier calculQuantiteRecette
+    echo("<br/>");
+
+    include ("fonctions/calculQuantiteRecette.php");
+
+    $DOSE_ALCOOL = 0.04;
+    $DOSE_DILUANT = 0.21;
+
+    print_r(calculQuantiteRecette($perroquet, $DOSE_ALCOOL, $DOSE_DILUANT));
+
+
+    // -- Test fichier calculQuantiteDesRecettes
+    echo("<br/> <br/>");
+
+    include ("fonctions/calculQuantiteDesRecettes.php");
+
+    $recettesPossibles = array(); //On crée la liste des recettes possibles
+
+    array_push($recettesPossibles, $mazout,$perroquet); //On ajoute les recettes à la liste
+
+    $tailleStockSoireePossible = count($recettesPossibles); //nombre de recettes dans la liste
+
+    print_r(calculQuantiteDesRecettes($recettesPossibles,$DOSE_ALCOOL,$DOSE_DILUANT,$stock,$tailleStockSoireeAlcool,$tailleStockSoireeDiluant,$tailleStockSoireePossible));
+
 ?>
