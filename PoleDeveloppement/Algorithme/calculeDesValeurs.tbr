@@ -1,8 +1,8 @@
-<?xml version="1.0"?>
+<?xml version="1.1"?>
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>calculeDesValeurs</nom>
-  <date_creation>14/11/2022 15:16</date_creation>
+  <date_creation>20/12/2022 17:39</date_creation>
   <Elements>
     <Action>
       <Position>582;19</Position>
@@ -16,7 +16,7 @@
         <Action>
           <Position>89;190</Position>
           <StyleLien>2</StyleLien>
-          <PreAssertion>recettesPossibles
+          <PreAssertion>recettesPossibles&#xd;
 tailleRecettesPossibles</PreAssertion>
           <PostAssertion>recettesPossibles</PostAssertion>
           <Titre>Trier les recettes</Titre>
@@ -26,7 +26,7 @@ tailleRecettesPossibles</PreAssertion>
             <Iteration>
               <Position>304.5;313.5</Position>
               <StyleLien>1</StyleLien>
-              <Titre>Pour i allant de 0 à tailleRecettesPossibles</Titre>
+              <Titre>Pour i allant de 0 à tailleRecettesPossibles -1</Titre>
               <IterationFixe>1</IterationFixe>
               <Enfants>
                 <Iteration>
@@ -70,7 +70,7 @@ tailleRecettesPossibles</PreAssertion>
         <Action>
           <Position>930;181</Position>
           <StyleLien>2</StyleLien>
-          <PreAssertion>recettesPossibles
+          <PreAssertion>recettesPossibles&#xd;
 tailleRecettesPossibles</PreAssertion>
           <PostAssertion>recettesPossibles</PostAssertion>
           <Titre>Attribuer les valeurs</Titre>
@@ -80,7 +80,7 @@ tailleRecettesPossibles</PreAssertion>
             <Iteration>
               <Position>1432.5;370.5</Position>
               <StyleLien>1</StyleLien>
-              <Titre>Pour i allant de 1 à tailleRecettesPossibles - 1</Titre>
+              <Titre>Pour i allant de 1 à tailleRecettesPossibles - 2</Titre>
               <IterationFixe>1</IterationFixe>
               <Enfants>
                 <Condition>
@@ -168,5 +168,4 @@ tailleRecettesPossibles</PreAssertion>
       </Enfants>
     </Action>
   </Elements>
-  <Dictionary/>
 </Algorithme>

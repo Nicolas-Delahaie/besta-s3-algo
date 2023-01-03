@@ -195,4 +195,16 @@
 
     print_r(calculQuantiteDesRecettes($recettesPossibles,$DOSE_ALCOOL,$DOSE_DILUANT,$stock,$tailleStockSoireeAlcool,$tailleStockSoireeDiluant,$tailleStockSoireePossible));
 
+    // -- Test fonction calculDesValeurs --
+    echo("<br/><br/> -- Calcul des valeurs --");
+    include ("fonctions/calculDesValeurs.php");
+    $copieRecettes = [];
+    for ($i=0; $i < 6; $i++) { 
+        array_push($recettes[$i]);
+    }
+    echo "<br>Avant modif :<br>";
+    foreach($copieRecettes as $recette) echo $recette->toString()."<br>";
+    calculDesValeurs($copieRecettes);
+    echo "<br>Apres modif :<br>";
+    foreach($copieRecettes as $recette) echo $recette->toString()."<br>";
 ?>
