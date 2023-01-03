@@ -13,6 +13,10 @@ function calculQuantiteRecette($recette, $DOSE_ALCOOL, $DOSE_DILUANT){
     
     $nbDoseDiluant = $recette->getDiluant()->getQtBoissonEnCours() / $DOSE_DILUANT; //Calcul du nombre de doses de diluant possible par rapport à la quantité de diluant disponible
 
+    if($nbDoseAlcool == 0 || $nbDoseDiluant == 0){ //Si il n'y a pas de doses d'alcool ou de diluant, on ne peut pas faire de recette
+        return $recettePossible; //On retourne l'objet recettePossible
+    }
+
     if ($nbDoseAlcool <= $nbDoseDiluant){ //Compare les 2 nombres de le doses et si il y a plus de doses de diluant que d'alcool; le limitant est l'alcool
         $qtDiluant = $nbDoseAlcool * $DOSE_DILUANT; //On calcule la quantité de diluant que l'on va avoir en fonction du nombre de doses maximale (nombre de doses d'alcool)
 
