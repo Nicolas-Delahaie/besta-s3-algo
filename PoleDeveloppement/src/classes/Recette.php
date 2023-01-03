@@ -14,25 +14,61 @@
         /*                                  ATTRIBUTS                                 */
         /* -------------------------------------------------------------------------- */
 
-        private $nomRecette;        //nom de la recette
+        /**
+         * Summary of nomRecette 
+         * @var string nom de la recette
+         */
+        private $nomRecette;        
+
+        /**
+         * Summary of alcool
+         * @var Boisson alcool associé à la recette
+         */
         private $alcool;            //alcool associé à la recette
+        /**
+         * Summary of diluant
+         * @var Boisson diluant associé à la recette
+         */
+        private $diluant;           
 
-        private $diluant;           //diluant associé à la recette
-
-        private $qtRecette;         //quantité en litres de la recette 
+        /**
+         * Summary of qtRecette
+         * @var int quantité en litres de la recette
+         */
+        private $qtRecette;         
         
-        private $qtAlcool;          //quantité d'alcool présent dans la recette 
+        /**
+         * Summary of qtAlcool
+         * @var int quantité d'alcool présent dans la recette
+         */
+        private $qtAlcool;           
 
-        private $qtDiluant;         //quantité de diluant présent dans la recette 
+        /**
+         * Summary of qtDiluant
+         * @var int quantité de diluant présent dans la recette
+         */
+        private $qtDiluant;         
 
-        private $valeur;            //valeur de la recette 
+        /**
+         * Summary of valeur
+         * @var int valeur de la recette
+         */
+        private $valeur;            
 
         /* -------------------------------------------------------------------------- */
         /*                                CONSTRUCTEUR                                */
         /* -------------------------------------------------------------------------- */
 
         /**
-         * @brief constructeur d'une recette 
+         * Summary of __construct
+         * @brief constructeur d'une recette par défaut, par copie ou avec paramètres
+         * @param string 1 de la classe : nomRecette
+         * @param Boisson 2 de la classe : alcool
+         * @param Boisson 3 de la classe : diluant
+         * @param int 4 de la classe : qtRecette
+         * @param int 5 de la classe : qtAlcool
+         * @param int 6 de la classe : qtDiluant
+         * @param int 7 de la classe : valeur
          */
         function __construct()
         {

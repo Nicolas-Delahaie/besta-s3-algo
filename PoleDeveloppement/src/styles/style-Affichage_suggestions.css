@@ -1,3 +1,11 @@
+:root {
+    --blanc : #FFFFFF;
+    --rose : #E3BAC6;
+    --violet : #BC9EC1;
+    --bleuClair : #596475;
+    --bleuFonce : #1F2232;
+}
+
 body{
     display : grid;
     grid-template-columns: 1fr min-content 1fr;

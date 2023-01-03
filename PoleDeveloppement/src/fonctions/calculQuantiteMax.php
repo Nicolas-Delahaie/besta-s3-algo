@@ -1,7 +1,5 @@
 <?php
-
-/**
- * Summary of calculQuantiteMax
+/*
  * @brief calcule la quantité totale d'alcool et de diluant que l'on a en stock (pas autre)
  * @param Stock $stockSoiree contient toutes les listes de boissons
  * @param int $tailleStockSoireeAlcool taille de la liste d'alcool du stock $stockSoiree
@@ -27,5 +25,5 @@ function calculQuantiteMax ($stockSoiree,$tailleStockSoireeAlcool,$tailleStockSo
     return $qtMax;
 
 }
-
 ?>
+
