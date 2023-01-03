@@ -42,7 +42,7 @@ function calculDesValeurs($recettesPossibles)
         else
         {
             //Recette moins volumineuse, incrementation de valeur
-            $valeur += 1;
+            $valeur -= 1;
             $recettesPossibles[$i]->setValeur($valeur);
         }
     }
