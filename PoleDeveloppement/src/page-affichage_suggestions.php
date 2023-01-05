@@ -6,7 +6,8 @@
         <title>Suggestion d'une combinaison de cocktails</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles/style-Affichage_suggestions.css">
+        <link rel="stylesheet" href="styles/index.css">
+        <link rel="stylesheet" href="styles/page_affichage_suggestion.css">
     </head>
     <body>
         <section id="containerPrincipal">

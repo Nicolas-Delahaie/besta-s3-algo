@@ -2,6 +2,7 @@
 
 <head>
     <link rel="stylesheet" href="src/styles/index.css">
+    <link rel="stylesheet" href="src/styles/page_ajout_boissons.css">
 </head>
 
 <body>
