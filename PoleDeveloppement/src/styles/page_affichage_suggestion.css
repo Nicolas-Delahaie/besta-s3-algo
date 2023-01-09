@@ -1,27 +1,27 @@
 :root {
     --blanc : #FFFFFF;
-    --rose : #E3BAC6;
+    --violet-clair : #E3BAC6;
     --violet : #BC9EC1;
-    --bleuClair : #596475;
-    --bleuFonce : #1F2232;
+    --gris : #596475;
+    --noir : #1F2232;
 }
 
 body{
     display : grid;
     grid-template-columns: 1fr min-content 1fr;
-    color: var(--bleuFonce);
+    color: var(--noir);
 }
 
 #containerPrincipal{
     grid-column: 2;
-    border: 4px solid var(--bleuFonce);
+    border: 4px solid var(--noir);
     border-radius: 20px;
 
     overflow: hidden;
 }
 
 header{
-    background-color: var(--bleuClair);
+    background-color: var(--gris);
     height : 100px;
     text-align: center;
 
@@ -35,7 +35,7 @@ h1 {
 }
 h2{
     text-align: center;
-    border-bottom: 3px solid var(--bleuFonce);
+    border-bottom: 3px solid var(--noir);
 }
 
 main{
