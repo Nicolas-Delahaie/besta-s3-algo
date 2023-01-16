@@ -1,1 +1,20 @@
-{"Stock":[{"nomBoisson":"Tequila","qtBoisson":60},{"nomBoisson":"Vodka","qtBoisson":20}]}
+{
+    "Stock": [
+        {
+            "nomBoisson": "tequila",
+            "qtBoisson": 60
+        },
+        {
+            "nomBoisson": "vodka",
+            "qtBoisson": 20
+        },
+        {
+            "nomBoisson": "coca",
+            "qtBoisson": 12
+        },
+        {
+            "nomBoisson": "orange",
+            "qtBoisson": 5
+        }
+    ]
+}

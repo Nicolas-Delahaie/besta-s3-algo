@@ -2,11 +2,9 @@
     /**
      *@author @oiercesat <ocesat@iutbayonne.univ-pau.fr>
      *@version ${1:1.0.0
-    */
-    
-    /**
      * @brief classe Recette comportant un nom, un alcool, un diluant, une quantité de recette, la quantité d'alcool présent dans la recette, la quantité de diluant présent dans la recette et la valeur de la recette
-     */
+    */
+
     class Recette 
     {
 

@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <form action="src/fonctions/saisieVerif.php" method="POST">
+    <form action="./src/fonctions/fonctionsIndex.php" method="POST">
         <p>Sélectionnez le nom de la boisson </p>
         <select name="nomBoisson" id="nomBoisson">
             <option value="default">Boisson</option>

@@ -3,13 +3,8 @@
     /** 
     *@author @alexandrePascal <apascal003@iutbayonne.univ-pau.fr>
     *@version 6.0
+    * @brief Classe Stock comportant une liste d'alcools, une liste de diluants et une 
     */
-
-
-    /**
-     * @brief Classe Stock comportant une liste d'alcools, une liste de diluants et une 
-     */
-
     class Stock{
         
         /* -------------------------------------------------------------------------- */
@@ -175,7 +170,6 @@
         {
             //On ouvre et decode le fichier json
             $json_data = ouvrirJson($nomFichier);
-
             //On crée une nouvelle boisson avec le nom passé en paramètre
             $boissonAajouter = new Boisson($nomBoisson, 0, 0, 0);
 
@@ -265,6 +259,30 @@
                 echo "La boisson n'a pas été trouvée";
             }
 
+        }
+
+        /**
+         * @brief: Retourne la taille de la liste des alcools
+         * @return int
+         */
+        public function tailleAlcools(){
+            return count($this->lAlcools);
+        }
+
+        /**
+         * @brief: Retourne la taille de la liste des diluants
+         * @return int
+         */
+        public function tailleDiluants(){
+            return count($this->lDiluants);
+        }
+
+        /**
+         * @brief: Retourne la taille de la liste des autres boissons
+         * @return int
+         */
+        public function tailleAutres(){
+            return count($this->lAutres);
         }
     }
 ?>
