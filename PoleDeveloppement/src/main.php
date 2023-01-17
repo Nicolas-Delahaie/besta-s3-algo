@@ -116,11 +116,11 @@ $meilleureCombinaison = sacApo($recettesPossibles, $tailleRecettesPossibles, $qt
                 $html .= '<section class="zoneVerres">';
                 #Calcul du nombre de verres de 25cl
                 $nbVerres = floor($recetteAffichee->getQtRecette() / 0.25);
-                $html .= '<p class="nbVerres">' . $nbVerres . ' verres</p>';
                 $nbVerresTotaux += $nbVerres;
                 for ($n = 0; $n < $nbVerres; $n++) {
                     $html .= '<img src="datas/img/verre.jpg" class="verres">';
                 }
+                $html .= '<p class="nbVerres"> = ' . $nbVerres . '</p>';
                 $html .= '</section></article>';
             }
 
