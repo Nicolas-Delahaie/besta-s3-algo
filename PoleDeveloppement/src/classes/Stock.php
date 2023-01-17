@@ -1,17 +1,18 @@
 <?php
 
     /** 
+     * @file Stock.php
      * @author @alexandrePascal <apascal003@iutbayonne.univ-pau.fr>
      * @version 6.0
-     * @brief Classe Stock comportant une liste d'alcools, une liste de diluants et une 
+     * @brief Classe Stock representant le stock de boissons d un evenement
     */
     class Stock{
         /* -------------------------------------------------------------------------- */
         /*                                  ATTRIBUTS                                 */
         /* -------------------------------------------------------------------------- */
-        private $lAlcools = array(); // Création de la liste d'alcools
-        private $lDiluants = array(); // Création de la liste de diluants
-        private $lAutres = array(); // Création de la liste des autres boissons
+        private $lAlcools = array();  /** @var array Liste des alcools du stock (Rhum, Pastis...)*/
+        private $lDiluants = array(); /** @var array Liste des diluants du stock (Oasis, Coca...)*/
+        private $lAutres = array();   /** @var array Liste des autres boissons du stock (Biere, vin...)*/
 
         /* -------------------------------------------------------------------------- */
         /*                                CONSTRUCTEUR                                */

@@ -1,18 +1,19 @@
 <?php
     /**
+     * @file Boisson.php
      * @author @oiercesat <ocesat@iutbayonne.univ-pau.fr>
      * @version 2.0
-     * @brief classe Boisson comportant un nom, un type, une quantité initiale et la quantité de boisson en cours
+     * @brief Classe Boisson representant une boisson (permettant de fabriquer un cocktail)
     */
     class Boisson{
 
         /* -------------------------------------------------------------------------- */
         /*                                  ATTRIBUTS                                 */
         /* -------------------------------------------------------------------------- */
-        private $nomBoisson;            //nom de la boisson
-        private $typeBoisson;           //type de la boisson
-        private $qtBoissonInitiale;     //quantité initiale de la boisson
-        private $qtBoissonEnCours;      //quantité en cours/actuelle de la boisson
+        private $nomBoisson;         /** @var string Nom de la boisson*/
+        private $typeBoisson;        /** @var string Type de la boisson (alcool, soft, autre)*/
+        private $qtBoissonInitiale;  /** @var float Volume initial de la boisson*/
+        private $qtBoissonEnCours;   /** @var float Volume initial de la boisson*/
 
         /* -------------------------------------------------------------------------- */
         /*                                CONSTRUCTEUR                                */

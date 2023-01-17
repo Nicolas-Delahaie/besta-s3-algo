@@ -1,39 +1,19 @@
 <?php
     /**
-     *@author @oiercesat <ocesat@iutbayonne.univ-pau.fr>
-     *@version ${1:1.0.0
-     * @brief classe Recette comportant un nom, un alcool, un diluant, une quantité de recette, la quantité d'alcool présent dans la recette, la quantité de diluant présent dans la recette et la valeur de la recette
+     * @file Recette.php
+     * @author @oiercesat <ocesat@iutbayonne.univ-pau.fr>
+     * @version 3.0
+     * @brief Classe Recette representant une combinaison de 2 boissons (un alcool et un diluant) 
     */
-
     class Recette 
     {
-
         /* -------------------------------------------------------------------------- */
         /*                                  ATTRIBUTS                                 */
         /* -------------------------------------------------------------------------- */
-
-        /**
-         * Summary of nomRecette 
-         * @var string nom de la recette
-         */
-        private $nomRecette;        
-
-        /**
-         * Summary of alcool
-         * @var Boisson alcool associé à la recette
-         */
-        private $alcool;            //alcool associé à la recette
-        /**
-         * Summary of diluant
-         * @var Boisson diluant associé à la recette
-         */
-        private $diluant;           
-
-        /**
-         * Summary of qtRecette
-         * @var int quantité en litres de la recette
-         */
-        private $qtRecette;         
+        private $nomRecette; /** @var string nom de la recette*/   
+        private $alcool;     /** @var Boisson alcool associé à la recette*/
+        private $diluant;    /** @var Boisson diluant associé à la recette*/
+        private $qtRecette;  /** @var float quantité en litres de la recette*/
         
         /**
          * Summary of qtAlcool

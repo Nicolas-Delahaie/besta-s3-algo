@@ -1,26 +1,17 @@
 <?php
     /** 
+     * @file Branche.php
      * @author @nicolasdelahaie <ndelahaie@iutbayonne.univ-pau.fr>
-     * @version ${1:1.0.0
-     * @brief Classe branche representant une possiblite de cocktail
+     * @version 3.0
+     * @brief Classe branche representant une possiblite de recette
     */
-    
     class Branche{
         /* -------------------------------------------------------------------------- */
         /*                                  ATTRIBUTS                                 */
         /* -------------------------------------------------------------------------- */
-        /**
-         * @brief A REMPLIR (pRecette)
-         */
-        private $pRecette;
-        /**
-         * @brief A REMPLIR (qtBranche)
-         */
-        private $qtBranche;
-        /**
-         * @brief A REMPLIR (qtValeur)
-         */
-        private $qtValeur;
+        private $pRecette;  /** @var array Pile des recettes présents dans les noeuds precedents*/
+        private $qtBranche; /** @var float Quantité de la branche*/
+        private $qtValeur;  /** @var int Valeur de la branche*/
 
         /* -------------------------------------------------------------------------- */
         /*                                CONSTRUCTEUR                                */
