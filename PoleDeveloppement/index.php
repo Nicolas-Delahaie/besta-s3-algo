@@ -26,7 +26,7 @@
             ?>  
         </select>
         <p>Sélectionnez la quantité de votre boisson en litres</p>
-        <input type="number" name="qtBoisson" value="qtBoisson">
+        <input type="number" step="any" name="qtBoisson" value="qtBoisson">
         <br>
         <section>
             <input type="submit" value="Valider" class="btn">
