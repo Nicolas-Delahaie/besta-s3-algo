@@ -17,11 +17,11 @@
         /* -------------------------------------------------------------------------- */
         /*                                CONSTRUCTEUR                                */
         /* -------------------------------------------------------------------------- */
-        
         /**
-         * @brief
+         * @brief Constructeur d'un objet Stock par défaut, par copie ou par paramètres
          * @param
          * @warning Si le stock est construit avec une seule boisson, il y aura un problème car le code ne sais pas différentier entre 1 paramètre étant un object boisson, ou un autre étant un objet stock (problème de constructeur par copie). On admet donc que le cas d'une seul boisson n'existera jamais (pour 1 recette il faut au moins 2 boissons)
+         * @todo ENLEVE LES CONSTYRUCTEURS PAR COPIE ET DEFAUT CAR IMPOSSIBLE A DOCUMENTER
          */
         function __construct()
         {

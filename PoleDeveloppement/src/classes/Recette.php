@@ -24,7 +24,7 @@
 
         /**
          * Summary of __construct
-         * @brief constructeur d'une recette par défaut, par copie ou avec paramètres
+         * @brief Constructeur d'un objet Recette par défaut, par copie ou par paramètres
          * @param string 1 de la classe : nomRecette
          * @param Boisson 2 de la classe : alcool
          * @param Boisson 3 de la classe : diluant
@@ -32,6 +32,7 @@
          * @param int 5 de la classe : qtAlcool
          * @param int 6 de la classe : qtDiluant
          * @param int 7 de la classe : valeur
+         * @todo ENLEVE LES CONSTYRUCTEURS PAR COPIE ET DEFAUT CAR IMPOSSIBLE A DOCUMENTER
          */
         function __construct()
         {

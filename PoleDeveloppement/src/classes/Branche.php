@@ -10,17 +10,18 @@
         /*                                  ATTRIBUTS                                 */
         /* -------------------------------------------------------------------------- */
         private $pRecette;  /** @var array Pile des recettes présents dans les noeuds precedents*/
-        private $qtBranche; /** @var float Quantité de la branche*/
-        private $qtValeur;  /** @var int Valeur de la branche*/
+        private $qtBranche; /** @var float Volume total de la branche*/
+        private $qtValeur;  /** @var int Valeur totale de la branche*/
 
         /* -------------------------------------------------------------------------- */
         /*                                CONSTRUCTEUR                                */
         /* -------------------------------------------------------------------------- */
         /**
-         * @brief Constructeur par defaut, par copie ou avec parametres
+         * @brief Constructeur d'un objet Branche par défaut, par copie ou par paramètres
          * @param array 1 de la classe : pRecette
-         * @param int 2 de la classe : qtBranche
+         * @param float 2 de la classe : qtBranche
          * @param int 2 de la classe : qtValeur
+         * @todo ENLEVE LES CONSTYRUCTEURS PAR COPIE ET DEFAUT CAR IMPOSSIBLE A DOCUMENTER
          */
         function __construct()
         {
@@ -59,43 +60,36 @@
         /* -------------------------------------------------------------------------- */
 
         /* --------------------------------- GETTERS --------------------------------- */
-        /**
-         * @return array 1 de la classe : pRecette
-         */
+        /** @return array pRecette*/
         function getPRecette (){return ($this->pRecette);}
-        /**
-         * @return int 2 de la classe : qtBranche
-         */
+        /** @return float qtBranche*/
         function getQtBranche (){return ($this->qtBranche);}  
-        /**
-         * @return int 3 de la classe : qtValeur
-         */
+        /** @return int qtValeur*/
         function getQtValeur (){return ($this->qtValeur);}     
         
         /* --------------------------------- SETTERS --------------------------------- */
         /**
-         * @brief set l'attribut 1 pRecette
-         * @param array 1 pRecette
+         * @brief Set la pile de recettes
+         * @param array p
          */
         function setPRecette ($p){$this->pRecette = $p;}  
         /**
-         * @brief set l'attribut 1 pRecette
-         * @param int
+         * @brief Set le volume total
+         * @param float qtB
          */
         function setQtBranche ($qtB){$this->qtBranche = $qtB;}  
         /**
-         * @brief set l'attribut 1 pRecette
-         * @param int
+         * @brief Set la valeur totale
+         * @param int qtV
          */
         function setQtValeur ($qtV){$this->qtValeur = $qtV;} 
 
         /* -------------------------------- TO STRING ------------------------------- */
         /**
-         * @brief Traduit la branche en une chaine de caracteres
+         * @brief Traduit la branche en une chaine de caracteres de la forme branche(volume utilise : X, valeur totale : X, suite de cocktails : X - X - Z)
          * @return string caractere representant l objet
          */
         function toString(){
-            //Retourne la branche de la forme branche(volume utilise : X, valeur totale : X, suite de cocktails : X - X - Z)
             $message = "Branche (volume utilise : $this->qtBranche, valeur totale : $this->qtValeur, suite de cocktails : ";
 
             $copiePile = $this->pRecette;

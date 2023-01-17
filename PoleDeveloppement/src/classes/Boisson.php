@@ -18,12 +18,14 @@
         /* -------------------------------------------------------------------------- */
         /*                                CONSTRUCTEUR                                */
         /* -------------------------------------------------------------------------- */
-        
-
         /**
-         * @brief constructeur d'une Boisson 
-         * @param string, int, int, int ou une boisson ou pas de paramètres 
+         * @brief Constructeur d'un objet Boisson par défaut, par copie ou par paramètres
+         * @param string
+         * @param int
+         * @param int
+         * @param int
          * @return Boisson
+         * @todo ENLEVE LES CONSTYRUCTEURS PAR COPIE ET DEFAUT CAR IMPOSSIBLE A DOCUMENTER
          */
         function __construct()
         {
