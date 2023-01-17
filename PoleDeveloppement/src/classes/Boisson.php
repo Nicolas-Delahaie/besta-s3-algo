@@ -1,12 +1,9 @@
 <?php
     /**
-         *@author @oiercesat <ocesat@iutbayonne.univ-pau.fr>
-        *@version ${1:1.0.0
-    */
-
-    /**
+     * @author @oiercesat <ocesat@iutbayonne.univ-pau.fr>
+     * @version 2.0
      * @brief classe Boisson comportant un nom, un type, une quantité initiale et la quantité de boisson en cours
-     */
+    */
     class Boisson{
 
         /* -------------------------------------------------------------------------- */

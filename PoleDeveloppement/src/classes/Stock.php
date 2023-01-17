@@ -1,12 +1,11 @@
 <?php
 
     /** 
-    *@author @alexandrePascal <apascal003@iutbayonne.univ-pau.fr>
-    *@version 6.0
-    * @brief Classe Stock comportant une liste d'alcools, une liste de diluants et une 
+     * @author @alexandrePascal <apascal003@iutbayonne.univ-pau.fr>
+     * @version 6.0
+     * @brief Classe Stock comportant une liste d'alcools, une liste de diluants et une 
     */
     class Stock{
-        
         /* -------------------------------------------------------------------------- */
         /*                                  ATTRIBUTS                                 */
         /* -------------------------------------------------------------------------- */
