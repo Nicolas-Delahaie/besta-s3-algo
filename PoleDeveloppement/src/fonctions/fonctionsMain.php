@@ -344,107 +344,122 @@ function sacApo($recettesPossibles, $tailleRecettesPossibles, $qtMax, $doseAlcoo
         
         //Parcours et recherche des branches valide
         while (true) {
-            
-            //Ajout de la recette en cours a la branche en cours
-            $brancheEnCours->ajouterRecette($recettesPossibles[$iterateurRecette]);
-            
-            //initialisation de la taille de la branche invalide 
-            $tailleBrancheInvalide = sizeof($brancheInvalide);
-            
-            //initialisation de la taille de la branche valide
-            $tailleBrancheValide = sizeof($brancheValide);
-            
-            //Verification si la brancheEnCours est dans brancheValide
-            for ($i = 0; $i < $tailleBrancheValide; $i++) {
-                if ($brancheEnCours->getPRecette() == $brancheValide[$i]->getPRecette()) {
-                    $brancheEnCours->popRecette();
-                }
-            }
-            
-            /* ------- Verification si la brancheEnCours est dans brancheInvalide ------- */
-            
-            for ($i = 0; $i < $tailleBrancheInvalide; $i++) {
-                if ($brancheEnCours->getPRecette() == $brancheInvalide[$i]->getPRecette()) {
-                    
-                    //si en plus la branche en vide alors on arrete
-                    if ($brancheEnCours->estVide()) {
-                        $estFini = true;
-                        break;
-                    }
-                    
-                    //sinon on supprime la recette en cours de la branche en cours
-                    else {
+
+            // echo $brancheEnCours->toString();
+
+            if ($recettesPossibles[$iterateurRecette]->getAlcool()->getQtBoissonEnCours() != 0 && $recettesPossibles[$iterateurRecette]->getDiluant()->getQtBoissonEnCours() != 0) {
+
+                //Ajout de la recette en cours a la branche en cours
+                $brancheEnCours->ajouterRecette($recettesPossibles[$iterateurRecette]);
+                
+                //initialisation de la taille de la branche invalide 
+                $tailleBrancheInvalide = sizeof($brancheInvalide);
+                
+                //initialisation de la taille de la branche valide
+                $tailleBrancheValide = sizeof($brancheValide);
+                
+                //Verification si la brancheEnCours est dans brancheValide
+                for ($i = 0; $i < $tailleBrancheValide; $i++) {
+                    if ($brancheEnCours->getPRecette() == $brancheValide[$i]->getPRecette()) {
                         $brancheEnCours->popRecette();
                     }
                 }
-            }
-            
-            /* ------------------------ Mis à jour des variables ------------------------ */
-            
-            //Mise à jour de la borne sup
-            $borneSup = 0;
-            
-            //Parcours des recettes possibles encore ajoutable
-            for ($i = $iterateurRecette+1; $i < $tailleRecettesPossibles; $i++) {
-                $borneSup += $recettesPossibles[$i]->getValeur();
-            }
-            
-            //Ajout de la valeur de la branche en cours a la borne sup
-            $borneSup += $brancheEnCours->getQtValeur();            
-            
-            //Mise à jour de la borne inf
-            if ($brancheEnCours->getQtBranche() > $borneInf) {
-                $borneInf = $brancheEnCours->getQtValeur();
-            }
-
-            /* --------------- Verification si brancheEnCours est invalide -------------- */
-
-            if ($brancheEnCours->getQtBranche() > $qtMax || $brancheEnCours->getQtValeur() < $borneInf) {
-                array_push($brancheInvalide, $brancheEnCours);
-                break;
-            }
-            
-            /* ------------------------- Mis à jour des varibles ------------------------ */
-            
-            //Mise à jour de la quantité des boissons
-
-            if($recettesPossibles[$iterateurRecette]->getAlcool()->getQtBoissonEnCours() > 0){
-                $recettesPossibles[$iterateurRecette]->getAlcool()->setQtBoissonEnCours($recettesPossibles[$iterateurRecette]->getAlcool()->getQtBoissonEnCours() - $recettesPossibles[$iterateurRecette]->getQtAlcool());
-            }
-            else {
-                $recettesPossibles[$iterateurRecette]->getAlcool()->setQtBoissonEnCours(0);
-            }
-
-            if($recettesPossibles[$iterateurRecette]->getDiluant()->getQtBoissonEnCours() > 0){
-
-                $recettesPossibles[$iterateurRecette]->getDiluant()->setQtBoissonEnCours($recettesPossibles[$iterateurRecette]->getDiluant()->getQtBoissonEnCours() - $recettesPossibles[$iterateurRecette]->getQtDiluant());
-            }
-            else {
-                $recettesPossibles[$iterateurRecette]->getDiluant()->setQtBoissonEnCours(0);
-            }
-
-            
-            //Mise à jour de la quantité des boissons dans recette
-            for ($i = 0; $i < $tailleRecettesPossibles; $i++) {
-                if ($recettesPossibles[$iterateurRecette]->getAlcool() == $recettesPossibles[$i]->getAlcool()) {
-                    calculQuantiteRecette($recettesPossibles[$i], $doseAlcool, $doseDiluant);
+                
+                /* ------- Verification si la brancheEnCours est dans brancheInvalide ------- */
+                
+                for ($i = 0; $i < $tailleBrancheInvalide; $i++) {
+                    if ($brancheEnCours->getPRecette() == $brancheInvalide[$i]->getPRecette()) {
+                        
+                        //si en plus la branche en vide alors on arrete
+                        if ($brancheEnCours->estVide()) {
+                            $estFini = true;
+                            break;
+                        }
+                        
+                        //sinon on supprime la recette en cours de la branche en cours
+                        else {
+                            $brancheEnCours->popRecette();
+                        }
+                    }
                 }
-                if ($recettesPossibles[$iterateurRecette]->getDiluant() == $recettesPossibles[$i]->getDiluant()) {
-                    calculQuantiteRecette($recettesPossibles[$i], $doseAlcool, $doseDiluant);
+                
+                /* ------------------------ Mis à jour des variables ------------------------ */
+                
+                //Mise à jour de la borne sup
+                $borneSup = 0;
+                
+                //Parcours des recettes possibles encore ajoutable
+                for ($i = $iterateurRecette+1; $i < $tailleRecettesPossibles; $i++) {
+                    $borneSup += $recettesPossibles[$i]->getValeur();
                 }
+                
+                //Ajout de la valeur de la branche en cours a la borne sup
+                $borneSup += $brancheEnCours->getQtValeur();            
+                
+                //Mise à jour de la borne inf
+                if ($brancheEnCours->getQtBranche() > $borneInf) {
+                    $borneInf = $brancheEnCours->getQtValeur();
+                }
+    
+                /* --------------- Verification si brancheEnCours est invalide -------------- */
+    
+                if ($brancheEnCours->getQtBranche() > $qtMax || $brancheEnCours->getQtValeur() < $borneInf) {
+                    array_push($brancheInvalide, $brancheEnCours);
+                    break;
+                }
+                
+                /* ------------------------- Mis à jour des varibles ------------------------ */
+                
+                //Mise à jour de la quantité des boissons
+    
+                if($recettesPossibles[$iterateurRecette]->getAlcool()->getQtBoissonEnCours() > 0){
+                    $recettesPossibles[$iterateurRecette]->getAlcool()->setQtBoissonEnCours($recettesPossibles[$iterateurRecette]->getAlcool()->getQtBoissonEnCours() - $recettesPossibles[$iterateurRecette]->getQtAlcool());
+                }
+                else {
+                    $recettesPossibles[$iterateurRecette]->getAlcool()->setQtBoissonEnCours(0);
+                }
+    
+                if($recettesPossibles[$iterateurRecette]->getDiluant()->getQtBoissonEnCours() > 0){
+    
+                    $recettesPossibles[$iterateurRecette]->getDiluant()->setQtBoissonEnCours($recettesPossibles[$iterateurRecette]->getDiluant()->getQtBoissonEnCours() - $recettesPossibles[$iterateurRecette]->getQtDiluant());
+                }
+                else {
+                    $recettesPossibles[$iterateurRecette]->getDiluant()->setQtBoissonEnCours(0);
+                }
+    
+                
+                //Mise à jour de la quantité des boissons dans recette
+                for ($i = 0; $i < $tailleRecettesPossibles; $i++) {
+                    if ($recettesPossibles[$iterateurRecette]->getAlcool() == $recettesPossibles[$i]->getAlcool()) {
+                        calculQuantiteRecette($recettesPossibles[$i], $doseAlcool, $doseDiluant);
+                    }
+                    if ($recettesPossibles[$iterateurRecette]->getDiluant() == $recettesPossibles[$i]->getDiluant()) {
+                        calculQuantiteRecette($recettesPossibles[$i], $doseAlcool, $doseDiluant);
+                    }
+                }
+                
+                /* ---------- Verification si toute les recettes ont été parcourus ---------- */
+                
+                //si oui on ajoute la branche en cours a brancheValide
+                if ($iterateurRecette == $tailleRecettesPossibles - 1) {
+                    array_push($brancheValide, $brancheEnCours);
+                    break;
+                }
+                
+                //sinon on passe a la recette suivante
+                else {
+                    $iterateurRecette++;
+                } 
             }
-            
-            /* ---------- Verification si toute les recettes ont été parcourus ---------- */
-            
-            //si oui on ajoute la branche en cours a brancheValide
-            if ($iterateurRecette == $tailleRecettesPossibles - 1) {
-                array_push($brancheValide, $brancheEnCours);
-                break;
-            }
-            
-            //sinon on passe a la recette suivante
             else {
-                $iterateurRecette++;
+                if($iterateurRecette == $tailleRecettesPossibles - 1){
+                    echo "iterateurRecette : " . $iterateurRecette . "<br>";
+                    echo "tailleRecettesPossibles : " . $tailleRecettesPossibles . "<br>";
+                    break;
+                }
+                else{
+                    $iterateurRecette++;
+                }
             }
         }
     }
