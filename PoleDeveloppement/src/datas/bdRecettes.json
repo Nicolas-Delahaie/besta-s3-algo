@@ -21,11 +21,6 @@
         "diluant": "eau"
     },
     {
-        "nomRecette": "whiskyAnanas",
-        "alcool": "whisky",
-        "diluant": "ananas"
-    },
-    {
         "nomRecette": "whiskyCoca",
         "alcool": "whisky",
         "diluant": "coca"

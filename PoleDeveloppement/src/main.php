@@ -162,8 +162,9 @@ $meilleureCombinaison = sacApo($recettesPossibles, $tailleRecettesPossibles, $qt
                         $html .= '<img src="datas/img/bouteilles/' . $restes[$i]->getNomBoisson() . '.jpg" class="imagesBoissons imagesRestes">';
                         $html .= '<p class="separateur">=</p>';
                         $html .= '<section class="zoneShots">';
-
+                        
                         #Calcul du nombre de shots de 4cl
+
                         $nbShots = floor($restes[$i]->getQtBoissonEnCours() / 0.04);
 
                         $nbShotsTotaux += $nbShots;
