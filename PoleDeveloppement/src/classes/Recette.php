@@ -10,28 +10,13 @@
         /* -------------------------------------------------------------------------- */
         /*                                  ATTRIBUTS                                 */
         /* -------------------------------------------------------------------------- */
-        private $nomRecette; /** @var string nom de la recette*/   
-        private $alcool;     /** @var Boisson alcool associé à la recette*/
-        private $diluant;    /** @var Boisson diluant associé à la recette*/
-        private $qtRecette;  /** @var float quantité en litres de la recette*/
-        
-        /**
-         * Summary of qtAlcool
-         * @var int quantité d'alcool présent dans la recette
-         */
-        private $qtAlcool;           
-
-        /**
-         * Summary of qtDiluant
-         * @var int quantité de diluant présent dans la recette
-         */
-        private $qtDiluant;         
-
-        /**
-         * Summary of valeur
-         * @var int valeur de la recette
-         */
-        private $valeur;            
+        private $nomRecette; /** @var string Nom de la recette*/   
+        private $alcool;     /** @var Boisson Alcool associé à la recette*/
+        private $diluant;    /** @var Boisson Diluant associé à la recette*/
+        private $qtRecette;  /** @var float Volume en litres de la recette*/
+        private $qtAlcool;   /** @var float Volume d'alcool présent dans la recette*/ 
+        private $qtDiluant;  /** @var float Volume de diluant présent dans la recette*/
+        private $valeur;     /** @var int Valeur de la recette*/    
 
         /* -------------------------------------------------------------------------- */
         /*                                CONSTRUCTEUR                                */
