@@ -56,11 +56,6 @@
         "diluant": "iceTea"
     },
     {
-        "nomRecette": "jeagerCoca",
-        "alcool": "jeager",
-        "diluant": "coca"
-    },
-    {
         "nomRecette": "ginTonic",
         "alcool": "gin",
         "diluant": "tonic"

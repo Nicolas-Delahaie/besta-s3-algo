@@ -17,7 +17,7 @@ function saisieVerif()
         $nomBoisson = $_POST['nomBoisson'];
         $qtBoisson = $_POST['qtBoisson'];
 
-        array_push($resultat,$nomBoisson,intval($qtBoisson));
+        array_push($resultat,$nomBoisson,doubleval($qtBoisson));
         header("Location: ./../../index.php");
     } 
     else {
