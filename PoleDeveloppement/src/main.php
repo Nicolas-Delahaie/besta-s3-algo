@@ -156,20 +156,22 @@ $meilleureCombinaison = sacApo($recettesPossibles, $tailleRecettesPossibles, $qt
             for ($i = 0; $i < count($restes); $i++) {
 
                 if ($restes[$i]->getQtBoissonEnCours() != 0) {
-                    $html .= '<article>';
-                    $html .= '<img src="datas/img/bouteilles/' . $restes[$i]->getNomBoisson() . '.jpg" class="imagesBoissons imagesRestes">';
-                    $html .= '<p class="separateur">=</p>';
-                    $html .= '<section class="zoneShots">';
-                    #Calcul du nombre de shots de 4cl
 
-                    $nbShots = floor($restes[$i]->getQtBoissonEnCours() / 0.04);
+                    if ($restes[$i]->getQtBoissonEnCours() > 0.04) {
+                        $html .= '<article>';
+                        $html .= '<img src="datas/img/bouteilles/' . $restes[$i]->getNomBoisson() . '.jpg" class="imagesBoissons imagesRestes">';
+                        $html .= '<p class="separateur">=</p>';
+                        $html .= '<section class="zoneShots">';
 
-                    $nbShotsTotaux += $nbShots;
+                        #Calcul du nombre de shots de 4cl
+                        $nbShots = floor($restes[$i]->getQtBoissonEnCours() / 0.04);
 
-                    for ($n = 0; $n < $nbShots; $n++) {
-                        $html .= '<img src="datas/img/shot.jpg" class="shots">';
+                        $nbShotsTotaux += $nbShots;
+                        for ($n = 0; $n < $nbShots; $n++) {
+                            $html .= '<img src="datas/img/shot.jpg" class="shots">';
+                        }
+                        $html .= '</section></article>';
                     }
-                    $html .= '</section></article>';
                 }
             }
 
