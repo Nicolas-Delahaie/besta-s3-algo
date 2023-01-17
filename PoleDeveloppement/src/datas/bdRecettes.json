@@ -21,11 +21,6 @@
         "diluant": "eau"
     },
     {
-        "nomRecette": "whiskyAnanas",
-        "alcool": "whisky",
-        "diluant": "ananas"
-    },
-    {
         "nomRecette": "whiskyCoca",
         "alcool": "whisky",
         "diluant": "coca"
@@ -54,11 +49,6 @@
         "nomRecette": "jeagerIceTea",
         "alcool": "jeager",
         "diluant": "iceTea"
-    },
-    {
-        "nomRecette": "jeagerCoca",
-        "alcool": "jeager",
-        "diluant": "coca"
     },
     {
         "nomRecette": "ginTonic",
