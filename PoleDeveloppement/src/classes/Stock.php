@@ -19,9 +19,9 @@
         /* -------------------------------------------------------------------------- */
         /**
          * @brief Constructeur d'un objet Stock par défaut, par copie ou par paramètres
-         * @param
-         * @warning Si le stock est construit avec une seule boisson, il y aura un problème car le code ne sais pas différentier entre 1 paramètre étant un object boisson, ou un autre étant un objet stock (problème de constructeur par copie). On admet donc que le cas d'une seul boisson n'existera jamais (pour 1 recette il faut au moins 2 boissons)
-         * @todo ENLEVE LES CONSTYRUCTEURS PAR COPIE ET DEFAUT CAR IMPOSSIBLE A DOCUMENTER
+         * @param array lAlcools (par parametres) ou Stock (objet a copier)
+         * @param array lDiluants (par parametres)
+         * @param array lAutres (par parametres)
          */
         function __construct()
         {
@@ -73,46 +73,79 @@
         /* -------------------------------------------------------------------------- */
 
         /* --------------------------------- GETEUR --------------------------------- */
-
+        /** 
+         * @brief Retourne la liste des alcools du stock
+         * @return array
+        */
         function getLAlcools (){
             return $this->lAlcools;
         }    
-
+        /** 
+         * @brief Retourne la liste des diluants du stock
+         * @return array
+        */
         function getLDiluants (){
             return $this -> lDiluants;
         }        
+        /** 
+         * @brief Retourne la liste des autres boissons du stock
+         * @return array
+        */
         function getLAutres (){       
             return $this -> lAutres;
         }              
 
         /* --------------------------------- SETEUR --------------------------------- */
-
+        /**
+         * @brief Permet de modifier l'attribut lAlcools
+         * @param array lAlcools
+         */
         function setLAlcools($nouveauAlcool){ 
-            array_push($this->lAlcools, $nouveauAlcool); //On ajoute a la liste d'alcools, l'alcool passée en paramètre
+            array_push($this->lAlcools, $nouveauAlcool);
         }
+        /**
+         * @brief Permet de modifier l'attribut lDiluants
+         * @param array lDiluants
+         */
         function setLDiluants($nouveauDiluant){
-            array_push($this->lDiluants, $nouveauDiluant);//On ajoute a la liste de diluants, le diluant passée en paramètre
+            array_push($this->lDiluants, $nouveauDiluant);
         }
+        /**
+         * @brief Permet de modifier l'attribut lAutres
+         * @param array lAutres
+         */
         function setLAutres($nouveauAutre){
-            array_push($this->lAutres, $nouveauAutre);//On ajoute a la liste des autres boissons, la boisson passée en paramètre
+            array_push($this->lAutres, $nouveauAutre);
         }
 
         /* --------------------------------- SUPPRESSION --------------------------------- */
-
-        function supprLAlcools($alcool){
-            unset($this->lAlcools[array_search($alcool, $this->lAlcools)]);//Supprime la boisson alcool passée en paramètre
+        /**
+         * @brief Permet de supprimer un alcool du stock
+         * @param string nomAlcool
+         */
+        function supprLAlcools($nomAlcool){
+            unset($this->lAlcools[array_search($nomAlcool, $this->lAlcools)]);
         }
-
-        function supprLDiluants($diluant){
-            unset($this->lDiluants[array_search($diluant, $this->lDiluants)]);//Supprime la boisson diluant passée en paramètre
+        /**
+         * @brief Permet de supprimer un diluant du stock
+         * @param string nomDiluant
+         */
+        function supprLDiluants($nomDiluant){
+            unset($this->lDiluants[array_search($nomDiluant, $this->lDiluants)]);
         }
-
-        function supprLAutres($autre){
-            unset($this->lAutres[array_search($autre, $this->lAutres)]); //Supprime la boisson autre passée en paramètre
+        /**
+         * @brief Permet de supprimer une boisson autre du stock
+         * @param string boissonAutre
+         */
+        function supprLAutres($boissonAutre){
+            unset($this->lAutres[array_search($boissonAutre, $this->lAutres)]); 
         }
 
         /* -------------------------------- TO STRING ------------------------------- */
-
+        /**
+         * @brief Retourne un message recapitulant le stock
+         * @return string
+         */
         function toString()
         {
             if ($this->lAlcools != []) { //On regarde si notre liste n'est pas vide
@@ -159,14 +192,13 @@
         /*                            METHODES SPECIFIQUES                            */
         /* -------------------------------------------------------------------------- */
 
-        public function ajouterBoisson($nomFichier, $nomBoisson, $quantite)
         /**
-         * @brief: Cette méthode permet d'ajouter une boisson à la liste des boissons
-         * @param: $nomFichier: le nom du fichier dans lequel on va recuperer les boissons à comparer
-         * @param: $nomBoisson: le nom de la boisson à ajouter
-         * @param: $quantite: la quantité de la boisson à ajouter
-         * @return: void
+         * @brief Ajoute une boisson au stock et a la base de données
+         * @param string nomFichier : Nom du fichier dans lequel on va recuperer les boissons à comparer
+         * @param string nomBoisson : Nom de la boisson à ajouter
+         * @param float quantite : Volume de la boisson à ajouter
          */
+        function ajouterBoisson($nomFichier, $nomBoisson, $quantite)
         {
             //On ouvre et decode le fichier json
             $json_data = ouvrirJson($nomFichier);
@@ -212,13 +244,12 @@
             }
         }
 
-        public function supprimerBoisson($nomBoisson)
-            /**
-             * @brief: Cette méthode permet de supprimer une boisson du stock
-             * @param: $nomBoisson: le nom de la boisson à supprimer
-             * @return: void
-             * @note: Cette méthode ne supprime pas la boisson du fichier json
-             */
+        /**
+         * @brief Supprime une boisson du stock
+         * @param string nomBoisson
+         * @note Ne supprime pas la boisson du fichier json
+         */
+        function supprimerBoisson($nomBoisson)
         {
             //On verifie si la boisson est dans nos listes
             $boissonTrouve = false;
@@ -262,23 +293,23 @@
         }
 
         /**
-         * @brief: Retourne la taille de la liste des alcools
+         * @brief Retourne la taille de la liste des alcools
          * @return int
          */
-        public function tailleAlcools(){
+        function tailleAlcools(){
             return count($this->lAlcools);
         }
 
         /**
-         * @brief: Retourne la taille de la liste des diluants
+         * @brief Retourne la taille de la liste des diluants
          * @return int
          */
-        public function tailleDiluants(){
+        function tailleDiluants(){
             return count($this->lDiluants);
         }
 
         /**
-         * @brief: Retourne la taille de la liste des autres boissons
+         * @brief Retourne la taille de la liste des autres boissons
          * @return int
          */
         public function tailleAutres(){
