@@ -1,7 +1,6 @@
 <?php
     /**
      * @file Recette.php
-     * @author @oiercesat <ocesat@iutbayonne.univ-pau.fr>
      * @version 3.0
      * @brief Classe Recette representant une combinaison de 2 boissons (un alcool et un diluant) 
     */

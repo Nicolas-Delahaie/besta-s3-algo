@@ -2,7 +2,6 @@
 
     /** 
      * @file Stock.php
-     * @author @alexandrePascal <apascal003@iutbayonne.univ-pau.fr>
      * @version 6.0
      * @brief Classe Stock representant le stock de boissons d un evenement
     */

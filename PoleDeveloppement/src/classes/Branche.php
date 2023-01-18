@@ -1,7 +1,6 @@
 <?php
     /** 
      * @file Branche.php
-     * @author @nicolasdelahaie <ndelahaie@iutbayonne.univ-pau.fr>
      * @version 3.0
      * @brief Classe Branche representant une possiblite de recette
     */

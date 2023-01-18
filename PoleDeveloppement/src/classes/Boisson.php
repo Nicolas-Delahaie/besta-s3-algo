@@ -1,7 +1,6 @@
 <?php
     /**
      * @file Boisson.php
-     * @author @oiercesat <ocesat@iutbayonne.univ-pau.fr>
      * @version 2.0
      * @brief Classe Boisson representant une boisson (permettant de fabriquer un cocktail)
     */
