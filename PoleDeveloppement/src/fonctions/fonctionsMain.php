@@ -12,7 +12,7 @@ function calculDesValeurs($recettesPossibles)
     $tailleRecettesPossibles = count($recettesPossibles);
     for ($i = 0; $i < $tailleRecettesPossibles; $i++) {
         for ($j = 0; $j < $tailleRecettesPossibles - (1 + $i); $j++) {
-            if ($recettesPossibles[$j]->getQtRecette() > $recettesPossibles[$j + 1]->getQtRecette()) {
+            if ($recettesPossibles[$j]->getAlcool()->getQtBoissonInitiale() > $recettesPossibles[$j + 1]->getAlcool()->getQtBoissonInitiale()) {
                 #Echange des recettes
                 $temp = $recettesPossibles[$j];
                 $recettesPossibles[$j] = $recettesPossibles[$j + 1];
@@ -28,9 +28,9 @@ function calculDesValeurs($recettesPossibles)
 
     //Autres valeurs
     for ($i = 1; $i < $tailleRecettesPossibles; $i++) {
-        $volumeRecette = $recettesPossibles[$i]->getQtRecette();
-        $volumeRecettePrecedente = $recettesPossibles[$i - 1]->getQtRecette();
-        if ($volumeRecette == $volumeRecettePrecedente) {
+        $volumeAlcool = $recettesPossibles[$i]->getAlcool()->getQtBoissonInitiale();
+        $volumeAlcoolPrecedente = $recettesPossibles[$i - 1]->getAlcool()->getQtBoissonInitiale();
+        if ($volumeAlcool == $volumeAlcoolPrecedente) {
             //Recette aussi volumineuse
             $recettesPossibles[$i]->setValeur($valeur);
         } else {
@@ -85,7 +85,7 @@ function calculQuantiteRecette($recette, $DOSE_ALCOOL, $DOSE_DILUANT)
 {
     $nbDoseAlcool = $recette->getAlcool()->getQtBoissonEnCours() / $DOSE_ALCOOL; //Calcul du nombre de doses d'alcool possible par rapport à la quantité d'alcool disponible
 
-    $nbDoseDiluant = $recette->getDiluant()->getQtBoissonEnCours() / $DOSE_DILUANT; //Calcul du nombre de doses de diluant possible par rapport à la quantité de diluant disponible
+    $nbDoseDiluant = $recette->getDiluant()->getQtBoissonEnCours() / $DOSE_DILUANT  ; //Calcul du nombre de doses de diluant possible par rapport à la quantité de diluant disponible
 
 
     if ($nbDoseAlcool <= 0 || $nbDoseDiluant <= 0) { //Si il n'y a pas de doses d'alcool ou de diluant, on ne peut pas faire de recette
@@ -93,6 +93,7 @@ function calculQuantiteRecette($recette, $DOSE_ALCOOL, $DOSE_DILUANT)
     }
 
     if ($nbDoseAlcool <= $nbDoseDiluant) { //Compare les 2 nombres de le doses et si il y a plus de doses de diluant que d'alcool; le limitant est l'alcool
+
         $qtDiluant = $nbDoseAlcool * $DOSE_DILUANT; //On calcule la quantité de diluant que l'on va avoir en fonction du nombre de doses maximale (nombre de doses d'alcool)
 
         $qtAlcool = $nbDoseAlcool * $DOSE_ALCOOL; //On calcule la quantité d'alcool que l'on va avoir en fonction du nombre de doses maximale (nombre de doses d'alcool)
@@ -103,6 +104,8 @@ function calculQuantiteRecette($recette, $DOSE_ALCOOL, $DOSE_DILUANT)
 
         $recette->setQtDiluant($qtDiluant); //On remplace la quantité de diluant actuelle par le résultat de qtDiluant
     } else { //le limitant est le diluant
+
+
         $qtDiluant = $nbDoseDiluant * $DOSE_DILUANT; //On calcule la quantité de diluant que l'on va avoir en fonction du nombre de doses maximale (nombre de doses de diluant)
 
         $qtAlcool = $nbDoseDiluant * $DOSE_ALCOOL; //On calcule la quantité d'alcool que l'on va avoir en fonction du nombre de doses maximale (nombre de doses de diluant)
@@ -436,8 +439,11 @@ function sacApo($recettesPossibles, $tailleRecettesPossibles, $qtMax, $doseAlcoo
             else {
                 //sinon on passe a la recette suivante
                 if ($recettesPossibles[$iterateurRecette + 1]->getAlcool()->getQtBoissonEnCours() == 0 || $recettesPossibles[$iterateurRecette + 1]->getDiluant()->getQtBoissonEnCours() == 0) {
+
                     $iterateurRecette = $iterateurRecette + 2;
-                    if ($iterateurRecette > $tailleRecettesPossibles - 1) {
+
+                    if ($iterateurRecette >= $tailleRecettesPossibles - 1) {
+                        array_push($brancheValide, $brancheEnCours);
                         break 1;
                     }                    
                 } else {
