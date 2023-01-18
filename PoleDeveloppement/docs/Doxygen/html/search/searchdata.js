@@ -4,7 +4,7 @@ var indexSectionsWithContent =
   1: "brs",
   2: "bfimrst",
   3: "_acegoprst",
-  4: "$df"
+  4: "$defi"
 };
 
 var indexSectionNames =

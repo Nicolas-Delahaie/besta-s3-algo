@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Besta: D:/DATAS/BUT/BESTA/S3.01_Developpement_d_application_et_Gestion_de_projet/PoleDeveloppement/src/fonctions/fonctionsIndex.php File Reference</title>
+<title>Besta documentation: D:/BIG_BACKUP_12_01_2023/DONNEES/PROGRAMMATION/BESTA/PoleDeveloppement/src/fonctions/fonctionsIndex.php File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Besta
+   <div id="projectname">Besta documentation
    </div>
   </td>
  </tr>
@@ -69,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_0bd70d887764b2fc1a2ab0719f5f28f4.html">fonctions</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_48a2bffe895605370a4641a98bf71f0c.html">src</a></li><li class="navelem"><a class="el" href="dir_7c5e91812085bd06d1bd8aa45a6bbd60.html">fonctions</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -82,10 +82,10 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a73cb097f17bc9e9c947157d28ac7b8c0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fonctions_index_8php.html#a73cb097f17bc9e9c947157d28ac7b8c0">saisieVerif</a> ()</td></tr>
-<tr class="memdesc:a73cb097f17bc9e9c947157d28ac7b8c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">vérifie que les variables transmise sont exploitable  <br /></td></tr>
+<tr class="memdesc:a73cb097f17bc9e9c947157d28ac7b8c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne les variables transmises dans _POST si elles sont exploitables.  <br /></td></tr>
 <tr class="separator:a73cb097f17bc9e9c947157d28ac7b8c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae71cdb5c587ee08dfe57502ad077bf43"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fonctions_index_8php.html#ae71cdb5c587ee08dfe57502ad077bf43">remplirStock</a> ()</td></tr>
-<tr class="memdesc:ae71cdb5c587ee08dfe57502ad077bf43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remplie la base de donnée contenant le stock de boisson.  <br /></td></tr>
+<tr class="memdesc:ae71cdb5c587ee08dfe57502ad077bf43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remplie la base de donnée avec la boisson et son volume entrés dans _POST.  <br /></td></tr>
 <tr class="separator:ae71cdb5c587ee08dfe57502ad077bf43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -104,8 +104,14 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Remplie la base de donnée contenant le stock de boisson. </p>
-<dl class="section author"><dt>Author</dt><dd>: Robin </dd></dl>
+<p>Remplie la base de donnée avec la boisson et son volume entrés dans _POST. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">array</td><td>qtBoisson dans $_POST </td></tr>
+    <tr><td class="paramname">array</td><td>nomBoisson dans $_POST </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -124,9 +130,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>vérifie que les variables transmise sont exploitable </p>
-<dl class="section author"><dt>Author</dt><dd>@oiercesat <a href="#" onclick="location.href='mai'+'lto:'+'oce'+'sa'+'t@i'+'ut'+'bay'+'on'+'ne.'+'un'+'iv-'+'pa'+'u.f'+'r'; return false;">ocesa<span class="obfuscator">.nosp@m.</span>t@iu<span class="obfuscator">.nosp@m.</span>tbayo<span class="obfuscator">.nosp@m.</span>nne.<span class="obfuscator">.nosp@m.</span>univ-<span class="obfuscator">.nosp@m.</span>pau.<span class="obfuscator">.nosp@m.</span>fr</a> Summary of saisiVerif </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>array liste sous la forme [nomBoisson,qtBoisson] </dd></dl>
+<p>Retourne les variables transmises dans _POST si elles sont exploitables. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">array</td><td>qtBoisson dans $_POST </td></tr>
+    <tr><td class="paramname">array</td><td>nomBoisson dans $_POST </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>array de la forme [nomBoisson,qtBoisson] </dd></dl>
 
 </div>
 </div>
