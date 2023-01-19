@@ -7,7 +7,7 @@
 
 <body>
     <form action="./src/fonctions/fonctionsIndex.php" method="POST">
-        <p>Sélectionnez le nom de la boisson </p>
+        <p>Nom de votre boisson </p>
         <select name="nomBoisson" id="nomBoisson">
             <option value="default">Boisson</option>
             <?php
@@ -25,12 +25,12 @@
             }
             ?>  
         </select>
-        <p>Sélectionnez la quantité de votre boisson en litres</p>
-        <input type="number" step="any" name="qtBoisson" value="qtBoisson">
+        <p>Volume (en litres)</p>
+        <input type="number" step="any" name="qtBoisson" value="qtBoisson" id="zoneVolume">
         <br>
         <section>
             <input type="submit" value="Valider" class="btn">
-            <a href="src/main.php" class="btn">Les résultats</a>
+            <a href="src/main.php" class="btn">Résultats</a>
         </section>
     </form>
 </body>
