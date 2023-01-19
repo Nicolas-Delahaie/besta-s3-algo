@@ -1,11 +1,10 @@
 <?php
 /**
- * @author @oiercesat <ocesat@iutbayonne.univ-pau.fr>
- * Summary of saisiVerif
- * @brief vérifie que les variables transmise sont exploitable
- * @return array liste sous la forme [nomBoisson,qtBoisson]
+ * @brief Retourne les variables transmises dans _POST si elles sont exploitables
+ * @param array qtBoisson dans $_POST
+ * @param array nomBoisson dans $_POST
+ * @return array de la forme [nomBoisson,qtBoisson]
  */
-
 function saisieVerif()
 {
     $resultat=array();
@@ -26,11 +25,12 @@ function saisieVerif()
     return $resultat;
 }
 
+/**
+ * @brief Remplie la base de donnée avec la boisson et son volume entrés dans _POST
+ * @param array qtBoisson dans $_POST
+ * @param array nomBoisson dans $_POST
+ */
 function remplirStock ()
-    /**
-     * @author : Robin
-     * @brief Remplie la base de donnée contenant le stock de boisson
-     */
 {
     // Récupération du nom et de la quantité fourinie par l'utilisateur
     $resultatSaisieVerif = saisieVerif();

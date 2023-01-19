@@ -1,10 +1,9 @@
 <?php
 
 /**
- * @author Nicolas D.
- * @brief Attribue les valeurs a chaque recettes possibles
- * @param array recettesPossibles Liste des recettes possibles en fonction des boissons restantes
- * @return array Liste des recettes possibles, completées avec leur valeur respective
+ * @brief Attribue les valeurs a chaque recette possible de recettesPossibles
+ * @param array recettesPossibles Recettes possibles en fonction des boissons restantes
+ * @return array recettesPossibles
  */
 function calculDesValeurs($recettesPossibles)
 {
@@ -42,8 +41,7 @@ function calculDesValeurs($recettesPossibles)
 }
 
 /**
- * Summary of calculQuantiteDesRecettes
- * @brief calcule la quantité maximale de recette que l'on peut faire à partir de la quantité de boisson que l'on a
+ * @brief Calcule la quantité maximale de recette que l'on peut faire à partir de la quantité de boisson que l'on a
  * @param array recettePossible valeursARetourner d'objets de type Recette
  * @param int $DOSE_ALCOOL constante représentant la quantité d'alcool par verre
  * @param int $DOSE_DILUANT constante représentant la quantité de diluant par verre
@@ -239,7 +237,6 @@ function creerStock($nomFichier)
 }
 
 /**
- * @author oier Cesat <ocesat@iutbayonne.univ-pau.fr>
  * @brief permet d'extrire toutes les recettes possibles grâce au stock de la soirée 
  * @param Stock $stockSoiree
  * @param array $recettesExistantes
@@ -289,7 +286,6 @@ function rechercheRecettes($stockSoiree, $recettesExistantes)
 
 /**
  * @brief Ouvre un fichier json
- * @author RobinAlonzo
  * @param string $nomFichier le nom du fichier
  * @return mixed $json_data le fichier json
  */

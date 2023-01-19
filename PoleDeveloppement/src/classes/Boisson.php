@@ -1,31 +1,28 @@
 <?php
     /**
-         *@author @oiercesat <ocesat@iutbayonne.univ-pau.fr>
-        *@version ${1:1.0.0
+     * @file Boisson.php
+     * @version 2.0
+     * @brief Classe Boisson representant une boisson (permettant de fabriquer un cocktail)
     */
-
-    /**
-     * @brief classe Boisson comportant un nom, un type, une quantité initiale et la quantité de boisson en cours
-     */
     class Boisson{
 
         /* -------------------------------------------------------------------------- */
         /*                                  ATTRIBUTS                                 */
         /* -------------------------------------------------------------------------- */
-        private $nomBoisson;            //nom de la boisson
-        private $typeBoisson;           //type de la boisson
-        private $qtBoissonInitiale;     //quantité initiale de la boisson
-        private $qtBoissonEnCours;      //quantité en cours/actuelle de la boisson
+        private $nomBoisson;         /** @var string Nom de la boisson*/
+        private $typeBoisson;        /** @var int Type de la boisson (alcool, soft, autre)*/
+        private $qtBoissonInitiale;  /** @var float Volume initial de la boisson*/
+        private $qtBoissonEnCours;   /** @var float Volume en cours de la boisson*/
 
         /* -------------------------------------------------------------------------- */
         /*                                CONSTRUCTEUR                                */
         /* -------------------------------------------------------------------------- */
-        
-
         /**
-         * @brief constructeur d'une Boisson 
-         * @param string, int, int, int ou une boisson ou pas de paramètres 
-         * @return Boisson
+         * @brief Constructeur d'un objet Boisson par défaut, par copie ou par paramètres
+         * @param string nomBoisson (par parametres) ou Boisson (objet a copier)
+         * @param int typeBoisson (par parametres)
+         * @param int qtBoissonInitiale (par parametres)
+         * @param int qtBoissonEnCours (par parametres)
          */
         function __construct()
         {
@@ -68,94 +65,74 @@
                     break;
             }   
         }
-
-        /* -------------------------------------------------------------------------- */
-        /*                              METHODES USUELLES                             */
-        /* -------------------------------------------------------------------------- */
-
         /* --------------------------------- GETEUR --------------------------------- */
-
         /**
-         * @brief retourne le nom de la boisson
+         * @brief Renvoie le nom de la boisson
          * @return string 
          */
         function getNomBoisson (){
             return ($this->nomBoisson);
         }      
-        
         /**
-         * @brief retourne le type de la boisson
+         * @brief Renvoie le type de la boisson
          * @return int 
          */
         function getTypeBoisson (){
             return ($this->typeBoisson);
         }        
-
         /**
-         * @brief retourne la quantité initiale de la boisson
-         * @return int
+         * @brief Renvoie le volume initial de la boisson
+         * @return float
          */
         function getQtBoissonInitiale (){
             return ($this->qtBoissonInitiale);
         }      
-        
         /**
-         * @brief retourne quantité en cours de la boisson
-         * @return int
+         * @brief Renvoie le volume en cours de la boisson
+         * @return float
          */
         function getQtBoissonEnCours (){
             return ($this->qtBoissonEnCours);
         }        
 
         /* --------------------------------- SETEUR --------------------------------- */
-
         /**
-         * @brief permet de modifier l'attribut nomBoisson
+         * @brief Permet de modifier l'attribut nomBoisson
          * @param string nouveauNomBoisson
          */
         function setNomBoisson($nouveauNomBoisson){
             $this->nomBoisson=$nouveauNomBoisson;
         }
-
         /**
-         * @brief permet de modifier l'attribut typeBoisson
+         * @brief Permet de modifier l'attribut typeBoisson
          * @param int nouveauTypeBoisson
          */
         function setTypeBoisson($nouveauTypeBoisson){
             $this->typeBoisson=$nouveauTypeBoisson;
         }
-
         /**
-         * @brief permet de modifier l'attribut qtBoissonInitiale
-         * @param int nouvelleQtBoissonInitiale
+         * @brief Permet de modifier l'attribut qtBoissonInitiale
+         * @param float nouvelleQtBoissonInitiale
          */
         function setQtBoissonInitiale($nouvelleQtBoissonInitiale){
             $this->qtBoissonInitiale=$nouvelleQtBoissonInitiale;
         }
-
         /**
-         * @brief permet de modifier l'attribut qtBoissonEnCours
-         * @param int nouvelleQtBoissonEnCours
+         * @brief Permet de modifier l'attribut qtBoissonEnCours
+         * @param float nouvelleQtBoissonEnCours
          */
         function setQtBoissonEnCours($nouvelleQtBoissonEnCours){
             $this->qtBoissonEnCours=$nouvelleQtBoissonEnCours;
         }
 
         /* -------------------------------- TO STRING ------------------------------- */
-
-
         /**
-         * @brief retourne un message comportant les spécifiquations de l'objet Boisson 
-         * @return string message 
+         * @brief Retourne un message recapitulant la Boisson
+         * @return string
          */
         function toString(){
             $message="Le nom de la boisson est : ".$this->getNomBoisson().", le type de la boisson est : ".$this->getTypeBoisson().", la quantité initiale est : ".$this->getQtBoissonInitiale().", la quantité de boisson en cours est : ".$this->getQtBoissonEnCours();
             return($message);
         }
-
-        /* -------------------------------------------------------------------------- */
-        /*                            METHODES SPECIFIQUES                            */
-        /* -------------------------------------------------------------------------- */
     }
-
 ?>

@@ -1,35 +1,25 @@
 <?php
     /** 
-     * @author @nicolasdelahaie <ndelahaie@iutbayonne.univ-pau.fr>
-     * @version ${1:1.0.0
-     * @brief Classe branche representant une possiblite de cocktail
-     */
-    
+     * @file Branche.php
+     * @version 3.0
+     * @brief Classe Branche representant une possiblite de recette
+    */
     class Branche{
         /* -------------------------------------------------------------------------- */
         /*                                  ATTRIBUTS                                 */
         /* -------------------------------------------------------------------------- */
-        /**
-         * @brief A REMPLIR (pRecette)
-         */
-        private $pRecette;
-        /**
-         * @brief A REMPLIR (qtBranche)
-         */
-        private $qtBranche;
-        /**
-         * @brief A REMPLIR (qtValeur)
-         */
-        private $qtValeur;
+        private $pRecette;  /** @var array Pile des recettes présentes dans l'arbre*/
+        private $qtBranche; /** @var float Volume total de la branche*/
+        private $qtValeur;  /** @var int Valeur totale de la branche*/
 
         /* -------------------------------------------------------------------------- */
         /*                                CONSTRUCTEUR                                */
         /* -------------------------------------------------------------------------- */
         /**
-         * @brief Constructeur par defaut, par copie ou avec parametres
-         * @param array 1 de la classe : pRecette
-         * @param int 2 de la classe : qtBranche
-         * @param int 2 de la classe : qtValeur
+         * @brief Constructeur d'un objet Branche par défaut, par copie ou par paramètres
+         * @param array pRecette (par parametres) ou Branche (objet a copier)
+         * @param float qtBranche (par parametres)
+         * @param int qtValeur (par parametres)
          */
         function __construct()
         {
@@ -66,45 +56,46 @@
         /* -------------------------------------------------------------------------- */
         /*                              METHODES USUELLES                             */
         /* -------------------------------------------------------------------------- */
-
         /* --------------------------------- GETTERS --------------------------------- */
-        /**
-         * @return array 1 de la classe : pRecette
-         */
+        /** 
+         * @brief Renvoie la pile de recettes présentes dans l'arbre
+         * @return array
+        */
         function getPRecette (){return ($this->pRecette);}
-        /**
-         * @return int 2 de la classe : qtBranche
-         */
+        /** 
+         * @brief Renvoie le volume total de la branche
+         * @return float
+        */
         function getQtBranche (){return ($this->qtBranche);}  
-        /**
-         * @return int 3 de la classe : qtValeur
-         */
+        /** 
+         * @brief Renvoie la valeur totale de la branche
+         * @return float
+        */
         function getQtValeur (){return ($this->qtValeur);}     
         
         /* --------------------------------- SETTERS --------------------------------- */
         /**
-         * @brief set l'attribut 1 pRecette
-         * @param array 1 pRecette
+         * @brief Permet de modifier l'attribut pRecette
+         * @param array p
          */
         function setPRecette ($p){$this->pRecette = $p;}  
         /**
-         * @brief set l'attribut 1 pRecette
-         * @param int
+         * @brief Permet de modifier l'attribut qtBranche
+         * @param float qtB
          */
         function setQtBranche ($qtB){$this->qtBranche = $qtB;}  
         /**
-         * @brief set l'attribut 1 pRecette
-         * @param int
+         * @brief Permet de modifier l'attribut qtValeur
+         * @param int qtV
          */
         function setQtValeur ($qtV){$this->qtValeur = $qtV;} 
 
         /* -------------------------------- TO STRING ------------------------------- */
         /**
-         * @brief Traduit la branche en une chaine de caracteres
-         * @return string caractere representant l objet
+         * @brief Retourne un message recapitulant la branche de la forme branche(volume utilise : X, valeur totale : X, suite de cocktails : X - X - Z)
+         * @return string
          */
         function toString(){
-            //Retourne la branche de la forme branche(volume utilise : X, valeur totale : X, suite de cocktails : X - X - Z)
             $message = "Branche (volume utilise : $this->qtBranche, valeur totale : $this->qtValeur, suite de cocktails : ";
 
             $copiePile = $this->pRecette;
@@ -122,7 +113,7 @@
 
         /**
          * @brief Ajoute une recette a la branche
-         * @param Recette recette a ajouter
+         * @param Recette recette
          */
         function ajouterRecette($recette)
         {
@@ -132,7 +123,7 @@
         }
 
         /**
-         * @brief Supprime la derniere recette de la branche
+         * @brief Depile la dernière recette de la branche
          */
         function popRecette(){
             $recette = array_pop($this->pRecette);
@@ -141,8 +132,8 @@
         }
 
         /**
-         * @brief Verifie si la branche est vide
-         * @return true si la branche est vide, false sinon
+         * @brief Indique si la branche est vide
+         * @return boolean
          */
         function estVide()
         {
@@ -151,7 +142,7 @@
 
         /**
          * @brief Retourne la taille de la pile
-         * @return int taille de la pile
+         * @return int
          */
         function taillePile()
         {

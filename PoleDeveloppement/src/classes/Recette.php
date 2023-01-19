@@ -1,72 +1,35 @@
 <?php
     /**
-     *@author @oiercesat <ocesat@iutbayonne.univ-pau.fr>
-     *@version ${1:1.0.0
-     * @brief classe Recette comportant un nom, un alcool, un diluant, une quantité de recette, la quantité d'alcool présent dans la recette, la quantité de diluant présent dans la recette et la valeur de la recette
+     * @file Recette.php
+     * @version 3.0
+     * @brief Classe Recette representant une combinaison de 2 boissons (un alcool et un diluant) 
     */
-
     class Recette 
     {
-
         /* -------------------------------------------------------------------------- */
         /*                                  ATTRIBUTS                                 */
         /* -------------------------------------------------------------------------- */
-
-        /**
-         * Summary of nomRecette 
-         * @var string nom de la recette
-         */
-        private $nomRecette;        
-
-        /**
-         * Summary of alcool
-         * @var Boisson alcool associé à la recette
-         */
-        private $alcool;            //alcool associé à la recette
-        /**
-         * Summary of diluant
-         * @var Boisson diluant associé à la recette
-         */
-        private $diluant;           
-
-        /**
-         * Summary of qtRecette
-         * @var int quantité en litres de la recette
-         */
-        private $qtRecette;         
-        
-        /**
-         * Summary of qtAlcool
-         * @var int quantité d'alcool présent dans la recette
-         */
-        private $qtAlcool;           
-
-        /**
-         * Summary of qtDiluant
-         * @var int quantité de diluant présent dans la recette
-         */
-        private $qtDiluant;         
-
-        /**
-         * Summary of valeur
-         * @var int valeur de la recette
-         */
-        private $valeur;            
+        private $nomRecette; /** @var string Nom de la recette*/   
+        private $alcool;     /** @var Boisson Alcool associé à la recette*/
+        private $diluant;    /** @var Boisson Diluant associé à la recette*/
+        private $qtRecette;  /** @var float Volume en litres de la recette*/
+        private $qtAlcool;   /** @var float Volume d'alcool présent dans la recette*/ 
+        private $qtDiluant;  /** @var float Volume de diluant présent dans la recette*/
+        private $valeur;     /** @var int Valeur de la recette*/    
 
         /* -------------------------------------------------------------------------- */
         /*                                CONSTRUCTEUR                                */
         /* -------------------------------------------------------------------------- */
 
         /**
-         * Summary of __construct
-         * @brief constructeur d'une recette par défaut, par copie ou avec paramètres
-         * @param string 1 de la classe : nomRecette
-         * @param Boisson 2 de la classe : alcool
-         * @param Boisson 3 de la classe : diluant
-         * @param int 4 de la classe : qtRecette
-         * @param int 5 de la classe : qtAlcool
-         * @param int 6 de la classe : qtDiluant
-         * @param int 7 de la classe : valeur
+         * @brief Constructeur d'un objet Recette par défaut, par copie ou par paramètres
+         * @param string nomRecette (par parametres) ou Recette (objet a copier)
+         * @param Boisson alcool (par parametres)
+         * @param Boisson diluant (par parametres)
+         * @param float qtRecette (par parametres)
+         * @param float qtAlcool (par parametres)
+         * @param float qtDiluant (par parametres)
+         * @param int valeur (par parametres)
          */
         function __construct()
         {
@@ -74,7 +37,6 @@
             $tabArguments = func_get_args();        //Stocke les paramètres dans un tableau
 
             switch ($nbArguments) {
-
                 //si le constructeur est par défaut
                 case 0:
                     $this->nomRecette="";
@@ -120,9 +82,8 @@
         /* -------------------------------------------------------------------------- */
 
         /* --------------------------------- GETEURS -------------------------------- */
-
         /**
-         * @brief retourne le nom de la recette
+         * @brief Retourne le nom de la recette
          * @return string 
          */
         function getNomRecette(){
@@ -130,7 +91,7 @@
         }
 
         /**
-         * @brief retourne l'alcool de la recette 
+         * @brief Retourne l'alcool associé à la recette 
          * @return Boisson 
          */
         function getAlcool(){
@@ -138,7 +99,7 @@
         }
 
         /**
-         * @brief retourne lle diluant de la recette
+         * @brief Retourne le diluant associé à la recette
          * @return Boisson 
          */
         function getDiluant(){
@@ -146,7 +107,7 @@
         }
 
         /**
-         * @brief retourne la quantité de la recette
+         * @brief Retourne le volume de la recette
          * @return float  
          */
         function getQtRecette(){
@@ -154,7 +115,7 @@
         }
 
         /**
-         * @brief retourne la quantité d'alcool de la recette
+         * @brief Retourne le volume d'alcool présent dans la recette
          * @return float  
          */
         function getQtAlcool(){
@@ -162,7 +123,7 @@
         }
 
         /**
-         * @brief retourne la quantité de diluant de la recette
+         * @brief Retourne le volume de diluant présent dans la recette
          * @return float  
          */
         function getQtDiluant(){
@@ -170,8 +131,8 @@
         }
 
         /**
-         * @brief retourne la valeur de la recette
-         * @return float  
+         * @brief Retourne la valeur de la recette
+         * @return int  
          */
         function getValeur(){
             return ($this->valeur);
@@ -180,7 +141,7 @@
         /* --------------------------------- SETEUR --------------------------------- */
 
         /**
-         * @brief permet de modifier l'attribut nomRecette
+         * @brief Definit l'attribut nomRecette
          * @param string nouveauNomRecette
          */
         function setNomRecette($nouveauNomRecette){
@@ -188,47 +149,47 @@
         }
 
         /**
-         * @brief permet de modifier l'attribut alcool
-         * @param string nouvelAlcool
+         * @brief Definit l'attribut alcool
+         * @param Boisson nouvelAlcool
          */
         function setAlcool($nouvelAlcool){
             $this->alcool=$nouvelAlcool;
         }
 
         /**
-         * @brief permet de modifier l'attribut diluant
-         * @param string nouveauDiluant
+         * @brief Definit l'attribut diluant
+         * @param Boisson nouveauDiluant
          */
         function setDiluant($nouveauDiluant){
             $this->diluant=$nouveauDiluant;
         }
 
         /**
-         * @brief permet de modifier l'attribut qtRecette
-         * @param string nouvelleQtRecette
+         * @brief Definit l'attribut qtRecette
+         * @param float nouvelleQtRecette
          */
         function setQtRecette($nouvelleQtRecette){
             $this->qtRecette=$nouvelleQtRecette;
         }
 
         /**
-         * @brief permet de modifier l'attribut qtAlcool
-         * @param string nouvelleQtAlcool
+         * @brief Definit l'attribut qtAlcool
+         * @param float nouvelleQtAlcool
          */
         function setQtAlcool($nouvelleQtAlcool){
             $this->qtAlcool=$nouvelleQtAlcool;
         }
 
         /**
-         * @brief permet de modifier l'attribut qtDiluant
-         * @param string nouvelleQtDiluant
+         * @brief Definit l'attribut qtDiluant
+         * @param float nouvelleQtDiluant
          */
         function setQtDiluant($nouvelleQtDiluant){
             $this->qtDiluant=$nouvelleQtDiluant;
         }
 
         /**
-         * @brief permet de modifier l'attribut valeur
+         * @brief Modifie l'attribut valeur
          * @param int nouvelleValeur
          */
         function setValeur($nouvelleValeur){
@@ -238,8 +199,8 @@
         /* -------------------------------- TO STRING -------------------------------- */
 
         /**
-         * @brief retourne un message comportant les spécifiquations de l'objet Recette 
-         * @return string message 
+         * @brief Retourne un message recapitulant la recette
+         * @return string
          */
         function toString(){
             $message = "Le nom de la recette est : ".$this->getNomRecette().", l'alcool de cette recette est : ".$this->getAlcool()->toString().", le diluant de cette recette est : ".$this->getDiluant()->toString().", la quantite de cette recette est de : ".$this->getQtRecette()." L, la quantite d'alcool est de : ".$this->getQtAlcool()." L, la quantite de diluant est de : ".$this->getQtDiluant()." L et la valeur de cette recette est de : ".$this->getValeur();
