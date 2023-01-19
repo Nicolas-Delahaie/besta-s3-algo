@@ -30,17 +30,17 @@ main{
     box-shadow: 0 0 30px 0px var(--violet-clair);
     border : 2px solid var(--gris);
     
-    padding: 0%;
-    margin-left: 10%;
-    margin-right: 10%;
+    padding: 5%;
 
-    margin-top: 2.5%;
-    margin-bottom: 2.5%;
+    width: 60%;
+
+    margin: 2.5% 10%;
+
 }
 
 h1 {
     margin: 0%;
-    padding-top: 5%;
+    margin-bottom: 30px;
     padding-bottom: 5%;
     
     font-size: 4em;
@@ -51,23 +51,21 @@ h1 {
 
     border-bottom: 3px solid var(--violet);
 }
-
 #sectionPrincipale{
-    padding : 5%;
+    /* width: 100%; */
 }
 
-#recettes{
+.recettes{
     display:grid;
-    grid-template-columns: 1fr 5% 1fr 5% 50%;
+    grid-template-columns: min-content 70px min-content 70px 1fr;
     align-items:center;
     justify-items:center;
 }
 
 .imagesBoissons{
-    height: 200px;
-    margin-top: 25%;
+    width: 5vw;
     border-radius: 10px;
-    padding: 0%;
+    margin: 10px 0px;
 
     background-color: var(--blanc);
 
@@ -76,20 +74,23 @@ h1 {
 
 .separateur{
     font-size: 3em;
+    
     text-align: center;
 }
 
 .zoneVerres{
+    /* width: 275px; */
+    max-width: 275px;
     display:flex;
     flex-wrap:wrap;
 }
 
 .verres{
-    width:10%;
+    width:50px;
 
     border-radius: 3px;
 
-    margin: 1%;
+    margin: 2.5px;
 }
 
 h2{
