@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap');
+
 :root {
     --blanc : #FFFFFF;
     --violet-clair : #E3BAC6;
@@ -7,84 +9,130 @@
 }
 
 body{
-    display : grid;
-    grid-template-columns: 1fr min-content 1fr;
-    color: var(--noir);
-}
-
-#containerPrincipal{
-    grid-column: 2;
-    border: 4px solid var(--noir);
-    border-radius: 20px;
-
-    overflow: hidden;
-}
-
-header{
-    background-color: var(--gris);
-    height : 100px;
-    text-align: center;
-
     display: flex;
     justify-content: center;
-    align-items: center;
-}
 
-h1 {
-    font-size: 40px;
-}
-h2{
-    text-align: center;
-    border-bottom: 3px solid var(--noir);
+    background-color: var(--noir);
+    color: var(--blanc);
+
+    font-family: 'Montserrat', sans-serif;
 }
 
 main{
-    padding : 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 4px solid var(--noir);
+    border-radius: 20px;
+    
+    box-shadow: 0 0 30px 0px var(--violet-clair);
+    border : 2px solid var(--gris);
+    
+    padding: 0%;
+    margin-left: 10%;
+    margin-right: 10%;
+
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
 }
-article{
+
+h1 {
+    margin: 0%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    
+    font-size: 4em;
+    text-align: center;
+    
+    width: 100%;
+    height: 100%;
+
+    border-bottom: 3px solid var(--violet);
+}
+
+#sectionPrincipale{
+    padding : 5%;
+}
+
+#recettes{
     display:grid;
-    grid-template-columns: 150px 150px 150px 290px;
+    grid-template-columns: 1fr 5% 1fr 5% 50%;
     align-items:center;
-}
-article>p{
-    white-space:nowrap;
+    justify-items:center;
 }
 
 .imagesBoissons{
-    height: 170px;
-    padding-top: 20px;
-    justify-self:center;
+    height: 200px;
+    margin-top: 25%;
+    border-radius: 10px;
+    padding: 0%;
+
+    background-color: var(--blanc);
+
+    box-shadow: 0 0 10px 0px var(--violet-clair);
 }
-.imagesRestes{
-    grid-column: 2;
+
+.separateur{
+    font-size: 3em;
+    text-align: center;
 }
+
 .zoneVerres{
     display:flex;
     flex-wrap:wrap;
-    padding : 20px;
 }
+
 .verres{
-    width:50px;
+    width:10%;
+
+    border-radius: 3px;
+
+    margin: 1%;
 }
-.shots{
-    width:25px;
-}
-.separateur{
-    font-size: 40px;
+
+h2{
     text-align: center;
-    font-weight: bold;
+    font-size: 2.5em;
+
+    border-bottom: 3px solid var(--violet);
+    border-top: 3px solid var(--violet);
+
+    margin-top: 10%;
+
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
+
+#restes{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items:center;
+    justify-items:center;
+}
+
+
+.total{
+    display:grid;
+    grid-template-columns: 1fr 10% 1fr;
+    text-align: center;
+    align-items:center;
+    justify-items:center;
+    margin: 10%;
+
+    border-radius: 25px;
+    box-shadow: 0 0 10px 0px var(--violet-clair);
+    border : 2px solid var(--violet-clair);
+}
+
 .sommesFinales{
     font-size: 70px;
-    margin : 0px;
-    justify-self:center;
-    grid-column: 2;
 }
+
 #verresTotaux{
-    height: 100px;
-    justify-self:center;
+    height: 7.5em;
 }
 #shotsTotaux{
-    height: 80px;
-    justify-self:center;
+    height: 7.5em;
 }

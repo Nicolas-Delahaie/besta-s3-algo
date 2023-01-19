@@ -89,11 +89,9 @@ $meilleureCombinaison = sacApo($recettesPossibles, $tailleRecettesPossibles, $qt
 </head>
 
 <body>
-    <section id="containerPrincipal">
-        <header>
-            <h1>Cocktails optimaux</h1>
-        </header>
-        <main>
+    <main>
+        <h1>Cocktails optimaux</h1>
+        <article id="sectionPrincipale">
             <?php
             /**
              * @brief Affiche la combinaison de cocktails avec les restes
@@ -109,8 +107,9 @@ $meilleureCombinaison = sacApo($recettesPossibles, $tailleRecettesPossibles, $qt
             // ------- Cocktails -------
             for ($i = 0; $i < count($meilleureCombinaison->getPRecette()); $i++) {
                 $recetteAffichee = $meilleureCombinaison->getPRecette()[$i];
-                $html .= '<article>';
+                $html .= '<article id="recettes">';
                 $html .= '<img src="datas/img/bouteilles/' . $recetteAffichee->getAlcool()->getNomBoisson() . '.jpg" class="imagesBoissons">';
+                $html .= '<p class="separateur">+</p>';
                 $html .= '<img src="datas/img/bouteilles/' . $recetteAffichee->getDiluant()->getNomBoisson() . '.jpg" class="imagesBoissons">';
                 $html .= '<p class="separateur">=</p>';
                 $html .= '<section class="zoneVerres">';
@@ -120,7 +119,7 @@ $meilleureCombinaison = sacApo($recettesPossibles, $tailleRecettesPossibles, $qt
                 for ($n = 0; $n < $nbVerres; $n++) {
                     $html .= '<img src="datas/img/verre.jpg" class="verres">';
                 }
-                $html .= '<p class="nbVerres"> = ' . $nbVerres . '</p>';
+                $html .= '<p class="nbVerres"> = ' . $nbVerres . ' verres</p>';
                 $html .= '</section></article>';
             }
 
@@ -158,10 +157,10 @@ $meilleureCombinaison = sacApo($recettesPossibles, $tailleRecettesPossibles, $qt
                 if ($restes[$i]->getQtBoissonEnCours() != 0) {
 
                     if ($restes[$i]->getQtBoissonEnCours() > 0.04) {
-                        $html .= '<article>';
+                        $html .= '<article id="restes">';
                         $html .= '<img src="datas/img/bouteilles/' . $restes[$i]->getNomBoisson() . '.jpg" class="imagesBoissons imagesRestes">';
                         $html .= '<p class="separateur">=</p>';
-                        $html .= '<section class="zoneShots">';
+                        $html .= '<section class="zoneVerres">';
                         
                         #Calcul du nombre de shots de 4cl
 
@@ -169,7 +168,7 @@ $meilleureCombinaison = sacApo($recettesPossibles, $tailleRecettesPossibles, $qt
 
                         $nbShotsTotaux += $nbShots;
                         for ($n = 0; $n < $nbShots; $n++) {
-                            $html .= '<img src="datas/img/shot.jpg" class="shots">';
+                            $html .= '<img src="datas/img/shot.jpg" class="verres">';
                         }
                         $html .= '</section></article>';
                     }
@@ -178,14 +177,14 @@ $meilleureCombinaison = sacApo($recettesPossibles, $tailleRecettesPossibles, $qt
 
             // ------- Total -------
             $html .= '<h2>Au total</h2>';
-            $html .= '<article><p class="sommesFinales">' . strval($nbVerresTotaux) . '</p><p class="separateur">X</p><img src="datas/img/verre.jpg" id="verresTotaux"></article>';
-            $html .= '<article><p class="sommesFinales">' . strval($nbShotsTotaux) . '</p><p class="separateur">X</p><img src="datas/img/shot.jpg" id="shotsTotaux"></article>';
+            $html .= '<article class="total"><p class="sommesFinales">' . strval($nbVerresTotaux) . '</p><p class="separateur">X</p><img src="datas/img/verre.jpg" id="verresTotaux"></article>';
+            $html .= '<article class="total"><p class="sommesFinales">' . strval($nbShotsTotaux) . '</p><p class="separateur">X</p><img src="datas/img/shot.jpg" id="shotsTotaux"></article>';
 
 
             echo $html;
             ?>
-        </main>
-    </section>
+        </article>
+    </main>
 </body>
 
 </html>
