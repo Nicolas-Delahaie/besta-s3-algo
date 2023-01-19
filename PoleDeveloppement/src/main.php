@@ -107,7 +107,7 @@ $meilleureCombinaison = sacApo($recettesPossibles, $tailleRecettesPossibles, $qt
             // ------- Cocktails -------
             for ($i = 0; $i < count($meilleureCombinaison->getPRecette()); $i++) {
                 $recetteAffichee = $meilleureCombinaison->getPRecette()[$i];
-                $html .= '<article id="recettes">';
+                $html .= '<article class="recettes">';
                 $html .= '<img src="datas/img/bouteilles/' . $recetteAffichee->getAlcool()->getNomBoisson() . '.jpg" class="imagesBoissons">';
                 $html .= '<p class="separateur">+</p>';
                 $html .= '<img src="datas/img/bouteilles/' . $recetteAffichee->getDiluant()->getNomBoisson() . '.jpg" class="imagesBoissons">';
