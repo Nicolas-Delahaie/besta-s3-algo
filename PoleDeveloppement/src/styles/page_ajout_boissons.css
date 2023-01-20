@@ -5,14 +5,14 @@ body{
     background-color: var(--gris);
 
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.25rem;
+    font-size: 30px;
 }
 
 form {
     display: flex;
     flex-direction: column;
 
-    padding: 2.5%;
+    padding: 70px;
 
     border-radius: 25px;
     box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.595);
@@ -60,16 +60,16 @@ input{
 .btn{
 
     background-image: linear-gradient(to right, var(--violet-clair), var(--violet-fonce));
-
+    
     padding-left: 10%;
     padding-right: 10%;
+    margin : 0px 10px;
 
     color: var(--noir);
 
     cursor: pointer;
 
 }
-
     
 .btn:hover{
     box-shadow: 0px 0px 20px 0px rgba(255,255,255,0.75);
@@ -94,7 +94,12 @@ a{
     color: var(--blanc);
     text-decoration: none;
 
-    font-size: 0.8rem;
+    font-size: 20px;
 
 
+}
+
+input[type="submit"] {
+    font-size: 20px;
+    justify-content: center;
 }
