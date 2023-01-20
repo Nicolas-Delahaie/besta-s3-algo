@@ -168,7 +168,7 @@ $meilleureCombinaison = sacApo($recettesPossibles, $tailleRecettesPossibles, $qt
 
                         $nbShotsTotaux += $nbShots;
                         for ($n = 0; $n < $nbShots; $n++) {
-                            $html .= '<img src="datas/img/shot.jpg" class="verres">';
+                            $html .= '<img src="datas/img/shot.jpg" class="shots">';
                         }
                         $html .= '</section></article>';
                     }
@@ -177,8 +177,8 @@ $meilleureCombinaison = sacApo($recettesPossibles, $tailleRecettesPossibles, $qt
 
             // ------- Total -------
             $html .= '<h2>Au total</h2>';
-            $html .= '<article class="total"><p class="sommesFinales">' . strval($nbVerresTotaux) . '</p><p class="separateur">X</p><img src="datas/img/verre.jpg" id="verresTotaux"></article>';
-            $html .= '<article class="total"><p class="sommesFinales">' . strval($nbShotsTotaux) . '</p><p class="separateur">X</p><img src="datas/img/shot.jpg" id="shotsTotaux"></article>';
+            $html .= '<article class="total"><p class="sommesFinales">' . strval($nbVerresTotaux) . '</p><p class="separateur">X</p><img src="datas/img/verre.jpg" class="verresTotaux"></article>';
+            $html .= '<article class="total"><p class="sommesFinales">' . strval($nbShotsTotaux) . '</p><p class="separateur">X</p><img src="datas/img/shot.jpg" class="shotsTotaux"></article>';
 
 
             echo $html;
