@@ -1,2 +1,1 @@
-
-{"Stock":[{"nomBoisson":"jeager","qtBoisson":0.75},{"nomBoisson":"redbull","qtBoisson":3},{"nomBoisson":"whisky","qtBoisson":2.75},{"nomBoisson":"rhum","qtBoisson":1.25},{"nomBoisson":"coca","qtBoisson":6},{"nomBoisson":"vodka","qtBoisson":0.75},{"nomBoisson":"kas","qtBoisson":4}]}
+{"Stock":[{"nomBoisson":"whisky","qtBoisson":0.75},{"nomBoisson":"rhum","qtBoisson":1.5},{"nomBoisson":"jeager","qtBoisson":0.75},{"nomBoisson":"coca","qtBoisson":8},{"nomBoisson":"redbull","qtBoisson":4},{"nomBoisson":"ananas","qtBoisson":3}]}

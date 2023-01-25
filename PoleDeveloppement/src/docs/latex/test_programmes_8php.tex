@@ -1,0 +1,248 @@
+\hypertarget{test_programmes_8php}{}\doxysection{C\+:/\+Users/robin/\+Documents/\+BUT/\+S3.01\+\_\+\+Developpement\+\_\+d\+\_\+application\+\_\+et\+\_\+\+Gestion\+\_\+de\+\_\+projet/\+Pole\+Developpement/src/test\+Programmes.php File Reference}
+\label{test_programmes_8php}\index{C:/Users/robin/Documents/BUT/S3.01\_Developpement\_d\_application\_et\_Gestion\_de\_projet/PoleDeveloppement/src/testProgrammes.php@{C:/Users/robin/Documents/BUT/S3.01\_Developpement\_d\_application\_et\_Gestion\_de\_projet/PoleDeveloppement/src/testProgrammes.php}}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{test_programmes_8php_a278672f1609a3409c5591a5232853890}{\$mazout}} = new \mbox{\hyperlink{class_recette}{Recette}}(\char`\"{}Mazout\char`\"{}, \$ricard, new \mbox{\hyperlink{class_boisson}{Boisson}}(\char`\"{}Coca\char`\"{}, \char`\"{}Diluant\char`\"{}, 10, 10), \char`\"{}999\char`\"{}, \char`\"{}1\char`\"{}, \char`\"{}5\char`\"{}, \char`\"{}0\char`\"{})
+\item 
+\mbox{\hyperlink{test_programmes_8php_ab2687224b44943352e5b56d9e1bcd753}{\$perroquet}} = new \mbox{\hyperlink{class_recette}{Recette}}(\char`\"{}Perroquet\char`\"{}, \$ricard, new \mbox{\hyperlink{class_boisson}{Boisson}}(\char`\"{}Sirop de menthe\char`\"{}, \char`\"{}Diluant\char`\"{}, 5, 5), \char`\"{}999\char`\"{}, \char`\"{}1\char`\"{}, \char`\"{}5\char`\"{}, \char`\"{}0\char`\"{})
+\item 
+\mbox{\hyperlink{test_programmes_8php_aff083bb4c15a3d9b1fc012fe9efa2f6f}{\$recettes\+Existantes}} = array()
+\item 
+\mbox{\hyperlink{test_programmes_8php_acf43941b2068dedcee217cd623f796b5}{\$meilleure\+Combinaison}} = new \mbox{\hyperlink{class_branche}{Branche}}()
+\item 
+\mbox{\hyperlink{test_programmes_8php_a2c4f48ba29105d7cd8fb4fedc975ccc1}{\$qt\+Max}} =18
+\item 
+const \mbox{\hyperlink{test_programmes_8php_a951b2dbb4e23ead194657f6aaab38ca6}{DOSE\+\_\+\+ALCOOL}} 4
+\item 
+const \mbox{\hyperlink{test_programmes_8php_af8af6136c999ea3d041cf2d8e0b8a321}{DOSE\+\_\+\+DILUANT}} 21
+\item 
+\mbox{\hyperlink{test_programmes_8php_afffd601a0a344a41e00df0411c0da9d7}{\$boisson1}} = new \mbox{\hyperlink{class_boisson}{Boisson}}(\char`\"{}Whisky\char`\"{}, \char`\"{}Alcool\char`\"{}, 0.\+75, 0.\+75)
+\item 
+\mbox{\hyperlink{test_programmes_8php_aa986d269ef111bf6668e283797708ad1}{\$boisson2}} = new \mbox{\hyperlink{class_boisson}{Boisson}}(\char`\"{}Coca\char`\"{}, \char`\"{}Diluant\char`\"{}, 8, 8)
+\item 
+\mbox{\hyperlink{test_programmes_8php_a311ea8c60b9b507bf55753ef3fd40555}{\$recette1}} = new \mbox{\hyperlink{class_recette}{Recette}}(\char`\"{}Whisky-\/coca\char`\"{}, \$boisson1, \$boisson2, 0, 0, 0, 2)
+\item 
+\mbox{\hyperlink{test_programmes_8php_a0f6c2fe58cbdb44fbe522927373c6899}{\$boisson3}} = new \mbox{\hyperlink{class_boisson}{Boisson}}(\char`\"{}rhum\char`\"{}, \char`\"{}Alcool\char`\"{}, 1.\+5, 1.\+5)
+\item 
+\mbox{\hyperlink{test_programmes_8php_aca29e81686563c2b7a39fb20715926eb}{\$boisson4}} = new \mbox{\hyperlink{class_boisson}{Boisson}}(\char`\"{}Ananas\char`\"{}, \char`\"{}Diluant\char`\"{}, 3, 3)
+\item 
+\mbox{\hyperlink{test_programmes_8php_ad249261836931747d028cc8bd3280f47}{\$recette2}} = new \mbox{\hyperlink{class_recette}{Recette}}(\char`\"{}rhum-\/ananas\char`\"{}, \$boisson3, \$boisson4, 0, 0, 0, 1)
+\item 
+\mbox{\hyperlink{test_programmes_8php_a3fb3dc405639ef609f7ec35b95b38287}{\$boisson5}} = new \mbox{\hyperlink{class_boisson}{Boisson}}(\char`\"{}Jägermeister \char`\"{}, \char`\"{}Alcool\char`\"{}, 0.\+75, 0.\+75)
+\item 
+\mbox{\hyperlink{test_programmes_8php_acec5e986d8c0e461008ecf9dc7e9ad1f}{\$boisson6}} = new \mbox{\hyperlink{class_boisson}{Boisson}}(\char`\"{}Crazy Tiger\char`\"{}, \char`\"{}Diluant\char`\"{}, 4, 4)
+\item 
+\mbox{\hyperlink{test_programmes_8php_a6f05d210fb3651b7e50a4dfbd13c5b1e}{\$recette3}} = new \mbox{\hyperlink{class_recette}{Recette}}(\char`\"{}jagerbomb\char`\"{}, \$boisson5, \$boisson6, 0, 0, 0, 2)
+\item 
+\mbox{\hyperlink{test_programmes_8php_a3034839c898d1581e9f131aa60baaac5}{\$recette4}} = new \mbox{\hyperlink{class_recette}{Recette}}(\char`\"{}rhum-\/coca\char`\"{}, \$boisson3, \$boisson2, 0, 0, 0, 1)
+\item 
+\mbox{\hyperlink{test_programmes_8php_a27bfe76fdd5c3bad4b496509c0ad290c}{\$taille\+Recete\+Existante}} = sizeof(\$recettes\+Existantes)
+\item 
+\mbox{\hyperlink{test_programmes_8php_a5c1325a31666177fe2088dc1b8053e92}{\$stock\+Soiree}} = new \mbox{\hyperlink{class_stock}{Stock}}()
+\item 
+\mbox{\hyperlink{test_programmes_8php_ab704586a9573a6b31c9299104ddf4c78}{\$stock}} = new \mbox{\hyperlink{class_stock}{Stock}}(\$ricard,\$biere,\$rhum,\$crazy)
+\item 
+\mbox{\hyperlink{test_programmes_8php_a65dc0a1fd724ce3f4cd2b9d6c6afaaaf}{\$recettes}} = \mbox{\hyperlink{fonctions_main_8php_a42c65a1d7ed305d93da3eb667bf85e9b}{creer\+Recette}}(\char`\"{}./datas/bd\+Recettes.\+json\char`\"{})
+\item 
+\mbox{\hyperlink{test_programmes_8php_afc63c88da0602b312f87e0a04c21113a}{foreach}} ( \$recettes as \$recette)
+\item 
+\mbox{\hyperlink{test_programmes_8php_ab0404c6bd0a4b1f25874729c2b3078f5}{\$taille\+Stock\+Soiree\+Alcool}} = count(\$stock-\/$>$get\+LAlcools())
+\item 
+\mbox{\hyperlink{test_programmes_8php_accee278ba3cabd6974a4c23b06dc9b67}{\$taille\+Stock\+Soiree\+Diluant}} = count(\$stock-\/$>$get\+LDiluants())
+\item 
+\mbox{\hyperlink{test_programmes_8php_ac49ec0a3a7ae70f6d60aafc04d98f16f}{\$\+DOSE\+\_\+\+ALCOOL}} = 0.\+04
+\item 
+\mbox{\hyperlink{test_programmes_8php_a14e3adaae105077fa8a8e684f3b0f0bd}{\$\+DOSE\+\_\+\+DILUANT}} = 0.\+21
+\item 
+\mbox{\hyperlink{test_programmes_8php_a9a5688dc65fac5ced54fd4eeb1dc67b6}{\$recettes\+Possibles}} = array()
+\item 
+\mbox{\hyperlink{test_programmes_8php_afea6fc6e32244ccd6edd5f29bc273731}{\$taille\+Stock\+Soiree\+Possible}} = count(\$recettes\+Possibles)
+\item 
+\mbox{\hyperlink{test_programmes_8php_aaa35cf19ab7b1c4cdb8c9b7aff1b0dc0}{\$copie\+Recettes}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{test_programmes_8php_a9d383995db15e84f6902ff61cdb3526b}{for}} ( \$i=0;\$i$<$ 6;\$i++) = \textquotesingle{}$<$h2$>$Boissons restantes$<$/h2$>$\textquotesingle{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{test_programmes_8php_afffd601a0a344a41e00df0411c0da9d7}\label{test_programmes_8php_afffd601a0a344a41e00df0411c0da9d7}} 
+\index{testProgrammes.php@{testProgrammes.php}!\$boisson1@{\$boisson1}}
+\index{\$boisson1@{\$boisson1}!testProgrammes.php@{testProgrammes.php}}
+\doxysubsubsection{\texorpdfstring{\$boisson1}{$boisson1}}
+{\footnotesize\ttfamily \$boisson1 = new \mbox{\hyperlink{class_boisson}{Boisson}}(\char`\"{}Whisky\char`\"{}, \char`\"{}Alcool\char`\"{}, 0.\+75, 0.\+75)}
+
+\mbox{\Hypertarget{test_programmes_8php_aa986d269ef111bf6668e283797708ad1}\label{test_programmes_8php_aa986d269ef111bf6668e283797708ad1}} 
+\index{testProgrammes.php@{testProgrammes.php}!\$boisson2@{\$boisson2}}
+\index{\$boisson2@{\$boisson2}!testProgrammes.php@{testProgrammes.php}}
+\doxysubsubsection{\texorpdfstring{\$boisson2}{$boisson2}}
+{\footnotesize\ttfamily \$boisson2 = new \mbox{\hyperlink{class_boisson}{Boisson}}(\char`\"{}Coca\char`\"{}, \char`\"{}Diluant\char`\"{}, 8, 8)}
+
+\mbox{\Hypertarget{test_programmes_8php_a0f6c2fe58cbdb44fbe522927373c6899}\label{test_programmes_8php_a0f6c2fe58cbdb44fbe522927373c6899}} 
+\index{testProgrammes.php@{testProgrammes.php}!\$boisson3@{\$boisson3}}
+\index{\$boisson3@{\$boisson3}!testProgrammes.php@{testProgrammes.php}}
+\doxysubsubsection{\texorpdfstring{\$boisson3}{$boisson3}}
+{\footnotesize\ttfamily \$boisson3 = new \mbox{\hyperlink{class_boisson}{Boisson}}(\char`\"{}rhum\char`\"{}, \char`\"{}Alcool\char`\"{}, 1.\+5, 1.\+5)}
+
+\mbox{\Hypertarget{test_programmes_8php_aca29e81686563c2b7a39fb20715926eb}\label{test_programmes_8php_aca29e81686563c2b7a39fb20715926eb}} 
+\index{testProgrammes.php@{testProgrammes.php}!\$boisson4@{\$boisson4}}
+\index{\$boisson4@{\$boisson4}!testProgrammes.php@{testProgrammes.php}}
+\doxysubsubsection{\texorpdfstring{\$boisson4}{$boisson4}}
+{\footnotesize\ttfamily \$boisson4 = new \mbox{\hyperlink{class_boisson}{Boisson}}(\char`\"{}Ananas\char`\"{}, \char`\"{}Diluant\char`\"{}, 3, 3)}
+
+\mbox{\Hypertarget{test_programmes_8php_a3fb3dc405639ef609f7ec35b95b38287}\label{test_programmes_8php_a3fb3dc405639ef609f7ec35b95b38287}} 
+\index{testProgrammes.php@{testProgrammes.php}!\$boisson5@{\$boisson5}}
+\index{\$boisson5@{\$boisson5}!testProgrammes.php@{testProgrammes.php}}
+\doxysubsubsection{\texorpdfstring{\$boisson5}{$boisson5}}
+{\footnotesize\ttfamily \$boisson5 = new \mbox{\hyperlink{class_boisson}{Boisson}}(\char`\"{}Jägermeister \char`\"{}, \char`\"{}Alcool\char`\"{}, 0.\+75, 0.\+75)}
+
+\mbox{\Hypertarget{test_programmes_8php_acec5e986d8c0e461008ecf9dc7e9ad1f}\label{test_programmes_8php_acec5e986d8c0e461008ecf9dc7e9ad1f}} 
+\index{testProgrammes.php@{testProgrammes.php}!\$boisson6@{\$boisson6}}
+\index{\$boisson6@{\$boisson6}!testProgrammes.php@{testProgrammes.php}}
+\doxysubsubsection{\texorpdfstring{\$boisson6}{$boisson6}}
+{\footnotesize\ttfamily \$boisson6 = new \mbox{\hyperlink{class_boisson}{Boisson}}(\char`\"{}Crazy Tiger\char`\"{}, \char`\"{}Diluant\char`\"{}, 4, 4)}
+
+\mbox{\Hypertarget{test_programmes_8php_aaa35cf19ab7b1c4cdb8c9b7aff1b0dc0}\label{test_programmes_8php_aaa35cf19ab7b1c4cdb8c9b7aff1b0dc0}} 
+\index{testProgrammes.php@{testProgrammes.php}!\$copieRecettes@{\$copieRecettes}}
+\index{\$copieRecettes@{\$copieRecettes}!testProgrammes.php@{testProgrammes.php}}
+\doxysubsubsection{\texorpdfstring{\$copieRecettes}{$copieRecettes}}
+{\footnotesize\ttfamily \$copie\+Recettes = \mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{test_programmes_8php_ac49ec0a3a7ae70f6d60aafc04d98f16f}\label{test_programmes_8php_ac49ec0a3a7ae70f6d60aafc04d98f16f}} 
+\index{testProgrammes.php@{testProgrammes.php}!\$DOSE\_ALCOOL@{\$DOSE\_ALCOOL}}
+\index{\$DOSE\_ALCOOL@{\$DOSE\_ALCOOL}!testProgrammes.php@{testProgrammes.php}}
+\doxysubsubsection{\texorpdfstring{\$DOSE\_ALCOOL}{$DOSE\_ALCOOL}}
+{\footnotesize\ttfamily \$\mbox{\hyperlink{main_8php_a951b2dbb4e23ead194657f6aaab38ca6}{DOSE\+\_\+\+ALCOOL}} = 0.\+04}
+
+\mbox{\Hypertarget{test_programmes_8php_a14e3adaae105077fa8a8e684f3b0f0bd}\label{test_programmes_8php_a14e3adaae105077fa8a8e684f3b0f0bd}} 
+\index{testProgrammes.php@{testProgrammes.php}!\$DOSE\_DILUANT@{\$DOSE\_DILUANT}}
+\index{\$DOSE\_DILUANT@{\$DOSE\_DILUANT}!testProgrammes.php@{testProgrammes.php}}
+\doxysubsubsection{\texorpdfstring{\$DOSE\_DILUANT}{$DOSE\_DILUANT}}
+{\footnotesize\ttfamily \$\mbox{\hyperlink{main_8php_af8af6136c999ea3d041cf2d8e0b8a321}{DOSE\+\_\+\+DILUANT}} = 0.\+21}
+
+\mbox{\Hypertarget{test_programmes_8php_a278672f1609a3409c5591a5232853890}\label{test_programmes_8php_a278672f1609a3409c5591a5232853890}} 
+\index{testProgrammes.php@{testProgrammes.php}!\$mazout@{\$mazout}}
+\index{\$mazout@{\$mazout}!testProgrammes.php@{testProgrammes.php}}
+\doxysubsubsection{\texorpdfstring{\$mazout}{$mazout}}
+{\footnotesize\ttfamily \$mazout = new \mbox{\hyperlink{class_recette}{Recette}}(\char`\"{}Mazout\char`\"{}, \$ricard, new \mbox{\hyperlink{class_boisson}{Boisson}}(\char`\"{}Coca\char`\"{}, \char`\"{}Diluant\char`\"{}, 10, 10), \char`\"{}999\char`\"{}, \char`\"{}1\char`\"{}, \char`\"{}5\char`\"{}, \char`\"{}0\char`\"{})}
+
+\mbox{\Hypertarget{test_programmes_8php_acf43941b2068dedcee217cd623f796b5}\label{test_programmes_8php_acf43941b2068dedcee217cd623f796b5}} 
+\index{testProgrammes.php@{testProgrammes.php}!\$meilleureCombinaison@{\$meilleureCombinaison}}
+\index{\$meilleureCombinaison@{\$meilleureCombinaison}!testProgrammes.php@{testProgrammes.php}}
+\doxysubsubsection{\texorpdfstring{\$meilleureCombinaison}{$meilleureCombinaison}}
+{\footnotesize\ttfamily \$meilleure\+Combinaison = new \mbox{\hyperlink{class_branche}{Branche}}()}
+
+\mbox{\Hypertarget{test_programmes_8php_ab2687224b44943352e5b56d9e1bcd753}\label{test_programmes_8php_ab2687224b44943352e5b56d9e1bcd753}} 
+\index{testProgrammes.php@{testProgrammes.php}!\$perroquet@{\$perroquet}}
+\index{\$perroquet@{\$perroquet}!testProgrammes.php@{testProgrammes.php}}
+\doxysubsubsection{\texorpdfstring{\$perroquet}{$perroquet}}
+{\footnotesize\ttfamily \$perroquet = new \mbox{\hyperlink{class_recette}{Recette}}(\char`\"{}Perroquet\char`\"{}, \$ricard, new \mbox{\hyperlink{class_boisson}{Boisson}}(\char`\"{}Sirop de menthe\char`\"{}, \char`\"{}Diluant\char`\"{}, 5, 5), \char`\"{}999\char`\"{}, \char`\"{}1\char`\"{}, \char`\"{}5\char`\"{}, \char`\"{}0\char`\"{})}
+
+\mbox{\Hypertarget{test_programmes_8php_a2c4f48ba29105d7cd8fb4fedc975ccc1}\label{test_programmes_8php_a2c4f48ba29105d7cd8fb4fedc975ccc1}} 
+\index{testProgrammes.php@{testProgrammes.php}!\$qtMax@{\$qtMax}}
+\index{\$qtMax@{\$qtMax}!testProgrammes.php@{testProgrammes.php}}
+\doxysubsubsection{\texorpdfstring{\$qtMax}{$qtMax}}
+{\footnotesize\ttfamily \$qt\+Max =18}
+
+\mbox{\Hypertarget{test_programmes_8php_a311ea8c60b9b507bf55753ef3fd40555}\label{test_programmes_8php_a311ea8c60b9b507bf55753ef3fd40555}} 
+\index{testProgrammes.php@{testProgrammes.php}!\$recette1@{\$recette1}}
+\index{\$recette1@{\$recette1}!testProgrammes.php@{testProgrammes.php}}
+\doxysubsubsection{\texorpdfstring{\$recette1}{$recette1}}
+{\footnotesize\ttfamily \$recette1 = new \mbox{\hyperlink{class_recette}{Recette}}(\char`\"{}Whisky-\/coca\char`\"{}, \$boisson1, \$boisson2, 0, 0, 0, 2)}
+
+\mbox{\Hypertarget{test_programmes_8php_ad249261836931747d028cc8bd3280f47}\label{test_programmes_8php_ad249261836931747d028cc8bd3280f47}} 
+\index{testProgrammes.php@{testProgrammes.php}!\$recette2@{\$recette2}}
+\index{\$recette2@{\$recette2}!testProgrammes.php@{testProgrammes.php}}
+\doxysubsubsection{\texorpdfstring{\$recette2}{$recette2}}
+{\footnotesize\ttfamily \$recette2 = new \mbox{\hyperlink{class_recette}{Recette}}(\char`\"{}rhum-\/ananas\char`\"{}, \$boisson3, \$boisson4, 0, 0, 0, 1)}
+
+\mbox{\Hypertarget{test_programmes_8php_a6f05d210fb3651b7e50a4dfbd13c5b1e}\label{test_programmes_8php_a6f05d210fb3651b7e50a4dfbd13c5b1e}} 
+\index{testProgrammes.php@{testProgrammes.php}!\$recette3@{\$recette3}}
+\index{\$recette3@{\$recette3}!testProgrammes.php@{testProgrammes.php}}
+\doxysubsubsection{\texorpdfstring{\$recette3}{$recette3}}
+{\footnotesize\ttfamily \$recette3 = new \mbox{\hyperlink{class_recette}{Recette}}(\char`\"{}jagerbomb\char`\"{}, \$boisson5, \$boisson6, 0, 0, 0, 2)}
+
+\mbox{\Hypertarget{test_programmes_8php_a3034839c898d1581e9f131aa60baaac5}\label{test_programmes_8php_a3034839c898d1581e9f131aa60baaac5}} 
+\index{testProgrammes.php@{testProgrammes.php}!\$recette4@{\$recette4}}
+\index{\$recette4@{\$recette4}!testProgrammes.php@{testProgrammes.php}}
+\doxysubsubsection{\texorpdfstring{\$recette4}{$recette4}}
+{\footnotesize\ttfamily \$recette4 = new \mbox{\hyperlink{class_recette}{Recette}}(\char`\"{}rhum-\/coca\char`\"{}, \$boisson3, \$boisson2, 0, 0, 0, 1)}
+
+\mbox{\Hypertarget{test_programmes_8php_a65dc0a1fd724ce3f4cd2b9d6c6afaaaf}\label{test_programmes_8php_a65dc0a1fd724ce3f4cd2b9d6c6afaaaf}} 
+\index{testProgrammes.php@{testProgrammes.php}!\$recettes@{\$recettes}}
+\index{\$recettes@{\$recettes}!testProgrammes.php@{testProgrammes.php}}
+\doxysubsubsection{\texorpdfstring{\$recettes}{$recettes}}
+{\footnotesize\ttfamily \$recettes = \mbox{\hyperlink{fonctions_main_8php_a42c65a1d7ed305d93da3eb667bf85e9b}{creer\+Recette}}(\char`\"{}./datas/bd\+Recettes.\+json\char`\"{})}
+
+\mbox{\Hypertarget{test_programmes_8php_aff083bb4c15a3d9b1fc012fe9efa2f6f}\label{test_programmes_8php_aff083bb4c15a3d9b1fc012fe9efa2f6f}} 
+\index{testProgrammes.php@{testProgrammes.php}!\$recettesExistantes@{\$recettesExistantes}}
+\index{\$recettesExistantes@{\$recettesExistantes}!testProgrammes.php@{testProgrammes.php}}
+\doxysubsubsection{\texorpdfstring{\$recettesExistantes}{$recettesExistantes}}
+{\footnotesize\ttfamily \$recettes\+Existantes = array()}
+
+\mbox{\Hypertarget{test_programmes_8php_a9a5688dc65fac5ced54fd4eeb1dc67b6}\label{test_programmes_8php_a9a5688dc65fac5ced54fd4eeb1dc67b6}} 
+\index{testProgrammes.php@{testProgrammes.php}!\$recettesPossibles@{\$recettesPossibles}}
+\index{\$recettesPossibles@{\$recettesPossibles}!testProgrammes.php@{testProgrammes.php}}
+\doxysubsubsection{\texorpdfstring{\$recettesPossibles}{$recettesPossibles}}
+{\footnotesize\ttfamily \$recettes\+Possibles = array()}
+
+\mbox{\Hypertarget{test_programmes_8php_ab704586a9573a6b31c9299104ddf4c78}\label{test_programmes_8php_ab704586a9573a6b31c9299104ddf4c78}} 
+\index{testProgrammes.php@{testProgrammes.php}!\$stock@{\$stock}}
+\index{\$stock@{\$stock}!testProgrammes.php@{testProgrammes.php}}
+\doxysubsubsection{\texorpdfstring{\$stock}{$stock}}
+{\footnotesize\ttfamily \$stock = new \mbox{\hyperlink{class_stock}{Stock}}(\$ricard,\$biere,\$rhum,\$crazy)}
+
+\mbox{\Hypertarget{test_programmes_8php_a5c1325a31666177fe2088dc1b8053e92}\label{test_programmes_8php_a5c1325a31666177fe2088dc1b8053e92}} 
+\index{testProgrammes.php@{testProgrammes.php}!\$stockSoiree@{\$stockSoiree}}
+\index{\$stockSoiree@{\$stockSoiree}!testProgrammes.php@{testProgrammes.php}}
+\doxysubsubsection{\texorpdfstring{\$stockSoiree}{$stockSoiree}}
+{\footnotesize\ttfamily \$stock\+Soiree = new \mbox{\hyperlink{class_stock}{Stock}}()}
+
+\mbox{\Hypertarget{test_programmes_8php_a27bfe76fdd5c3bad4b496509c0ad290c}\label{test_programmes_8php_a27bfe76fdd5c3bad4b496509c0ad290c}} 
+\index{testProgrammes.php@{testProgrammes.php}!\$tailleReceteExistante@{\$tailleReceteExistante}}
+\index{\$tailleReceteExistante@{\$tailleReceteExistante}!testProgrammes.php@{testProgrammes.php}}
+\doxysubsubsection{\texorpdfstring{\$tailleReceteExistante}{$tailleReceteExistante}}
+{\footnotesize\ttfamily \$taille\+Recete\+Existante = sizeof(\$recettes\+Existantes)}
+
+\mbox{\Hypertarget{test_programmes_8php_ab0404c6bd0a4b1f25874729c2b3078f5}\label{test_programmes_8php_ab0404c6bd0a4b1f25874729c2b3078f5}} 
+\index{testProgrammes.php@{testProgrammes.php}!\$tailleStockSoireeAlcool@{\$tailleStockSoireeAlcool}}
+\index{\$tailleStockSoireeAlcool@{\$tailleStockSoireeAlcool}!testProgrammes.php@{testProgrammes.php}}
+\doxysubsubsection{\texorpdfstring{\$tailleStockSoireeAlcool}{$tailleStockSoireeAlcool}}
+{\footnotesize\ttfamily \$taille\+Stock\+Soiree\+Alcool = count(\$stock-\/$>$get\+LAlcools())}
+
+\mbox{\Hypertarget{test_programmes_8php_accee278ba3cabd6974a4c23b06dc9b67}\label{test_programmes_8php_accee278ba3cabd6974a4c23b06dc9b67}} 
+\index{testProgrammes.php@{testProgrammes.php}!\$tailleStockSoireeDiluant@{\$tailleStockSoireeDiluant}}
+\index{\$tailleStockSoireeDiluant@{\$tailleStockSoireeDiluant}!testProgrammes.php@{testProgrammes.php}}
+\doxysubsubsection{\texorpdfstring{\$tailleStockSoireeDiluant}{$tailleStockSoireeDiluant}}
+{\footnotesize\ttfamily \$taille\+Stock\+Soiree\+Diluant = count(\$stock-\/$>$get\+LDiluants())}
+
+\mbox{\Hypertarget{test_programmes_8php_afea6fc6e32244ccd6edd5f29bc273731}\label{test_programmes_8php_afea6fc6e32244ccd6edd5f29bc273731}} 
+\index{testProgrammes.php@{testProgrammes.php}!\$tailleStockSoireePossible@{\$tailleStockSoireePossible}}
+\index{\$tailleStockSoireePossible@{\$tailleStockSoireePossible}!testProgrammes.php@{testProgrammes.php}}
+\doxysubsubsection{\texorpdfstring{\$tailleStockSoireePossible}{$tailleStockSoireePossible}}
+{\footnotesize\ttfamily \$taille\+Stock\+Soiree\+Possible = count(\$recettes\+Possibles)}
+
+\mbox{\Hypertarget{test_programmes_8php_a951b2dbb4e23ead194657f6aaab38ca6}\label{test_programmes_8php_a951b2dbb4e23ead194657f6aaab38ca6}} 
+\index{testProgrammes.php@{testProgrammes.php}!DOSE\_ALCOOL@{DOSE\_ALCOOL}}
+\index{DOSE\_ALCOOL@{DOSE\_ALCOOL}!testProgrammes.php@{testProgrammes.php}}
+\doxysubsubsection{\texorpdfstring{DOSE\_ALCOOL}{DOSE\_ALCOOL}}
+{\footnotesize\ttfamily const DOSE\+\_\+\+ALCOOL 4}
+
+\mbox{\Hypertarget{test_programmes_8php_af8af6136c999ea3d041cf2d8e0b8a321}\label{test_programmes_8php_af8af6136c999ea3d041cf2d8e0b8a321}} 
+\index{testProgrammes.php@{testProgrammes.php}!DOSE\_DILUANT@{DOSE\_DILUANT}}
+\index{DOSE\_DILUANT@{DOSE\_DILUANT}!testProgrammes.php@{testProgrammes.php}}
+\doxysubsubsection{\texorpdfstring{DOSE\_DILUANT}{DOSE\_DILUANT}}
+{\footnotesize\ttfamily const DOSE\+\_\+\+DILUANT 21}
+
+\mbox{\Hypertarget{test_programmes_8php_a9d383995db15e84f6902ff61cdb3526b}\label{test_programmes_8php_a9d383995db15e84f6902ff61cdb3526b}} 
+\index{testProgrammes.php@{testProgrammes.php}!for@{for}}
+\index{for@{for}!testProgrammes.php@{testProgrammes.php}}
+\doxysubsubsection{\texorpdfstring{for}{for}}
+{\footnotesize\ttfamily for (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) = \textquotesingle{}$<$h2$>$Boissons restantes$<$/h2$>$\textquotesingle{}}
+
+\mbox{\Hypertarget{test_programmes_8php_afc63c88da0602b312f87e0a04c21113a}\label{test_programmes_8php_afc63c88da0602b312f87e0a04c21113a}} 
+\index{testProgrammes.php@{testProgrammes.php}!foreach@{foreach}}
+\index{foreach@{foreach}!testProgrammes.php@{testProgrammes.php}}
+\doxysubsubsection{\texorpdfstring{foreach}{foreach}}
+{\footnotesize\ttfamily foreach(\$recettes as \$recette) (\begin{DoxyParamCaption}\item[{}]{\$recettes as }\end{DoxyParamCaption})}
+

@@ -1,0 +1,217 @@
+\hypertarget{class_stock}{}\doxysection{Stock Class Reference}
+\label{class_stock}\index{Stock@{Stock}}
+
+
+Classe \mbox{\hyperlink{class_stock}{Stock}} comportant une liste d\textquotesingle{}alcools, une liste de diluants et une.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_stock_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{class_stock_ad5a8fc85dc36b8112b47e863d46f4e2b}{get\+LAlcools}} ()
+\item 
+\mbox{\hyperlink{class_stock_a29355b8731bb8cad7effc3c9ee77baa1}{get\+LDiluants}} ()
+\item 
+\mbox{\hyperlink{class_stock_a2b9e2debf6487bca2d9ed1c5d8d83200}{get\+LAutres}} ()
+\item 
+\mbox{\hyperlink{class_stock_a2b401bd2a9833adda455a0854a07c651}{set\+LAlcools}} (\$nouveau\+Alcool)
+\item 
+\mbox{\hyperlink{class_stock_af0aff7dccc23a9b8992ac20c78de60ab}{set\+LDiluants}} (\$nouveau\+Diluant)
+\item 
+\mbox{\hyperlink{class_stock_aa35a6b7dd46c74e607bd1f0fc72822d1}{set\+LAutres}} (\$nouveau\+Autre)
+\item 
+\mbox{\hyperlink{class_stock_a8f80fc6c894a7f2e7aec775cf8f0ce50}{suppr\+LAlcools}} (\$alcool)
+\item 
+\mbox{\hyperlink{class_stock_a7e71afd7ca0b99fabd2a2960a8d1fedf}{suppr\+LDiluants}} (\$diluant)
+\item 
+\mbox{\hyperlink{class_stock_a5bba93b6274eb0897245685eb80fde24}{suppr\+LAutres}} (\$autre)
+\item 
+\mbox{\hyperlink{class_stock_a5558c5d549f41597377fa1ea8a1cefa3}{to\+String}} ()
+\item 
+\mbox{\hyperlink{class_stock_a1f2887dd0634efda44e04257ce8a1c1b}{ajouter\+Boisson}} (\$nom\+Fichier, \$nom\+Boisson, \$quantite)
+\begin{DoxyCompactList}\small\item\em \+: Cette méthode permet d\textquotesingle{}ajouter une boisson à la liste des boissons \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_stock_af31abb8e8ff3dbf6476e9dc5d607f325}{supprimer\+Boisson}} (\$nom\+Boisson)
+\begin{DoxyCompactList}\small\item\em \+: Cette méthode permet de supprimer une boisson du stock \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_stock_a463020318b32ad3d230047c9904a0105}{taille\+Alcools}} ()
+\begin{DoxyCompactList}\small\item\em \+: Retourne la taille de la liste des alcools \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_stock_a69ae7306df5fd7d335f212f0e81b0e2e}{taille\+Diluants}} ()
+\begin{DoxyCompactList}\small\item\em \+: Retourne la taille de la liste des diluants \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_stock_a4461669531609a0bee133254f326d04b}{taille\+Autres}} ()
+\begin{DoxyCompactList}\small\item\em \+: Retourne la taille de la liste des autres boissons \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe \mbox{\hyperlink{class_stock}{Stock}} comportant une liste d\textquotesingle{}alcools, une liste de diluants et une. 
+
+\begin{DoxyAuthor}{Author}
+@alexandre\+Pascal \href{mailto:apascal003@iutbayonne.univ-pau.fr}{\texttt{ apascal003@iutbayonne.\+univ-\/pau.\+fr}} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+6.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_stock_a095c5d389db211932136b53f25f39685}\label{class_stock_a095c5d389db211932136b53f25f39685}} 
+\index{Stock@{Stock}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!Stock@{Stock}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+warning Si le stock est construit avec une seule boisson, il y aura un problème car le code ne sais pas différentier entre 1 paramètre étant un object boisson, ou un autre étant un objet stock (problème de constructeur par copie). On admet donc que le cas d\textquotesingle{}une seul boisson n\textquotesingle{}existera jamais (pour 1 recette il faut au moins 2 boissons) 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_stock_a1f2887dd0634efda44e04257ce8a1c1b}\label{class_stock_a1f2887dd0634efda44e04257ce8a1c1b}} 
+\index{Stock@{Stock}!ajouterBoisson@{ajouterBoisson}}
+\index{ajouterBoisson@{ajouterBoisson}!Stock@{Stock}}
+\doxysubsubsection{\texorpdfstring{ajouterBoisson()}{ajouterBoisson()}}
+{\footnotesize\ttfamily ajouter\+Boisson (\begin{DoxyParamCaption}\item[{}]{\$nom\+Fichier,  }\item[{}]{\$nom\+Boisson,  }\item[{}]{\$quantite }\end{DoxyParamCaption})}
+
+
+
+\+: Cette méthode permet d\textquotesingle{}ajouter une boisson à la liste des boissons 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\+: & {\em \$nom\+Fichier,} & le nom du fichier dans lequel on va recuperer les boissons à comparer \\
+\hline
+\+: & {\em \$nom\+Boisson,} & le nom de la boisson à ajouter \\
+\hline
+\+: & {\em \$quantite,} & la quantité de la boisson à ajouter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_stock_ad5a8fc85dc36b8112b47e863d46f4e2b}\label{class_stock_ad5a8fc85dc36b8112b47e863d46f4e2b}} 
+\index{Stock@{Stock}!getLAlcools@{getLAlcools}}
+\index{getLAlcools@{getLAlcools}!Stock@{Stock}}
+\doxysubsubsection{\texorpdfstring{getLAlcools()}{getLAlcools()}}
+{\footnotesize\ttfamily get\+LAlcools (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_stock_a2b9e2debf6487bca2d9ed1c5d8d83200}\label{class_stock_a2b9e2debf6487bca2d9ed1c5d8d83200}} 
+\index{Stock@{Stock}!getLAutres@{getLAutres}}
+\index{getLAutres@{getLAutres}!Stock@{Stock}}
+\doxysubsubsection{\texorpdfstring{getLAutres()}{getLAutres()}}
+{\footnotesize\ttfamily get\+LAutres (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_stock_a29355b8731bb8cad7effc3c9ee77baa1}\label{class_stock_a29355b8731bb8cad7effc3c9ee77baa1}} 
+\index{Stock@{Stock}!getLDiluants@{getLDiluants}}
+\index{getLDiluants@{getLDiluants}!Stock@{Stock}}
+\doxysubsubsection{\texorpdfstring{getLDiluants()}{getLDiluants()}}
+{\footnotesize\ttfamily get\+LDiluants (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_stock_a2b401bd2a9833adda455a0854a07c651}\label{class_stock_a2b401bd2a9833adda455a0854a07c651}} 
+\index{Stock@{Stock}!setLAlcools@{setLAlcools}}
+\index{setLAlcools@{setLAlcools}!Stock@{Stock}}
+\doxysubsubsection{\texorpdfstring{setLAlcools()}{setLAlcools()}}
+{\footnotesize\ttfamily set\+LAlcools (\begin{DoxyParamCaption}\item[{}]{\$nouveau\+Alcool }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_stock_aa35a6b7dd46c74e607bd1f0fc72822d1}\label{class_stock_aa35a6b7dd46c74e607bd1f0fc72822d1}} 
+\index{Stock@{Stock}!setLAutres@{setLAutres}}
+\index{setLAutres@{setLAutres}!Stock@{Stock}}
+\doxysubsubsection{\texorpdfstring{setLAutres()}{setLAutres()}}
+{\footnotesize\ttfamily set\+LAutres (\begin{DoxyParamCaption}\item[{}]{\$nouveau\+Autre }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_stock_af0aff7dccc23a9b8992ac20c78de60ab}\label{class_stock_af0aff7dccc23a9b8992ac20c78de60ab}} 
+\index{Stock@{Stock}!setLDiluants@{setLDiluants}}
+\index{setLDiluants@{setLDiluants}!Stock@{Stock}}
+\doxysubsubsection{\texorpdfstring{setLDiluants()}{setLDiluants()}}
+{\footnotesize\ttfamily set\+LDiluants (\begin{DoxyParamCaption}\item[{}]{\$nouveau\+Diluant }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_stock_af31abb8e8ff3dbf6476e9dc5d607f325}\label{class_stock_af31abb8e8ff3dbf6476e9dc5d607f325}} 
+\index{Stock@{Stock}!supprimerBoisson@{supprimerBoisson}}
+\index{supprimerBoisson@{supprimerBoisson}!Stock@{Stock}}
+\doxysubsubsection{\texorpdfstring{supprimerBoisson()}{supprimerBoisson()}}
+{\footnotesize\ttfamily supprimer\+Boisson (\begin{DoxyParamCaption}\item[{}]{\$nom\+Boisson }\end{DoxyParamCaption})}
+
+
+
+\+: Cette méthode permet de supprimer une boisson du stock 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\+: & {\em \$nom\+Boisson,} & le nom de la boisson à supprimer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: void 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+\+: Cette méthode ne supprime pas la boisson du fichier json 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_stock_a8f80fc6c894a7f2e7aec775cf8f0ce50}\label{class_stock_a8f80fc6c894a7f2e7aec775cf8f0ce50}} 
+\index{Stock@{Stock}!supprLAlcools@{supprLAlcools}}
+\index{supprLAlcools@{supprLAlcools}!Stock@{Stock}}
+\doxysubsubsection{\texorpdfstring{supprLAlcools()}{supprLAlcools()}}
+{\footnotesize\ttfamily suppr\+LAlcools (\begin{DoxyParamCaption}\item[{}]{\$alcool }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_stock_a5bba93b6274eb0897245685eb80fde24}\label{class_stock_a5bba93b6274eb0897245685eb80fde24}} 
+\index{Stock@{Stock}!supprLAutres@{supprLAutres}}
+\index{supprLAutres@{supprLAutres}!Stock@{Stock}}
+\doxysubsubsection{\texorpdfstring{supprLAutres()}{supprLAutres()}}
+{\footnotesize\ttfamily suppr\+LAutres (\begin{DoxyParamCaption}\item[{}]{\$autre }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_stock_a7e71afd7ca0b99fabd2a2960a8d1fedf}\label{class_stock_a7e71afd7ca0b99fabd2a2960a8d1fedf}} 
+\index{Stock@{Stock}!supprLDiluants@{supprLDiluants}}
+\index{supprLDiluants@{supprLDiluants}!Stock@{Stock}}
+\doxysubsubsection{\texorpdfstring{supprLDiluants()}{supprLDiluants()}}
+{\footnotesize\ttfamily suppr\+LDiluants (\begin{DoxyParamCaption}\item[{}]{\$diluant }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_stock_a463020318b32ad3d230047c9904a0105}\label{class_stock_a463020318b32ad3d230047c9904a0105}} 
+\index{Stock@{Stock}!tailleAlcools@{tailleAlcools}}
+\index{tailleAlcools@{tailleAlcools}!Stock@{Stock}}
+\doxysubsubsection{\texorpdfstring{tailleAlcools()}{tailleAlcools()}}
+{\footnotesize\ttfamily taille\+Alcools (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\+: Retourne la taille de la liste des alcools 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_stock_a4461669531609a0bee133254f326d04b}\label{class_stock_a4461669531609a0bee133254f326d04b}} 
+\index{Stock@{Stock}!tailleAutres@{tailleAutres}}
+\index{tailleAutres@{tailleAutres}!Stock@{Stock}}
+\doxysubsubsection{\texorpdfstring{tailleAutres()}{tailleAutres()}}
+{\footnotesize\ttfamily taille\+Autres (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\+: Retourne la taille de la liste des autres boissons 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_stock_a69ae7306df5fd7d335f212f0e81b0e2e}\label{class_stock_a69ae7306df5fd7d335f212f0e81b0e2e}} 
+\index{Stock@{Stock}!tailleDiluants@{tailleDiluants}}
+\index{tailleDiluants@{tailleDiluants}!Stock@{Stock}}
+\doxysubsubsection{\texorpdfstring{tailleDiluants()}{tailleDiluants()}}
+{\footnotesize\ttfamily taille\+Diluants (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\+: Retourne la taille de la liste des diluants 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_stock_a5558c5d549f41597377fa1ea8a1cefa3}\label{class_stock_a5558c5d549f41597377fa1ea8a1cefa3}} 
+\index{Stock@{Stock}!toString@{toString}}
+\index{toString@{toString}!Stock@{Stock}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/robin/\+Documents/\+BUT/\+S3.\+01\+\_\+\+Developpement\+\_\+d\+\_\+application\+\_\+et\+\_\+\+Gestion\+\_\+de\+\_\+projet/\+Pole\+Developpement/src/classes/\mbox{\hyperlink{_stock_8php}{Stock.\+php}}\end{DoxyCompactItemize}

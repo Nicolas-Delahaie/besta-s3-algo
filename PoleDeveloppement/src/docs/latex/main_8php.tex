@@ -1,0 +1,123 @@
+\hypertarget{main_8php}{}\doxysection{C\+:/\+Users/robin/\+Documents/\+BUT/\+S3.01\+\_\+\+Developpement\+\_\+d\+\_\+application\+\_\+et\+\_\+\+Gestion\+\_\+de\+\_\+projet/\+Pole\+Developpement/src/main.php File Reference}
+\label{main_8php}\index{C:/Users/robin/Documents/BUT/S3.01\_Developpement\_d\_application\_et\_Gestion\_de\_projet/PoleDeveloppement/src/main.php@{C:/Users/robin/Documents/BUT/S3.01\_Developpement\_d\_application\_et\_Gestion\_de\_projet/PoleDeveloppement/src/main.php}}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{main_8php_a5c1325a31666177fe2088dc1b8053e92}{\$stock\+Soiree}} = \mbox{\hyperlink{fonctions_main_8php_a790d412634fab195dfb6cb3e6b1276db}{creer\+Stock}}(\char`\"{}./datas/bd\+Stock.\+json\char`\"{})
+\item 
+\mbox{\hyperlink{main_8php_aff083bb4c15a3d9b1fc012fe9efa2f6f}{\$recettes\+Existantes}} = \mbox{\hyperlink{fonctions_main_8php_a42c65a1d7ed305d93da3eb667bf85e9b}{creer\+Recette}}(\char`\"{}./datas/bd\+Recettes.\+json\char`\"{})
+\item 
+\mbox{\hyperlink{main_8php_acf43941b2068dedcee217cd623f796b5}{\$meilleure\+Combinaison}} = new \mbox{\hyperlink{class_branche}{Branche}}()
+\item 
+\mbox{\hyperlink{main_8php_a9a5688dc65fac5ced54fd4eeb1dc67b6}{\$recettes\+Possibles}} = array()
+\item 
+\mbox{\hyperlink{main_8php_a2c4f48ba29105d7cd8fb4fedc975ccc1}{\$qt\+Max}} = 0
+\item 
+const \mbox{\hyperlink{main_8php_a951b2dbb4e23ead194657f6aaab38ca6}{DOSE\+\_\+\+ALCOOL}} 4
+\item 
+const \mbox{\hyperlink{main_8php_af8af6136c999ea3d041cf2d8e0b8a321}{DOSE\+\_\+\+DILUANT}} 21
+\item 
+\mbox{\hyperlink{main_8php_aec304292124b1144bcccc54e64738e87}{\$taille\+Recettes\+Possibles}} = count(\$recettes\+Possibles)
+\item 
+\mbox{\hyperlink{main_8php_a21cd6d0f33ad23b96009d61f7919608c}{\$valeurs\+Renvoyees}} = \mbox{\hyperlink{fonctions_main_8php_a188db49328f65379284951a4f2fb4155}{calcul\+Quantite\+Des\+Recettes}}(\$recettes\+Possibles, \mbox{\hyperlink{main_8php_a951b2dbb4e23ead194657f6aaab38ca6}{DOSE\+\_\+\+ALCOOL}}, \mbox{\hyperlink{main_8php_af8af6136c999ea3d041cf2d8e0b8a321}{DOSE\+\_\+\+DILUANT}}, \$stock\+Soiree, \$stock\+Soiree-\/$>$taille\+Alcools(), \$stock\+Soiree-\/$>$taille\+Diluants(), \$taille\+Recettes\+Possibles)
+\item 
+\mbox{\hyperlink{main_8php_a6f96e7fc92441776c9d1cd3386663b40}{\$html}} = \char`\"{}\char`\"{}
+\begin{DoxyCompactList}\small\item\em Affiche la combinaison de cocktails avec les restes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{main_8php_afcf25fc6fc2cf9a7b01db8e6ad58d865}{\$nb\+Verres\+Totaux}} = 0
+\item 
+\mbox{\hyperlink{main_8php_a6f08af957e3b6cda6c29aeb293c53e84}{\$nb\+Shots\+Totaux}} = 0
+\item 
+\mbox{\hyperlink{main_8php_ad9cb548c582568349d855e174135fe5e}{\$restes}} = array()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{main_8php_a6f96e7fc92441776c9d1cd3386663b40}\label{main_8php_a6f96e7fc92441776c9d1cd3386663b40}} 
+\index{main.php@{main.php}!\$html@{\$html}}
+\index{\$html@{\$html}!main.php@{main.php}}
+\doxysubsubsection{\texorpdfstring{\$html}{$html}}
+{\footnotesize\ttfamily \$html = \char`\"{}\char`\"{}}
+
+
+
+Affiche la combinaison de cocktails avec les restes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & Cocktails triés par volume total décroissant \\
+\hline
+{\em array} & \mbox{\hyperlink{class_boisson}{Boisson}} Restes de boissons triés par volulmme decroisant \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8php_acf43941b2068dedcee217cd623f796b5}\label{main_8php_acf43941b2068dedcee217cd623f796b5}} 
+\index{main.php@{main.php}!\$meilleureCombinaison@{\$meilleureCombinaison}}
+\index{\$meilleureCombinaison@{\$meilleureCombinaison}!main.php@{main.php}}
+\doxysubsubsection{\texorpdfstring{\$meilleureCombinaison}{$meilleureCombinaison}}
+{\footnotesize\ttfamily \$meilleure\+Combinaison = new \mbox{\hyperlink{class_branche}{Branche}}()}
+
+\mbox{\Hypertarget{main_8php_a6f08af957e3b6cda6c29aeb293c53e84}\label{main_8php_a6f08af957e3b6cda6c29aeb293c53e84}} 
+\index{main.php@{main.php}!\$nbShotsTotaux@{\$nbShotsTotaux}}
+\index{\$nbShotsTotaux@{\$nbShotsTotaux}!main.php@{main.php}}
+\doxysubsubsection{\texorpdfstring{\$nbShotsTotaux}{$nbShotsTotaux}}
+{\footnotesize\ttfamily \$nb\+Shots\+Totaux = 0}
+
+\mbox{\Hypertarget{main_8php_afcf25fc6fc2cf9a7b01db8e6ad58d865}\label{main_8php_afcf25fc6fc2cf9a7b01db8e6ad58d865}} 
+\index{main.php@{main.php}!\$nbVerresTotaux@{\$nbVerresTotaux}}
+\index{\$nbVerresTotaux@{\$nbVerresTotaux}!main.php@{main.php}}
+\doxysubsubsection{\texorpdfstring{\$nbVerresTotaux}{$nbVerresTotaux}}
+{\footnotesize\ttfamily \$nb\+Verres\+Totaux = 0}
+
+\mbox{\Hypertarget{main_8php_a2c4f48ba29105d7cd8fb4fedc975ccc1}\label{main_8php_a2c4f48ba29105d7cd8fb4fedc975ccc1}} 
+\index{main.php@{main.php}!\$qtMax@{\$qtMax}}
+\index{\$qtMax@{\$qtMax}!main.php@{main.php}}
+\doxysubsubsection{\texorpdfstring{\$qtMax}{$qtMax}}
+{\footnotesize\ttfamily \$qt\+Max = 0}
+
+\mbox{\Hypertarget{main_8php_aff083bb4c15a3d9b1fc012fe9efa2f6f}\label{main_8php_aff083bb4c15a3d9b1fc012fe9efa2f6f}} 
+\index{main.php@{main.php}!\$recettesExistantes@{\$recettesExistantes}}
+\index{\$recettesExistantes@{\$recettesExistantes}!main.php@{main.php}}
+\doxysubsubsection{\texorpdfstring{\$recettesExistantes}{$recettesExistantes}}
+{\footnotesize\ttfamily \$recettes\+Existantes = \mbox{\hyperlink{fonctions_main_8php_a42c65a1d7ed305d93da3eb667bf85e9b}{creer\+Recette}}(\char`\"{}./datas/bd\+Recettes.\+json\char`\"{})}
+
+\mbox{\Hypertarget{main_8php_a9a5688dc65fac5ced54fd4eeb1dc67b6}\label{main_8php_a9a5688dc65fac5ced54fd4eeb1dc67b6}} 
+\index{main.php@{main.php}!\$recettesPossibles@{\$recettesPossibles}}
+\index{\$recettesPossibles@{\$recettesPossibles}!main.php@{main.php}}
+\doxysubsubsection{\texorpdfstring{\$recettesPossibles}{$recettesPossibles}}
+{\footnotesize\ttfamily \$recettes\+Possibles = array()}
+
+\mbox{\Hypertarget{main_8php_ad9cb548c582568349d855e174135fe5e}\label{main_8php_ad9cb548c582568349d855e174135fe5e}} 
+\index{main.php@{main.php}!\$restes@{\$restes}}
+\index{\$restes@{\$restes}!main.php@{main.php}}
+\doxysubsubsection{\texorpdfstring{\$restes}{$restes}}
+{\footnotesize\ttfamily \$restes = array()}
+
+\mbox{\Hypertarget{main_8php_a5c1325a31666177fe2088dc1b8053e92}\label{main_8php_a5c1325a31666177fe2088dc1b8053e92}} 
+\index{main.php@{main.php}!\$stockSoiree@{\$stockSoiree}}
+\index{\$stockSoiree@{\$stockSoiree}!main.php@{main.php}}
+\doxysubsubsection{\texorpdfstring{\$stockSoiree}{$stockSoiree}}
+{\footnotesize\ttfamily \$stock\+Soiree = \mbox{\hyperlink{fonctions_main_8php_a790d412634fab195dfb6cb3e6b1276db}{creer\+Stock}}(\char`\"{}./datas/bd\+Stock.\+json\char`\"{})}
+
+\mbox{\Hypertarget{main_8php_aec304292124b1144bcccc54e64738e87}\label{main_8php_aec304292124b1144bcccc54e64738e87}} 
+\index{main.php@{main.php}!\$tailleRecettesPossibles@{\$tailleRecettesPossibles}}
+\index{\$tailleRecettesPossibles@{\$tailleRecettesPossibles}!main.php@{main.php}}
+\doxysubsubsection{\texorpdfstring{\$tailleRecettesPossibles}{$tailleRecettesPossibles}}
+{\footnotesize\ttfamily \$taille\+Recettes\+Possibles = count(\$recettes\+Possibles)}
+
+\mbox{\Hypertarget{main_8php_a21cd6d0f33ad23b96009d61f7919608c}\label{main_8php_a21cd6d0f33ad23b96009d61f7919608c}} 
+\index{main.php@{main.php}!\$valeursRenvoyees@{\$valeursRenvoyees}}
+\index{\$valeursRenvoyees@{\$valeursRenvoyees}!main.php@{main.php}}
+\doxysubsubsection{\texorpdfstring{\$valeursRenvoyees}{$valeursRenvoyees}}
+{\footnotesize\ttfamily \$valeurs\+Renvoyees = \mbox{\hyperlink{fonctions_main_8php_a188db49328f65379284951a4f2fb4155}{calcul\+Quantite\+Des\+Recettes}}(\$recettes\+Possibles, \mbox{\hyperlink{main_8php_a951b2dbb4e23ead194657f6aaab38ca6}{DOSE\+\_\+\+ALCOOL}}, \mbox{\hyperlink{main_8php_af8af6136c999ea3d041cf2d8e0b8a321}{DOSE\+\_\+\+DILUANT}}, \$stock\+Soiree, \$stock\+Soiree-\/$>$taille\+Alcools(), \$stock\+Soiree-\/$>$taille\+Diluants(), \$taille\+Recettes\+Possibles)}
+
+\mbox{\Hypertarget{main_8php_a951b2dbb4e23ead194657f6aaab38ca6}\label{main_8php_a951b2dbb4e23ead194657f6aaab38ca6}} 
+\index{main.php@{main.php}!DOSE\_ALCOOL@{DOSE\_ALCOOL}}
+\index{DOSE\_ALCOOL@{DOSE\_ALCOOL}!main.php@{main.php}}
+\doxysubsubsection{\texorpdfstring{DOSE\_ALCOOL}{DOSE\_ALCOOL}}
+{\footnotesize\ttfamily const DOSE\+\_\+\+ALCOOL 4}
+
+\mbox{\Hypertarget{main_8php_af8af6136c999ea3d041cf2d8e0b8a321}\label{main_8php_af8af6136c999ea3d041cf2d8e0b8a321}} 
+\index{main.php@{main.php}!DOSE\_DILUANT@{DOSE\_DILUANT}}
+\index{DOSE\_DILUANT@{DOSE\_DILUANT}!main.php@{main.php}}
+\doxysubsubsection{\texorpdfstring{DOSE\_DILUANT}{DOSE\_DILUANT}}
+{\footnotesize\ttfamily const DOSE\+\_\+\+DILUANT 21}
+
