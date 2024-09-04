@@ -6,6 +6,8 @@ Durant le S3 nous avons dû imaginer et développer une fonctionnalité complexe
 Cette dernière, longuement cherchée et mûrement imaginée a été de pouvoir créer des cocktails d'alcool et de diluant, 
 à l'aide des boissons renseignés par les participants d'une soirée en ayant à la fin le moins de reste possible.
 
+Le projet est développé en PHP et une documentation Doxygen est trouvable dans le dossier `docs/`.
+
 Cette fonctionnalité allie gestion des données et algorithmie, un cocktail parfait !
 
 Equipe de projet: Oier Cesat, Nicolas Delahaie, Alexandre Pascal, Robin Alonzo
